@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import url("https://unpkg.com/leaflet/dist/leaflet.css");
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -8,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: #d8e5e5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
