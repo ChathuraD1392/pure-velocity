@@ -1,6 +1,11 @@
+import { BiMoon, BiSun } from "react-icons/bi";
 import logo from "../assets/images/Logo Horizontal R Blue@300x.png";
 
-const NavBar = () => {
+interface Props {
+  theme: string;
+  toggleTheme: () => void;
+}
+const NavBar = ({ theme, toggleTheme }: Props) => {
   const navItems = [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
@@ -10,7 +15,7 @@ const NavBar = () => {
   ];
   return (
     <>
-      <div className="navbar bg-white shadow-md rounded-b-xl w-full">
+      <div className="navbar bg-white shadow-md rounded-b-xl w-full dark:bg-black">
         <div className="navbar-start">
           <img src={logo} alt="logo" className="w-30" />
         </div>
@@ -26,7 +31,16 @@ const NavBar = () => {
         </div>
         <div className="navbar-end gap-2 font-black">
           <button className="btn btn-neutral btn-outline">Open Location</button>
-          <button className="btn btn-neutral btn-outline btn-circle"></button>
+          <button
+            className="btn btn-neutral btn-outline rounded-lg"
+            onClick={toggleTheme}
+          >
+            {theme === "light" ? (
+              <BiMoon className="text-xl" />
+            ) : (
+              <BiSun className="text-xl" />
+            )}
+          </button>
         </div>
       </div>
     </>
