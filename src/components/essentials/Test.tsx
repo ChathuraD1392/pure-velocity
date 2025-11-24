@@ -1,4 +1,3 @@
-import background from "../assets/images/container_background.jpg";
 import background_2 from "../assets/images/background_2.jpg";
 export default function Test() {
   return (

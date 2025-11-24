@@ -1,5 +1,3 @@
-import React from "react";
-
 const Test_3 = () => {
   return (
     <div className="w-full bg-[#EFF3F3] font-sans overflow-hidden">

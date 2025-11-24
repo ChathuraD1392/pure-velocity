@@ -1,20 +1,6 @@
 import video from "../../assets/video/background_video.mp4";
 
-interface Props {
-  header1: string;
-  header2: string;
-  header3: string;
-  video: string;
-  buttonLabel: string;
-}
-
-const VideoBanner = ({
-  header1,
-  header2,
-  header3,
-  video,
-  buttonLabel,
-}: Props) => {
+const VideoBanner = () => {
   return (
     <div className="">
       <div className="relative w-full h-screen overflow-hidden">
