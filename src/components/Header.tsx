@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import video from "../assets/video/background_video.mp4";
+import { useContext } from "react";
+import MenuContext from "../StateManagement/contexts/menuContext";
 
 const Header = () => {
+  const { isMenuVisible } = useContext(MenuContext);
   return (
     <section className="relative w-full min-h-[80vh] sm:min-h-screen overflow-hidden">
       {/* Video Background */}
@@ -17,28 +21,32 @@ const Header = () => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 py-20 sm:py-32 top-30 sm:top-10 md:top-20">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal leading-tight">
+      <div
+        className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 py-20 sm:py-32 lg:top-20 top-10 md:top-20 ${
+          isMenuVisible ? "opacity-45" : ""
+        }`}
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extralight leading-tight">
           Welcome to
         </h1>
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-[Belamor] font-extrabold leading-tight tracking-widest">
+        <h1 className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest">
           <span className="text-white">PURE VELOCITY</span>
         </h1>
-        <p className="mt-4 text-base sm:text-lg md:text-xl max-w-3xl tracking-wide">
-          <span className="text-white/90 font-semibold text-2xl">
+        <p className="mt-4 sm:text-md md:text-xl lg:text-2xl max-w-3xl tracking-wide font-light">
+          <span className="text-white/90 font-semibold ">
             Sri Lanka’s first specialist Tesla service
           </span>
           , diagnostics, and repair ecosystem powered by cutting-edge tech,
           global expertise, and a team that eats, sleeps, and breathes{" "}
-          <span className="text-white/90 font-semibold text-2xl">EVs.</span>
+          <span className="text-white/90 font-semibold">EVs.</span>
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#services"
-            className="px-6 py-3 bg-white text-black font-semibold rounded-md shadow"
+          <Link
+            to="/services"
+            className="px-6 py-3 bg-[#007bff] text-white font-semibold rounded-md shadow"
           >
             Our Services
-          </a>
+          </Link>
           <a
             href="#contact"
             className="px-6 py-3 border border-white rounded-md"
