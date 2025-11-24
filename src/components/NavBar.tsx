@@ -83,6 +83,11 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
             <div className="bg-black/40"></div>
             <div className="bg-white/30 flex items-start justify-center pt-15">
               <ul className="space-y-7 text-center">
+                <li>
+                  <button onClick={() => setMenuVisible(false)}>
+                    <Link to="/">Home</Link>
+                  </button>
+                </li>
                 {navItems.map((item, index) => (
                   <li key={index}>
                     <button onClick={() => setMenuVisible(false)}>
