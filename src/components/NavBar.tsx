@@ -133,11 +133,16 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
               }`}
             >
               <div className=""></div>
-              <div className="bg-white flex items-start pt-15 text-black rounded-xl h-fit">
+              <div className="bg-[linear-gradient(135deg,#E6EBF2,#D1D7E3)] flex items-start pt-15 text-black rounded-xl h-fit">
                 <ul className="space-y-7 pl-15 pb-20">
                   <li>
                     <motion.button
                       whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
+                      whileTap={{
+                        scale: 1.2,
+                        originX: 0,
+                        color: "#007bff",
+                      }}
                       onClick={() => setMenuVisible(false)}
                       className="hover:font-medium"
                     >
@@ -157,6 +162,11 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                         onClick={() => setMenuVisible(false)}
                         className="text-black hover:font-medium"
                         whileHover={{
+                          scale: 1.2,
+                          originX: 0,
+                          color: "#007bff",
+                        }}
+                        whileTap={{
                           scale: 1.2,
                           originX: 0,
                           color: "#007bff",
