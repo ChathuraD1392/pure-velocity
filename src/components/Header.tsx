@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import video from "../assets/video/background_video.mp4";
 import { useContext } from "react";
 import MenuContext from "../StateManagement/contexts/menuContext";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const { isMenuVisible } = useContext(MenuContext);
@@ -10,7 +11,7 @@ const Header = () => {
       {/* Video Background */}
       <video
         autoPlay
-        loop
+        //loop
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
@@ -30,7 +31,13 @@ const Header = () => {
           Welcome to
         </h1>
         <h1 className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest">
-          <span className="text-white">PURE VELOCITY</span>
+          <motion.span
+            className="text-white"
+            initial={{ opacity: 0, y: -250 }}
+            animate={{ opacity: 1, y: -10 }}
+          >
+            PURE VELOCITY
+          </motion.span>
         </h1>
         <p className="mt-4 sm:text-md md:text-xl lg:text-2xl max-w-3xl tracking-wide font-light">
           <span className="text-white/90 font-semibold ">
@@ -40,19 +47,33 @@ const Header = () => {
           global expertise, and a team that eats, sleeps, and breathes{" "}
           <span className="text-white/90 font-semibold">EVs.</span>
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/services"
-            className="px-6 py-3 bg-[#007bff] text-white font-semibold rounded-md shadow"
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 justify-center">
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0px 0px 2px rgb(255,255,255)",
+            }}
           >
-            Our Services
-          </Link>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-white rounded-md"
+            <Link
+              to="/services"
+              className="px-8 py-3 bg-[#007bff] border border-[#007bff] text-white font-light rounded-md shadow text-sm"
+            >
+              Our Services
+            </Link>
+          </motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0px 0px 4px rgb(255,255,255)",
+            }}
           >
-            Contact Us
-          </a>
+            <a
+              href="#contact"
+              className="px-9 py-3 border border-white rounded-md text-sm font-light"
+            >
+              Contact Us
+            </a>
+          </motion.button>
         </div>
       </div>
     </section>
