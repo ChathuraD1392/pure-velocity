@@ -44,6 +44,7 @@ const Header = () => {
             PURE VELOCITY
           </motion.span>
         </h1>
+
         <p className="mt-4 sm:text-md md:text-xl lg:text-2xl max-w-3xl tracking-wide font-light">
           <span className="text-white/90 font-semibold ">
             Sri Lanka’s first specialist Tesla service

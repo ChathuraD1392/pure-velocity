@@ -1,10 +1,9 @@
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { MdMenu } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import { hover, motion } from "framer-motion";
-import { button, li } from "framer-motion/client";
 
 interface NavBarProps {
   toggleTheme: () => void;
@@ -28,9 +27,9 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
     <>
       <motion.header
         className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md"
-        initial={{ opacity: 0, y: -250 }}
-        animate={{ opacity: 1, y: -10 }}
-        transition={{ delay: 1 }}
+        initial={{ opacity: 0, y: "-10vh" }}
+        animate={{ opacity: 1, y: "0" }}
+        transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between ">
           {/* Logo */}
