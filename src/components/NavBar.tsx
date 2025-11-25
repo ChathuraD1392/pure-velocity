@@ -128,7 +128,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full  text-white opacity-90 ${
+              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-screen  text-white opacity-90 ${
                 isMenuVisible ? "backdrop-blur-xs" : ""
               }`}
             >
