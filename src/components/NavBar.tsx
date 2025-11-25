@@ -1,14 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useContext } from "react";
-import { BiMoon, BiSun } from "react-icons/bi";
+import { BiMapPin, BiSun } from "react-icons/bi";
+import { FaMobileAlt } from "react-icons/fa";
 import { IoClose, IoHomeOutline } from "react-icons/io5";
 import { MdMenu, MdMiscellaneousServices } from "react-icons/md";
-import { RiTeamFill } from "react-icons/ri";
+import { RiMoonFill, RiTeamFill } from "react-icons/ri";
+import { SiTarget } from "react-icons/si";
 import { TbListDetails } from "react-icons/tb";
 import { Link, useLocation } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import { FaMobileAlt } from "react-icons/fa";
-import { SiTarget } from "react-icons/si";
 
 interface NavBarProps {
   toggleTheme: () => void;
@@ -29,7 +29,7 @@ export const navItems = [
 ];
 
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
-  const location = useLocation();
+  const { pathname } = useLocation();
   const { isMenuVisible, setMenuVisible } = useContext(MenuContext);
 
   return (
@@ -62,9 +62,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 <Link
                   key={index}
                   to={item.href}
-                  className={`${
-                    location.pathname === item.href ? "font-medium" : ""
-                  }`}
+                  className={`${pathname === item.href ? "font-medium" : ""}`}
                 >
                   {item.label}
                 </Link>
@@ -74,22 +72,31 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
 
           {/* Buttons */}
           <div className="flex items-center gap-3">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                textShadow: "0px 0px 4px rgb(255,255,255)",
-              }}
-            >
-              <Link
-                to="/contact"
-                className="hidden sm:inline-block px-4 py-2 rounded-md border border-white text-sm text-white font-extralight"
+            {pathname === "/contact" ? (
+              <span></span>
+            ) : (
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  textShadow: "0px 0px 4px rgb(255,255,255)",
+                }}
               >
-                Open Location
-              </Link>
-            </motion.button>
+                <Link
+                  to="/contact"
+                  className="hidden sm:inline-block px-4 py-2 rounded-md border border-white text-sm text-white font-extralight"
+                >
+                  <span className="flex item-center space-x-2">
+                    <span>Open Location</span>
+                    <span className="pt-0.5">
+                      <BiMapPin />
+                    </span>
+                  </span>
+                </Link>
+              </motion.button>
+            )}
             <motion.button
               className={`inline-flex items-center border rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
-                theme === "light" ? "border-white" : "border-amber-200"
+                theme === "light" ? "border-white" : "border-amber-300"
               }`}
               onClick={toggleTheme}
               whileHover={{ scale: 1.1 }}
@@ -97,7 +104,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
               {theme === "light" ? (
                 <BiSun className="text-white text-lg" />
               ) : (
-                <BiMoon className="text-lg text-amber-200" />
+                <RiMoonFill className="text-lg text-amber-300" />
               )}
             </motion.button>
             <div className="lg:hidden sm:inline-block">
