@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import video from "../assets/video/background_video.mp4";
+import video from "../assets/video/alternate.webp";
 import { useContext } from "react";
 import MenuContext from "../StateManagement/contexts/menuContext";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <section className="relative w-full min-h-[80vh] sm:min-h-screen overflow-hidden">
       {/* Video Background */}
-      <video
+      {/* <video
         autoPlay
         //loop
         muted
@@ -17,7 +17,12 @@ const Header = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={video} type="video/mp4" />
-      </video>
+      </video> */}
+      <img
+        src={video}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>

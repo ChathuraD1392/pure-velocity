@@ -3,7 +3,8 @@ import { BiMoon, BiSun } from "react-icons/bi";
 import { MdMenu } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import { motion } from "framer-motion";
+import { hover, motion } from "framer-motion";
+import { button, li } from "framer-motion/client";
 
 interface NavBarProps {
   toggleTheme: () => void;
@@ -29,6 +30,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md"
         initial={{ opacity: 0, y: -250 }}
         animate={{ opacity: 1, y: -10 }}
+        transition={{ delay: 1 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between ">
           {/* Logo */}
@@ -42,17 +44,23 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-7 text-md text-white font-light">
+          <nav className="hidden md:flex items-center gap-6 text-md text-white font-light">
             {navItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.href}
-                className={`${
-                  location.pathname === item.href ? "font-medium" : ""
-                } hover:underline hover:underline-offset-4`}
+              <motion.button
+                whileHover={{ scale: 1.05, originX: 0, originY: 0 }}
+                transition={{ type: "keyframes", stiffness: 100 }}
+                className="hover:font-medium"
               >
-                {item.label}
-              </Link>
+                <Link
+                  key={index}
+                  to={item.href}
+                  className={`${
+                    location.pathname === item.href ? "font-medium" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </motion.button>
             ))}
           </nav>
 
@@ -72,7 +80,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
               </Link>
             </motion.button>
             <motion.button
-              className="inline-flex items-center border border-white/30 rounded px-2 py-2 text-sm font-medium text-white"
+              className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
               onClick={toggleTheme}
               whileHover={{ scale: 1.1 }}
             >
@@ -85,7 +93,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
             <div className="lg:hidden sm:inline-block">
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                className="inline-flex items-center border border-white/30 rounded px-2 py-2 text-sm font-medium text-white"
+                className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
                 onClick={() => setMenuVisible(!isMenuVisible)}
               >
                 <MdMenu className="text-lg" />
@@ -98,18 +106,27 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         {isMenuVisible && (
           <div className="z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full bg-black/70 text-white opacity-90">
             <div className="bg-black/40"></div>
-            <div className="bg-white/30 flex items-start justify-center pt-15">
-              <ul className="space-y-7 text-center">
+            <div className="bg-white flex items-start pt-15 text-black">
+              <ul className="space-y-7 pl-15">
                 <li>
-                  <button onClick={() => setMenuVisible(false)}>
+                  <motion.button
+                    whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
+                    onClick={() => setMenuVisible(false)}
+                    className="hover:font-medium"
+                  >
                     <Link to="/">Home</Link>
-                  </button>
+                  </motion.button>
                 </li>
                 {navItems.map((item, index) => (
                   <li key={index}>
-                    <button onClick={() => setMenuVisible(false)}>
+                    <motion.button
+                      onClick={() => setMenuVisible(false)}
+                      className="text-black hover:font-medium"
+                      whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
                       <Link to={item.href}>{item.label}</Link>
-                    </button>
+                    </motion.button>
                   </li>
                 ))}
               </ul>
