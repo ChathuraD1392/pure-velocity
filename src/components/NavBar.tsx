@@ -107,7 +107,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 <RiMoonFill className="text-lg text-amber-300" />
               )}
             </motion.button>
-            <div className="lg:hidden sm:inline-block">
+            <div className="md:hidden sm:inline-block">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
@@ -123,9 +123,9 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           </div>
         </div>
       </motion.header>
-      <motion.section>
-        <AnimatePresence>
-          {isMenuVisible && (
+      {isMenuVisible && (
+        <motion.section>
+          <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, x: "10vw" }}
               animate={{ opacity: 1, x: "2vw" }}
@@ -135,12 +135,12 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-screen  text-white opacity-90 ${
+              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full text-white opacity-90 ${
                 isMenuVisible ? "backdrop-blur-xs" : ""
               }`}
             >
               <div className=""></div>
-              <div className="bg-[linear-gradient(135deg,#E6EBF2,#D1D7E3)] flex items-start pt-15 text-black rounded-xl h-fit">
+              <div className="bg-white/30 h-full flex items-start pt-15 text-black rounded-xl">
                 <ul className="space-y-7 pl-15 pb-20">
                   <li>
                     <motion.button
@@ -192,9 +192,9 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 </ul>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.section>
+          </AnimatePresence>
+        </motion.section>
+      )}
     </>
   );
 };

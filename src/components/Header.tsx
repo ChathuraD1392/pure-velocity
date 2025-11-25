@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
+import { useContext } from "react";
+import { BsTelephone } from "react-icons/bs";
+import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import video from "../assets/video/alternate.webp";
-import { useContext } from "react";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import { motion } from "framer-motion";
 
 const Header = () => {
   const { isMenuVisible } = useContext(MenuContext);
@@ -78,9 +80,12 @@ const Header = () => {
           >
             <Link
               to="/services"
-              className="px-8 py-3 bg-[#007bff] border border-[#007bff] text-white font-light rounded-md shadow text-sm"
+              className="hidden sm:inline-block px-9 py-3 rounded-md border border-[#007bff] bg-[#007bff] text-sm text-white font-extralight"
             >
-              Our Services
+              <span className="flex item-center space-x-2">
+                <HiOutlineCog6Tooth className="text-lg" />
+                <span>Services</span>
+              </span>
             </Link>
           </motion.button>
           <motion.button
@@ -89,12 +94,15 @@ const Header = () => {
               textShadow: "0px 0px 4px rgb(255,255,255)",
             }}
           >
-            <a
-              href="#contact"
-              className="px-9 py-3 border border-white rounded-md text-sm font-light"
+            <Link
+              to="/contact"
+              className="hidden sm:inline-block px-9 py-3 rounded-md border border-white text-sm text-white font-extralight"
             >
-              Contact Us
-            </a>
+              <span className="flex item-center space-x-2">
+                <BsTelephone />
+                <span>Contact</span>
+              </span>
+            </Link>
           </motion.button>
         </div>
       </div>

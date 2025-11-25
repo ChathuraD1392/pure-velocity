@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import contact from "../assets/images/contact.avif";
 import Map from "./essentials/Map";
+import { GoClockFill } from "react-icons/go";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Contact = () => {
   return (
@@ -49,13 +51,13 @@ const Contact = () => {
       </motion.section>
       <div className="relative top-10 mb-8">
         <section id="contact" className="py-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div>
               <Map />
             </div>
 
-            <div className="rounded-2xl">
-              <div className="space-y-4 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white">
+            <div className="rounded-2xl ">
+              <div className="space-y-4 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white shadow-xl">
                 <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-7 leading-tight text-black">
                   Contact Details
                 </h1>
@@ -79,12 +81,15 @@ const Contact = () => {
                     headoffice@purevelocity.lk
                   </a>
                 </p>
-                <p className="mt-4 text-sm text-gray-500">
-                  We respond fast — usually within minutes.
+                <p className="flex w-fit items-center rounded-md px-2 py-1 bg-[#0a0f2d] text-[10px] font-medium mt-2 text-white">
+                  <GoClockFill />
+                  <span className="pl-2">
+                    We respond fast — usually within minutes.
+                  </span>
                 </p>
               </div>
               <form
-                className="bg-white rounded-xl p-6 shadow-sm space-y-4 border border-slate-100"
+                className="bg-white rounded-xl p-6 space-y-4 border border-slate-100 shadow-xl"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div>
@@ -126,6 +131,7 @@ const Contact = () => {
                     type="submit"
                     className="inline-flex items-center rounded-md bg-[#007bff] border-0 text-white px-4 py-2"
                   >
+                    <AiOutlineMail className="mr-2" />
                     Send Message
                   </button>
                 </div>

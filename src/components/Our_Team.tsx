@@ -35,7 +35,7 @@ const Our_Team = () => {
           <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold leading-tight">
             Our Team
           </h1>
-          <p className="mt-4 text-sm md:text-md lg:text-xl font-extralight max-w-3xl tracking-wide">
+          <p className="mt-4 text-md md:text-lg lg:text-2xl font-extralight max-w-3xl tracking-wide">
             <span>
               Passionate people building a better
               <span className="text-white/90 font-semibold">
@@ -48,8 +48,8 @@ const Our_Team = () => {
         </div>
       </motion.section>
 
-      <div className="relative top-10 mb-8">
-        <section id="team" className="py-16">
+      <div className="relative top-2 md:top-6 lg:top-10 mb-8">
+        <section id="team" className="py-2 md:py-4 lg:py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Shanil */}
