@@ -7,7 +7,17 @@ import { motion } from "framer-motion";
 const Header = () => {
   const { isMenuVisible } = useContext(MenuContext);
   return (
-    <section className="relative w-full min-h-[80vh] sm:min-h-screen overflow-hidden">
+    <motion.section
+      className="relative w-full min-h-[80vh] sm:min-h-screen overflow-hidden"
+      initial={{ opacity: 0, y: "-10vh" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1,
+        delay: 0.5,
+        // type: "spring",
+        stiffness: 100,
+      }}
+    >
       {/* Video Background */}
       {/* <video
         autoPlay
@@ -38,8 +48,14 @@ const Header = () => {
         <h1 className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest">
           <motion.span
             className="text-white"
-            initial={{ opacity: 0, y: -250 }}
-            animate={{ opacity: 1, y: -10 }}
+            initial={{ opacity: 0, y: "200vh" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.5,
+              type: "spring",
+              stiffness: 100,
+            }}
           >
             PURE VELOCITY
           </motion.span>
@@ -82,7 +98,7 @@ const Header = () => {
           </motion.button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

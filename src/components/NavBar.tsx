@@ -1,9 +1,14 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useContext } from "react";
 import { BiMoon, BiSun } from "react-icons/bi";
-import { MdMenu } from "react-icons/md";
+import { IoClose, IoHomeOutline } from "react-icons/io5";
+import { MdMenu, MdMiscellaneousServices } from "react-icons/md";
+import { RiTeamFill } from "react-icons/ri";
+import { TbListDetails } from "react-icons/tb";
 import { Link, useLocation } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
+import { FaMobileAlt } from "react-icons/fa";
+import { SiTarget } from "react-icons/si";
 
 interface NavBarProps {
   toggleTheme: () => void;
@@ -12,11 +17,15 @@ interface NavBarProps {
 }
 
 export const navItems = [
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Team", href: "/our-team" },
-  { label: "Why EVs ?", href: "/why-evs" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "Services",
+    href: "/services",
+    element: <MdMiscellaneousServices />,
+  },
+  { label: "About", href: "/about", element: <TbListDetails /> },
+  { label: "Team", href: "/our-team", element: <RiTeamFill /> },
+  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
+  { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
 ];
 
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
@@ -27,8 +36,8 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
     <>
       <motion.header
         className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md"
-        initial={{ opacity: 0, y: "-10vh" }}
-        animate={{ opacity: 1, y: "0" }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between ">
@@ -48,7 +57,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
               <motion.button
                 whileHover={{ scale: 1.05, originX: 0, originY: 0 }}
                 transition={{ type: "keyframes", stiffness: 100 }}
-                className="hover:font-medium"
+                className="hover:font-medium p-1"
               >
                 <Link
                   key={index}
@@ -79,14 +88,16 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
               </Link>
             </motion.button>
             <motion.button
-              className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
+              className={`inline-flex items-center border rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
+                theme === "light" ? "border-white" : "border-amber-200"
+              }`}
               onClick={toggleTheme}
               whileHover={{ scale: 1.1 }}
             >
               {theme === "light" ? (
                 <BiSun className="text-white text-lg" />
               ) : (
-                <BiMoon className="text-amber-200 text-lg" />
+                <BiMoon className="text-lg text-amber-200" />
               )}
             </motion.button>
             <div className="lg:hidden sm:inline-block">
@@ -95,44 +106,78 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
                 onClick={() => setMenuVisible(!isMenuVisible)}
               >
-                <MdMenu className="text-lg" />
+                {!isMenuVisible ? (
+                  <MdMenu className="text-lg" />
+                ) : (
+                  <IoClose className="text-lg" />
+                )}
               </motion.button>
             </div>
           </div>
         </div>
       </motion.header>
-      <section>
-        {isMenuVisible && (
-          <div className="z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full bg-black/70 text-white opacity-90">
-            <div className="bg-black/40"></div>
-            <div className="bg-white flex items-start pt-15 text-black">
-              <ul className="space-y-7 pl-15">
-                <li>
-                  <motion.button
-                    whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
-                    onClick={() => setMenuVisible(false)}
-                    className="hover:font-medium"
-                  >
-                    <Link to="/">Home</Link>
-                  </motion.button>
-                </li>
-                {navItems.map((item, index) => (
-                  <li key={index}>
+      <motion.section>
+        <AnimatePresence>
+          {isMenuVisible && (
+            <motion.div
+              initial={{ opacity: 0, x: "10vw" }}
+              animate={{ opacity: 1, x: "2vw" }}
+              exit={{ opacity: 0, x: "10vw" }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+              }}
+              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full  text-white opacity-90 ${
+                isMenuVisible ? "backdrop-blur-xs" : ""
+              }`}
+            >
+              <div className=""></div>
+              <div className="bg-white flex items-start pt-15 text-black rounded-xl h-fit">
+                <ul className="space-y-7 pl-15 pb-20">
+                  <li>
                     <motion.button
-                      onClick={() => setMenuVisible(false)}
-                      className="text-black hover:font-medium"
                       whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      onClick={() => setMenuVisible(false)}
+                      className="hover:font-medium"
                     >
-                      <Link to={item.href}>{item.label}</Link>
+                      <Link to="/">
+                        <div className="flex justify-around items-center space-x-2">
+                          <span>
+                            <IoHomeOutline />
+                          </span>
+                          <span>Home</span>
+                        </div>
+                      </Link>
                     </motion.button>
                   </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-      </section>
+                  {navItems.map((item, index) => (
+                    <li key={index}>
+                      <motion.button
+                        onClick={() => setMenuVisible(false)}
+                        className="text-black hover:font-medium"
+                        whileHover={{
+                          scale: 1.2,
+                          originX: 0,
+                          color: "#007bff",
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Link to={item.href}>
+                          <div className="flex justify-around items-center space-x-2">
+                            <span>{item.element}</span>
+                            <span>{item.label}</span>
+                          </div>
+                        </Link>
+                      </motion.button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.section>
     </>
   );
 };
