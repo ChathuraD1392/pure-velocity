@@ -2,7 +2,6 @@ import { BsArrowUpRightSquareFill, BsFillPinMapFill } from "react-icons/bs";
 import { GoClockFill } from "react-icons/go";
 import { MdMedicalServices } from "react-icons/md";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
-import Map from "./essentials/Map";
 
 const Footer = () => {
   return (
