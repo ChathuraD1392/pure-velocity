@@ -35,7 +35,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   return (
     <>
       <motion.header
-        className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md"
+        className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md px-1"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}

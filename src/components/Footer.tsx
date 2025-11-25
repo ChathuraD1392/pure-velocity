@@ -7,9 +7,9 @@ import logo from "../assets/images/Logo Horizontal white@300x.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white/90 pt-5 px-3 py-2">
+    <footer className="bg-white/90 pt-5">
       {/* TOP BAR */}
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] pt-10 px-6 md:px-12 lg:px-10 pb-10 border-b border-dashed border-slate-400 rounded-t-xl">
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] pt-10 px-6 md:px-12 lg:px-10 pb-10">
         <div className="text-sm text-white flex flex-col text-center justify-center md:justify-start">
           <img
             src={logo}
@@ -36,12 +36,30 @@ const Footer = () => {
             </div>
 
             <div className="py-4 space-y-1 font-extralight">
-              <p>Advanced Diagnostics & Troubleshooting</p>
-              <p>High Voltage System Repairs</p>
-              <p>Electrical & Mechanical Repairs</p>
-              <p>Preventative Maintenance</p>
-              <p>Battery & Range Health Evaluation</p>
-              <p>Software & Configuration Support</p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span> Advanced
+                Diagnostics & Troubleshooting
+              </p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span> High
+                Voltage System Repairs
+              </p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span>{" "}
+                Electrical & Mechanical Repairs
+              </p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span>{" "}
+                Preventative Maintenance
+              </p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span> Battery
+                & Range Health Evaluation
+              </p>
+              <p>
+                <span className="text-blue-400 font-bold pr-3">✓</span> Software
+                & Configuration Support
+              </p>
             </div>
           </div>
         </div>
@@ -54,7 +72,7 @@ const Footer = () => {
               <BsFillPinMapFill className="text-lg md:text-2xl" />
             </div>
 
-            <div className="py-2 pr-2 md:pr-10 space-y-4 font-extralight text-sm">
+            <div className="py-2 pr-2 md:pr-10 mt-2 space-y-4 font-extralight text-sm">
               <p>
                 <span className="font-semibold ">Hotline : </span> +94 XXXXXXXX
               </p>
@@ -78,18 +96,19 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="w-full mx-auto px-4 py-3 grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] border-t border-slate-200 rounded-b-xl items-center">
+      <div className="w-full mx-auto px-4 py-3 grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] border-t border-slate-200 items-center">
         <div className="text-[10px] md:text-sm text-white text-center">
           © {new Date().getFullYear()} Pure Velocity — Powering Sri Lanka’s EV
           future.
         </div>
-        <div className="text-[10px] md:text-sm text-white text-center pt-2">
+        <div className="text-[10px] md:text-sm text-white text-center">
           All Rights Reserved
         </div>
         <div className="hidden md:block text-sm text-white pr-6">
           <div className="flex justify-end space-y-1 space-x-3 text-semibold">
             <p>Services</p>
             <p>About</p>
+            <p>Our Teama</p>
           </div>
         </div>
       </div>

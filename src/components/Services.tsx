@@ -1,64 +1,5 @@
-type Service = {
-  id: number;
-  title: string;
-  bullets: string[];
-};
-
-const services: Service[] = [
-  {
-    id: 1,
-    title: "Advanced Diagnostics & Troubleshooting",
-    bullets: [
-      "Full Tesla Toolbox diagnostics",
-      "Remote support & sensor/module testing",
-      "HVIL, BMS, PCS, inverter & CAN bus interpretation",
-    ],
-  },
-  {
-    id: 2,
-    title: "High Voltage System Repairs",
-    bullets: [
-      "HV battery analysis & main pack troubleshooting",
-      "Contactor, fuse inspections & HV wiring",
-      "DC-DC and pack level diagnostics",
-    ],
-  },
-  {
-    id: 3,
-    title: "Electrical & Mechanical Repairs",
-    bullets: [
-      "Steering, suspension & braking systems",
-      "AC / HVAC, cooling systems, 12V faults",
-      "Body harness and connector repairs",
-    ],
-  },
-  {
-    id: 4,
-    title: "Preventative Maintenance",
-    bullets: [
-      "Brake servicing & coolant checks",
-      "Suspension checks & cabin filters",
-      "General vehicle inspections",
-    ],
-  },
-  {
-    id: 5,
-    title: "Battery & Range Health Evaluation",
-    bullets: [
-      "SOH (State of Health) reports",
-      "Thermal performance & efficiency checks",
-      "Charging behaviour diagnostics",
-    ],
-  },
-  {
-    id: 6,
-    title: "Software & Configuration Support",
-    bullets: [
-      "Software-related troubleshooting & OTA help",
-      "Connectivity, configuration & firmware support",
-    ],
-  },
-];
+import { services } from "../assets/data/services";
+import Service_Card from "./essentials/Service_Card";
 
 const Services = () => {
   return (
@@ -74,20 +15,7 @@ const Services = () => {
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <article
-                key={s.id}
-                className="bg-white rounded-xl p-6 shadow-sm border"
-              >
-                <h3 className="font-semibold text-lg">{s.title}</h3>
-                <ul className="mt-3 text-sm text-gray-600 space-y-2">
-                  {s.bullets.map((b, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-green-600 font-bold">✓</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+              <Service_Card service={s} />
             ))}
           </div>
 
