@@ -4,8 +4,8 @@ import { steps } from "./essentials/Card";
 const About = () => {
   return (
     <>
-      <div className="pt-20 top-20 mb-8">
-        <section id="about" className="py-16 h-[40em]">
+      <div className="relative top-10">
+        <section id="about" className="py-16">
           <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold">
@@ -36,7 +36,7 @@ const About = () => {
                 <span className="text-xs tracking-wider font-semibold bg-[#007bff] text-white p-2 rounded-md">
                   Our Philosophy
                 </span>
-                <div className="grid md:grid-cols-4 gap-6 mt-4 max-w-7xl mx-auto relative">
+                <div className="grid md:grid-cols-4 gap-6 mt-4 max-w-7xl mx-auto">
                   {steps.map((step, index) => (
                     <div
                       key={index}
@@ -85,14 +85,14 @@ const About = () => {
               </p>
             </div>
 
-            <div className="rounded-lg overflow-hidden shadow-lg bg-white h-full w-3xl">
-              <span className="w-full object-cover">
+            <div className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl">
+              <span className="w-fit">
                 <video
                   autoPlay
                   // loop
                   muted
                   playsInline
-                  className="inset-0 w-full h-full object-cover"
+                  className="inset-0 w-fit h-full object-cover"
                 >
                   <source src={video} type="video/mp4" />
                 </video>
@@ -101,7 +101,6 @@ const About = () => {
           </div>
         </section>
       </div>
-      <div className="h-50"></div>
     </>
   );
 };
