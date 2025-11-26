@@ -1,11 +1,6 @@
-import p1 from "../assets/images/p1.jpeg";
-import p2 from "../assets/images/p2.webp";
-import p3 from "../assets/images/p3.jpg";
-import p4 from "../assets/images/p4.jpg";
-import p5 from "../assets/images/p5.jpg";
-import our_team from "../assets/images/contact.avif";
 import { motion } from "framer-motion";
 import { memberDetails } from "../assets/data/team";
+import our_team from "../assets/images/contact.avif";
 import Ourteam_Card from "./essentials/Ourteam_Card";
 
 const Our_Team = () => {

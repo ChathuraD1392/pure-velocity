@@ -7,7 +7,7 @@ import logo from "../assets/images/Logo Horizontal white@300x.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white/90 pt-5">
+    <footer className="bg-white/90">
       {/* TOP BAR */}
       <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] pt-10 px-6 md:px-12 lg:px-10 pb-10">
         <div className="text-sm text-white flex flex-col text-center justify-center md:justify-start">
@@ -36,30 +36,12 @@ const Footer = () => {
             </div>
 
             <div className="py-4 space-y-1 font-extralight">
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span> Advanced
-                Diagnostics & Troubleshooting
-              </p>
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span> High
-                Voltage System Repairs
-              </p>
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span>{" "}
-                Electrical & Mechanical Repairs
-              </p>
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span>{" "}
-                Preventative Maintenance
-              </p>
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span> Battery
-                & Range Health Evaluation
-              </p>
-              <p>
-                <span className="text-blue-400 font-bold pr-3">✓</span> Software
-                & Configuration Support
-              </p>
+              <p>Advanced Diagnostics & Troubleshooting</p>
+              <p>High Voltage System Repairs</p>
+              <p>Electrical & Mechanical Repairs</p>
+              <p>Preventative Maintenance</p>
+              <p>Battery & Range Health Evaluation</p>
+              <p>Software & Configuration Support</p>
             </div>
           </div>
         </div>
