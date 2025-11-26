@@ -35,10 +35,7 @@ const Our_Team = () => {
           <p className="mt-4 text-md md:text-lg lg:text-2xl font-extralight max-w-3xl tracking-wide">
             <span>
               Passionate people building a better
-              <span className="text-white/90 font-semibold">
-                {" "}
-                EV experience{" "}
-              </span>
+              <span className="text-white/90 font-semibold">EV experience</span>
               for Sri Lanka.
             </span>
           </p>

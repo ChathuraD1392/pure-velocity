@@ -1,25 +1,36 @@
+import { PiTargetBold } from "react-icons/pi";
 import video from "../assets/video/background_video.mp4";
 import { steps } from "./essentials/Card";
 
 const About = () => {
   return (
     <>
-      <div className="relative top-10">
+      <div className="relative top-20">
         <section id="about" className="py-16">
           <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold">
-                Pure Velocity — Sri Lanka’s Home of Tesla Expertise
+                Pure Velocity - Sri Lanka’s Home of Tesla Expertise
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                Pure Velocity began with a simple idea: to bring world-class
-                Tesla servicing to Sri Lanka.
+              <p className="mt-4 leading-relaxed text-xl font-semibold">
+                <div className="badge border-0 bg-[#007bff] text-white">
+                  <PiTargetBold className="text-lg" />
+                  Pure Velocity began with a simple idea: To bring world-class
+                  Tesla servicing to Sri Lanka
+                </div>
+              </p>
+
+              <p className="text-md mt-5 text-[#0a0f2d] bg-[#00ff99] p-3 rounded-lg">
+                <span className="text-md font-bold">Our Mission :</span>
+                To become Sri Lanka’s most trusted and advanced Tesla service
+                ecosystem, setting a new benchmark for EV maintenance,
+                transparency, and customer care.
               </p>
 
               <p className="mt-4 text-gray-700">
-                Founded by Shanil and Dilin — two entrepreneurs, tech lovers,
-                and unapologetic car addicts — PV has grown into a full-service
-                Tesla workshop backed by global experience.
+                Founded by Shanil and Dilin-two entrepreneurs, tech lovers, and
+                unapologetic car addicts-PV has grown into a full-service Tesla
+                workshop backed by global experience.
               </p>
               <p className="mt-4 text-gray-700">
                 With Sanjeev leading operations on the ground, Dinesh
@@ -32,26 +43,29 @@ const About = () => {
                 troubleshooting, and software-level repair workflows used
                 internationally.
               </p>
-              <div className="mt-5">
-                <span className="text-xs tracking-wider font-semibold bg-[#007bff] text-white p-2 rounded-md">
-                  Our Philosophy
-                </span>
+              <div className="mt-5 mb-4">
+                <p className="text-md mt-5 text-[#0a0f2d] p-3 rounded-lg">
+                  <span className="text-md font-bold">Our Philosophy</span>
+                </p>
                 <div className="grid md:grid-cols-4 gap-6 mt-4 max-w-7xl mx-auto">
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className="bg-white p-4 rounded-xl shadow-lg relative border border-[#0a0f2d]"
+                      className="group bg-white p-4 rounded-xl shadow-2xl relative text-[#007bff]
+                 hover:bg-[#007bff] transition-all duration-300"
                     >
-                      {/* Number */}
-                      <h3 className="text-4xl font-bold bg-linear-to-b from-[#0a0f2d] to-[#007bff] text-transparent bg-clip-text">
+                      <h3
+                        className="text-4xl font-bold text-[#0a0f2d] bg-clip-text 
+                     group-hover:text-white"
+                      >
                         {step.element}
                       </h3>
 
-                      {/* Title */}
-                      <h4 className="mt-4 text-md font-semibold text-gray-900">
+                      <h4 className="mt-4 text-md text-[#0a0f2d] font-semibold group-hover:text-white">
                         {step.title}
                       </h4>
-                      <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+
+                      <p className="mt-4 text-sm text-[#0a0f2d] leading-relaxed group-hover:text-white">
                         {step.text}
                       </p>
                     </div>
@@ -76,13 +90,6 @@ const About = () => {
                   trust
                 </li>
               </ul> */}
-
-              <p className="text-md mt-5 text-[#0a0f2d] bg-[#00ff99] p-3 rounded-lg">
-                <span className="text-lg font-bold">Our Mission : </span>To
-                become Sri Lanka’s most trusted and advanced Tesla service
-                ecosystem, setting a new benchmark for EV maintenance,
-                transparency, and customer care.
-              </p>
             </div>
 
             <div className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl">

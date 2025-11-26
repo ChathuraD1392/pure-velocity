@@ -1,4 +1,4 @@
-import type { Member } from "../../assets/data/team";
+import { badgeColors, type Member } from "../../assets/data/team";
 
 interface Props {
   member: Member;
@@ -7,7 +7,7 @@ interface Props {
 const Ourteam_Card = ({ member }: Props) => {
   return (
     <>
-      <div className="bg-white rounded-xl p-6 shadow-sm text-center border border-slate-100">
+      <div className="rounded-xl p-6 shadow-sm text-center border border-slate-100">
         <div className="w-28 h-28 mx-auto rounded-full bg-gray-200 overflow-hidden mb-4">
           <img
             src={member.photo}
@@ -23,7 +23,9 @@ const Ourteam_Card = ({ member }: Props) => {
           {member.para_3}
           <br />
           <span
-            className={`inline-flex items-center rounded-md bg-${member.badge_color}-400/10 mt-2 px-2 py-1 text-xs font-medium text-${member.badge_color}-400 inset-ring inset-ring-${member.badge_color}-400/20`}
+            className={`inline-flex items-center rounded-md mt-2 px-2 py-1 text-xs font-medium ring-1 ${
+              badgeColors[member.badge_color]
+            }`}
           >
             {member.badge}
           </span>

@@ -5,7 +5,6 @@ import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import video from "../assets/video/alternate.webp";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import Header_Team from "./essentials/Header_Team";
 
 const Header = () => {
   const { isMenuVisible } = useContext(MenuContext);
@@ -109,7 +108,7 @@ const Header = () => {
           </div>
         </div>
       </motion.section>
-      <Header_Team />
+      {/* <Header_Team /> */}
     </>
   );
 };

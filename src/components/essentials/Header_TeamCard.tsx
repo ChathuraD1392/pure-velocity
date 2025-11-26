@@ -7,7 +7,7 @@ interface Props {
 const Header_TeamCard = ({ member }: Props) => {
   return (
     <>
-      <div className="card card-side shadow-lg w-[35em] mt-5 bg-[#0a0f2d] text-white rounded-xl h-60">
+      <div className="card card-side shadow-lg w-[20em] md:w-[35em] mt-5 bg-[#0a0f2d] text-white rounded-xl h-60">
         <div className="rounded-l-xl overflow-hidden">
           <img
             src={member.photo}
@@ -26,13 +26,15 @@ const Header_TeamCard = ({ member }: Props) => {
               >
                 {member.badge}
               </span>
-              <p className="text-md font-semibold mt-2">{member.designation}</p>
+              <p className="text-md font-semibold mt-2 hidden md:block">
+                {member.designation}
+              </p>
             </div>
-            <p className="text-xs">{member.para_short}</p>
+            <p className="text-xs hidden md:block">{member.para_short}</p>
             <button
               className={`bg-${member.badge_color}-500 text-white rounded p-1 pl-2 pr-2`}
             >
-              <span className="flex items-center">
+              <span className="items-center hidden md:block">
                 Read More <MdArrowOutward className="ml-2" />
               </span>
             </button>

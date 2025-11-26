@@ -1,6 +1,6 @@
 const Why_Evs = () => {
   return (
-    <div className="relative top-10">
+    <div className="relative top-20">
       <section
         id="why-evs"
         className="py-16 bg-linear-to-b from-white to-gray-50"
@@ -53,6 +53,7 @@ const Why_Evs = () => {
           </div>
         </div>
       </section>
+      <p>dkmkmk</p>
     </div>
   );
 };

@@ -73,7 +73,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           {/* Buttons */}
           <div className="flex items-center gap-3">
             {pathname === "/contact" ? (
-              <span></span>
+              <span className="w-40 h-1"></span>
             ) : (
               <motion.button
                 whileHover={{

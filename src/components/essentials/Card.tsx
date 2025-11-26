@@ -1,21 +1,26 @@
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
+import { CiTrophy } from "react-icons/ci";
+import { HiOutlineCog6Tooth } from "react-icons/hi2";
+import { IoBookOutline } from "react-icons/io5";
+
 export const steps = [
   {
-    element: "01",
+    element: <CiTrophy />,
     title: "Honest work",
     text: "Trust begins with honest, reliable service",
   },
   {
-    element: "02",
+    element: <HiOutlineCog6Tooth />,
     title: "ECutting-edge diagnostics",
     text: "Precision technology ensures flawless troubleshooting",
   },
   {
-    element: "03",
+    element: <IoBookOutline />,
     title: "Global knowledge",
     text: "International EV knowledge, delivered locally",
   },
   {
-    element: "04",
+    element: <AiOutlineSafetyCertificate />,
     title: " Local trust",
     text: "Local service backed by strong community trust",
   },
@@ -42,18 +47,15 @@ export default function Card() {
       </div>
 
       {/* STEPS SECTION */}
-      <div className="grid md:grid-cols-4 gap-6 mt-16 max-w-7xl mx-auto relative">
+      <div className="grid md:grid-cols-4 gap-6 mt-16 max-w-7xl mx-auto relative hover:bg-amber-200">
         {steps.map((step, index) => (
           <div
             key={index}
             className="bg-white p-10 rounded-xl shadow-sm relative"
           >
-            {/* Number */}
             <h3 className="text-6xl font-bold bg-linear-to-b from-[#0a0f2d] to-[#007bff] text-transparent bg-clip-text">
               {step.element}
             </h3>
-
-            {/* Title */}
             <h4 className="mt-4 text-xl font-semibold text-gray-900">
               {step.title}
             </h4>

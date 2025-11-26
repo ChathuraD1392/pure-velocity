@@ -7,35 +7,35 @@ import logo from "../assets/images/Logo Horizontal white@300x.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white/90">
+    <footer className="relative bottom-0 left-0 w-full bg-[#0a0f2d]/70">
       {/* TOP BAR */}
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] pt-10 px-6 md:px-12 lg:px-10 pb-10">
-        <div className="text-sm text-white flex flex-col text-center justify-center md:justify-start">
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-5 bg-[#0a0f2d]/80 pt-10 px-6 md:px-12 lg:px-10 pb-10 mt-5">
+        <div className="text-sm text-white flex flex-col text-start justify-start md:justify-start">
           <img
             src={logo}
             alt="logo"
             className="h-16 w-full sm:h-14  md:h-20 lg:h-24 xl:h-28 object-contain"
           />
-          <p className="hidden md:block text-md px-20">
+          <p className="hidden md:block text-[10px] px-5">
             We specialise 100% in Tesla vehicles — nothing else.
           </p>
-          <div className="flex justify-center md:justify-start gap-5 text-3xl text-white mt-6 ml-10 md:mt-12 md:ml-42">
+          <div className="flex items-center justify-center md:justify-start gap-5 text-3xl text-white mt-2 ml-10 md:mt-5 md:ml-15">
             <FaFacebookSquare className="hover:text-[#007bff] cursor-pointer duration-200" />
             <FaInstagram className="hover:text-[#007bff] cursor-pointer duration-200" />
             <FaLinkedin className="hover:text-[#007bff] cursor-pointer duration-200" />
-            <AiFillTikTok className="hover:text-[#007bff] cursor-pointer duration-200" />
+            <AiFillTikTok className="hover:text-[#007bff] cursor-pointer duration-200 text-[33px]" />
           </div>
         </div>
 
         {/* Centered About Text (On large move to right) */}
-        <div className="text-white text-center md:text-left pt-5">
+        <div className="text-white col-start-4 text-center md:text-left pt-5">
           <div className="text-white hidden md:block">
             <div className="flex items-center space-x-3">
-              <h3 className="font-semibold text-xl md:text-2xl">Services</h3>
+              <h3 className="font-semibold text-sm md:text-lg">Services</h3>
               <MdMedicalServices className="text-3xl" />
             </div>
 
-            <div className="py-4 space-y-1 font-extralight">
+            <div className="py-4 space-y-1 text-xs">
               <p>Advanced Diagnostics & Troubleshooting</p>
               <p>High Voltage System Repairs</p>
               <p>Electrical & Mechanical Repairs</p>
@@ -48,15 +48,15 @@ const Footer = () => {
         <div className="text-white text-center md:text-left pt-5 grid grid-cols-1 ">
           <div className="text-white">
             <div className="flex items-center space-x-3">
-              <h3 className="font-semibold text-lg md:text-2xl ml-25 md:ml-0">
+              <h3 className="font-semibold text-sm md:text-lg ml-25 md:ml-0">
                 Find us
               </h3>
               <BsFillPinMapFill className="text-lg md:text-2xl" />
             </div>
 
-            <div className="py-2 pr-2 md:pr-10 mt-2 space-y-4 font-extralight text-sm">
+            <div className="py-1 pr-2 md:pr-10 mt-2 space-y-2 font-extralight text-xs">
               <p>
-                <span className="font-semibold ">Hotline : </span> +94 XXXXXXXX
+                <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
               </p>
               <p>
                 <span className="font-semibold">Our Office : </span> 11/3/2,
@@ -78,19 +78,19 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="w-full mx-auto px-4 py-3 grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d] border-t border-slate-200 items-center">
-        <div className="text-[10px] md:text-sm text-white text-center">
+      <div className="w-full mx-auto px-4 py-4 grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d]/80 border-t border-slate-200 items-center">
+        <div className="text-[10px] md:text-xs text-white text-start">
           © {new Date().getFullYear()} Pure Velocity — Powering Sri Lanka’s EV
           future.
         </div>
-        <div className="text-[10px] md:text-sm text-white text-center">
+        <div className="text-[10px] md:text-xs text-white text-center">
           All Rights Reserved
         </div>
-        <div className="hidden md:block text-sm text-white pr-6">
+        <div className="hidden md:block text-xs text-white pr-6">
           <div className="flex justify-end space-y-1 space-x-3 text-semibold">
             <p>Services</p>
             <p>About</p>
-            <p>Our Teama</p>
+            <p>Our Team</p>
           </div>
         </div>
       </div>

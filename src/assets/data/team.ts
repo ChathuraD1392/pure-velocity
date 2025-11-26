@@ -14,9 +14,15 @@ export interface Member {
   para_2?: string;
   para_3?: string;
   badge: string;
-  badge_color: "red" | "purple"| "green"| "amber" |"blue";
+  badge_color: keyof typeof badgeColors;
 }
-
+export const badgeColors = {
+  red: "bg-red-400/10 text-red-400 ring-red-400/20",
+  purple: "bg-purple-400/10 text-purple-400 ring-purple-400/20",
+  green: "bg-green-400/10 text-green-400 ring-green-400/20",
+  amber: "bg-amber-400/10 text-amber-400 ring-amber-400/20",
+  blue: "bg-blue-400/10 text-blue-400 ring-blue-400/20",
+} ;
 export const memberDetails:Member[] =[
     {
         id:1,
@@ -28,7 +34,7 @@ export const memberDetails:Member[] =[
         para_2:"With over a decade of running multiple businesses, Shanil can build systems with one hand and analyse a P&L with the other — all while talking about Autopilot quirks, battery health, or the next Tesla he’s planning to resurrect.",
         para_3:"If Pure Velocity were a Tesla, Shanil is the,",
         badge:"autopilot",
-        badge_color:'red',
+        badge_color:"red",
     },
     {
         id:2,
