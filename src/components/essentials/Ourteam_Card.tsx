@@ -7,12 +7,16 @@ interface Props {
 const Ourteam_Card = ({ member }: Props) => {
   return (
     <>
-      <div className="rounded-xl p-6 shadow-sm text-center border border-slate-100">
-        <div className="w-28 h-28 mx-auto rounded-full bg-gray-200 overflow-hidden mb-4">
+      <div className="rounded-xl p-6 shadow-sm text-center border border-slate-100 h-full">
+        <div
+          className={`w-28 h-28 mx-auto rounded-full bg-white overflow-hidden p-1 mb-4 border-3 border-${
+            badgeColors[member.badge_color]
+          }-400`}
+        >
           <img
             src={member.photo}
             alt={member.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover p-3px rounded-full "
           />
         </div>
         <h4 className="font-semibold text-2xl mb-2">{member.name}</h4>

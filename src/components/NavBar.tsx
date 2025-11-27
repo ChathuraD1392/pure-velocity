@@ -27,15 +27,34 @@ export const navItems = [
   { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
   { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
 ];
+export const navHome = [
+  { label: "Home", href: "/", element: <IoHomeOutline /> },
+  {
+    label: "Services",
+    href: "/services",
+    element: <MdMiscellaneousServices />,
+  },
+  { label: "About", href: "/about", element: <TbListDetails /> },
+  { label: "Team", href: "/our-team", element: <RiTeamFill /> },
+  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
+  { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
+];
 
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   const { pathname } = useLocation();
   const { isMenuVisible, setMenuVisible } = useContext(MenuContext);
+  console.log(pathname);
 
   return (
     <>
       <motion.header
-        className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-md px-1"
+        className={`fixed top-0 z-50 w-full ${
+          pathname === "/why-evs" ||
+          pathname == "/about" ||
+          pathname == "/services"
+            ? "bg-[#0a0f2d]"
+            : "bg-[#0a0f2d]/40"
+        } backdrop-blur-md px-1`}
         initial={{ opacity: 0, scale: 1, y: "-5vh" }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
@@ -127,63 +146,47 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         <motion.section>
           <AnimatePresence>
             <motion.div
-              initial={{ opacity: 0, x: "10vw" }}
-              animate={{ opacity: 1, x: "2vw" }}
-              exit={{ opacity: 0, x: "10vw" }}
+              initial={{ opacity: 0, x: "20vw" }}
+              animate={{ opacity: 1, x: "0vw" }}
+              exit={{ opacity: 0, x: "20vw" }}
               transition={{
-                duration: 0.5,
+                duration: 1,
                 type: "spring",
-                stiffness: 100,
+                stiffness: 200,
               }}
-              className={`z-60 grid grid-cols-2 fixed top-20 right-0 w-full h-full text-white opacity-90 ${
+              className={`z-60 grid grid-cols-5 fixed top-20 right-0 w-full h-full text-white opacity-90 ${
                 isMenuVisible ? "backdrop-blur-xs" : ""
               }`}
             >
-              <div className=""></div>
-              <div className="bg-white/30 h-full flex items-start pt-15 text-black rounded-xl">
-                <ul className="space-y-7 pl-15 pb-20">
-                  <li>
-                    <motion.button
-                      whileHover={{ scale: 1.2, originX: 0, color: "#007bff" }}
-                      whileTap={{
-                        scale: 1.2,
-                        originX: 0,
-                        color: "#007bff",
-                      }}
-                      onClick={() => setMenuVisible(false)}
-                      className="hover:font-medium"
-                    >
-                      <Link to="/">
-                        <div className="flex justify-around items-center space-x-2">
-                          <span>
-                            <IoHomeOutline />
-                          </span>
-                          <span>Home</span>
-                        </div>
-                      </Link>
-                    </motion.button>
-                  </li>
-                  {navItems.map((item, index) => (
+              <div className="h-full flex items-start justify-center pt-15 text-black rounded-xl col-start-4 col-span-2">
+                <ul className="space-y-7 pl-4 pb-20">
+                  {navHome.map((item, index) => (
                     <li key={index}>
                       <motion.button
                         onClick={() => setMenuVisible(false)}
-                        className="text-black hover:font-medium"
+                        className={`${
+                          pathname === item.href
+                            ? "bg-[#0a0f2d]/90"
+                            : "bg-[#007bff]"
+                        } pl-3 p-2 rounded-md text-white w-full`}
                         whileHover={{
-                          scale: 1.2,
+                          scale: 1.03,
                           originX: 0,
-                          color: "#007bff",
                         }}
                         whileTap={{
-                          scale: 1.2,
+                          scale: 1.03,
                           originX: 0,
-                          color: "#007bff",
                         }}
-                        transition={{ type: "spring", stiffness: 300 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          delay: index * 0.1,
+                        }}
                       >
                         <Link to={item.href}>
-                          <div className="flex justify-around items-center space-x-2">
+                          <div className="flex justify-start items-center text-sm space-x-1">
                             <span>{item.element}</span>
-                            <span>{item.label}</span>
+                            <span className="text-xs">{item.label}</span>
                           </div>
                         </Link>
                       </motion.button>

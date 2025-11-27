@@ -29,6 +29,20 @@ const Header = () => {
     },
   };
 
+  const letters = Array.from("PURE VELOCITY");
+
+  // Variants for each letter
+  const letterVariant = {
+    hidden: {
+      opacity: 0,
+      transition: {
+        duration: 4,
+        delay: 3,
+      },
+    },
+    visible: { opacity: 1 },
+  };
+
   return (
     <>
       <motion.section
@@ -55,7 +69,7 @@ const Header = () => {
         <img
           src={video}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover "
+          className="absolute inset-0 min-h-[30em] md:w-full h-full object-cover "
         />
 
         {/* Dark Overlay */}
@@ -79,8 +93,22 @@ const Header = () => {
           >
             Welcome to
           </motion.h1>
-          <h1 className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest">
-            <motion.span
+          <motion.h1
+            className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest"
+            initial="hidden"
+            animate="visible"
+          >
+            {letters.map((char, index) => (
+              <motion.span
+                key={index}
+                variants={letterVariant}
+                transition={{ delay: index * 0.1 }} // delay each letter
+              >
+                {char}
+              </motion.span>
+            ))}
+
+            {/* <motion.span
               className="text-white"
               initial={{ opacity: 0, y: "200vh" }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,8 +120,8 @@ const Header = () => {
               }}
             >
               PURE VELOCITY
-            </motion.span>
-          </h1>
+            </motion.span> */}
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: "5vh" }}

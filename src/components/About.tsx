@@ -8,7 +8,7 @@ const About = () => {
     <>
       <div className="relative top-20">
         <section id="about" className="py-16">
-          <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 1, y: "-5vh" }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -17,9 +17,9 @@ const About = () => {
               <h2 className="text-3xl font-bold">
                 Pure Velocity - Sri Lanka’s Home of Tesla Expertise
               </h2>
-              <p className="mt-4 leading-relaxed text-xl font-semibold">
-                <div className="badge border-0 bg-[#007bff] text-white">
-                  <PiTargetBold className="text-lg" />
+              <p className="mt-4 leading-relaxed  md:font-semibold w-full hidden md:block">
+                <div className="badge border-0 bg-[#007bff] text-white text-[7px] md:text-xl">
+                  <PiTargetBold className="text-xs md:text-lg" />
                   Pure Velocity began with a simple idea: To bring world-class
                   Tesla servicing to Sri Lanka
                 </div>
@@ -99,7 +99,7 @@ const About = () => {
               initial={{ opacity: 0, scale: 1, y: "-10vh" }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ type: "spring", delay: 1, stiffness: 100 }}
-              className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl"
+              className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl hidden md:block"
             >
               <span className="w-fit">
                 <video

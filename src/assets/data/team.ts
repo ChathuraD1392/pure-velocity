@@ -16,13 +16,14 @@ export interface Member {
   badge?: string;
   badge_color: keyof typeof badgeColors;
   btnColor?: keyof typeof btnColors;
+  circleColor:"red"|"purple"|"green"|"blue"|"amber";
 }
 export const badgeColors = {
-  red: "bg-red-400/10 text-red-400 ring-red-400/20",
-  purple: "bg-purple-400/10 text-purple-400 ring-purple-400/20",
-  green: "bg-green-400/10 text-green-400 ring-green-400/20",
-  amber: "bg-amber-400/10 text-amber-400 ring-amber-400/20",
-  blue: "bg-blue-400/10 text-blue-400 ring-blue-400/20",
+  red: "bg-red-600/20 text-red-400 ring-red-600/20",
+  purple: "bg-purple-600/20 text-purple-400 ring-purple-600/20",
+  green: "bg-green-600/20 text-green-400 ring-green-600/20",
+  amber: "bg-amber-600/20 text-amber-400 ring-amber-600/20",
+  blue: "bg-blue-600/20 text-blue-400 ring-blue-600/20",
 } ;
 
 export const btnColors = {
@@ -44,7 +45,8 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were a Tesla, Shanil is the,",
         badge:"autopilot",
         badge_color:"red",
-        btnColor:"red"
+        btnColor:"red",
+        circleColor:"red"
     },
     {
         id:2,
@@ -58,6 +60,7 @@ export const memberDetails:Member[] =[
         badge:"ludicrous mode boost.",
         badge_color:"amber",
         btnColor:"amber",
+        circleColor:"amber"
     },
     {
         id:3,
@@ -71,6 +74,7 @@ export const memberDetails:Member[] =[
         badge:"dyno room",
         badge_color:"blue",
         btnColor:"blue",
+        circleColor:"blue",
     },
     {
         id:4,
@@ -84,6 +88,7 @@ export const memberDetails:Member[] =[
         badge:"neatly routed wiring loom",
         badge_color:"green",
         btnColor:"green",
+        circleColor:"green",
     },
     {
         id:5,
@@ -97,6 +102,7 @@ export const memberDetails:Member[] =[
         badge:"wireless charger. Always ready, always reliable",
         badge_color:"purple",
         btnColor:"purple",
+        circleColor:"purple",
     },
 ]
 

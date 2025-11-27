@@ -7,7 +7,7 @@ interface Props {
 const Service_Card = ({ service }: Props) => {
   return (
     <>
-      <div className="max-w-sm rounded-lg bg-white overflow-hidden shadow-lg">
+      <div className="max-w-sm rounded-lg bg-white overflow-hidden shadow-lg h-full">
         <img
           className="w-full h-[250px]"
           src={service.image}
