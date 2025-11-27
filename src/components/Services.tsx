@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { services } from "../assets/data/services";
 import Service_Card from "./essentials/Service_Card";
 
@@ -6,18 +7,46 @@ const Services = () => {
     <div className="relative top-10 mb-8">
       <section id="services" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center">
-            Tesla Services & Repairs
-          </h2>
-          <p className="text-center mt-3 text-gray-600">
-            We specialise 100% in Tesla vehicles — nothing else.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Service_Card service={s} />
+          <motion.div
+            initial={{ opacity: 0, scale: 1, y: "-10vh" }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.55, stiffness: 20 }}
+          >
+            <h2 className="text-3xl font-bold text-center">
+              Tesla Services & Repairs
+            </h2>
+            <p className="text-center mt-3 text-gray-600">
+              We specialise 100% in Tesla vehicles — nothing else.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: "-10vh" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 0.5,
+              // type: "spring",
+              stiffness: 100,
+            }}
+            className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {services.map((s, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: "-10vh" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.5 + index * 0.2,
+                  type: "tween",
+                  stiffness: 100,
+                }}
+                className=""
+              >
+                <Service_Card service={s} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="mt-10 text-center">
             <p className="text-gray-700">

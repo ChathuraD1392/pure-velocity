@@ -13,8 +13,9 @@ export interface Member {
   para_1?: string;
   para_2?: string;
   para_3?: string;
-  badge: string;
+  badge?: string;
   badge_color: keyof typeof badgeColors;
+  btnColor?: keyof typeof btnColors;
 }
 export const badgeColors = {
   red: "bg-red-400/10 text-red-400 ring-red-400/20",
@@ -23,6 +24,14 @@ export const badgeColors = {
   amber: "bg-amber-400/10 text-amber-400 ring-amber-400/20",
   blue: "bg-blue-400/10 text-blue-400 ring-blue-400/20",
 } ;
+
+export const btnColors = {
+    red: "bg-red-400",
+    purple: "bg-purple-400",
+    green: "bg-green-400",
+    amber: "bg-amber-400",
+    blue: "bg-blue-400"
+}
 export const memberDetails:Member[] =[
     {
         id:1,
@@ -35,6 +44,7 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were a Tesla, Shanil is the,",
         badge:"autopilot",
         badge_color:"red",
+        btnColor:"red"
     },
     {
         id:2,
@@ -47,6 +57,7 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were a Tesla, Dilin is the",
         badge:"ludicrous mode boost.",
         badge_color:"amber",
+        btnColor:"amber",
     },
     {
         id:3,
@@ -59,6 +70,7 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were a service centre, Sanjeev is the",
         badge:"dyno room",
         badge_color:"blue",
+        btnColor:"blue",
     },
     {
         id:4,
@@ -71,6 +83,7 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were an engine bay, Dinesh is the",
         badge:"neatly routed wiring loom",
         badge_color:"green",
+        btnColor:"green",
     },
     {
         id:5,
@@ -83,6 +96,7 @@ export const memberDetails:Member[] =[
         para_3:"If Pure Velocity were a car interior, Rukshan is the",
         badge:"wireless charger. Always ready, always reliable",
         badge_color:"purple",
+        btnColor:"purple",
     },
 ]
 

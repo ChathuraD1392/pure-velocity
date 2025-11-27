@@ -8,6 +8,27 @@ import MenuContext from "../StateManagement/contexts/menuContext";
 
 const Header = () => {
   const { isMenuVisible } = useContext(MenuContext);
+  const btnVariants = {
+    initial: { opacity: 0, y: "-100vh" },
+    animate: { opacity: 1, y: 0 },
+
+    hover: {
+      scale: 1.1,
+      textShadow: "0px 0px 4px white",
+      transition: {
+        duration: 0.3,
+      },
+    },
+
+    rest: {
+      scale: 1,
+      textShadow: "0px 0px 0px transparent",
+      transition: {
+        duration: 0.1,
+      },
+    },
+  };
+
   return (
     <>
       <motion.section
@@ -45,9 +66,19 @@ const Header = () => {
             isMenuVisible ? "opacity-45" : ""
           }`}
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extralight leading-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: "2vh" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+              type: "spring",
+              stiffness: 200,
+            }}
+            className="text-2xl sm:text-3xl md:text-4xl font-extralight leading-tight"
+          >
             Welcome to
-          </h1>
+          </motion.h1>
           <h1 className="text-5xl sm:text-8xl md:text-9xl font-[Belamor] font-extrabold leading-tight tracking-widest">
             <motion.span
               className="text-white"
@@ -55,7 +86,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1,
-                delay: 1.5,
+                delay: 0.75,
                 type: "spring",
                 stiffness: 100,
               }}
@@ -64,20 +95,32 @@ const Header = () => {
             </motion.span>
           </h1>
 
-          <p className="mt-4 text-sm md:text-mg lg:text-xl font-extralight max-w-3xl tracking-wide">
+          <motion.p
+            initial={{ opacity: 0, y: "5vh" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="mt-4 text-sm md:text-mg lg:text-xl font-extralight max-w-3xl tracking-wide"
+          >
             <span className="text-white/90 font-semibold ">
               Sri Lanka’s first specialist Tesla service
             </span>
             , diagnostics, and repair ecosystem powered by cutting-edge tech,
             global expertise, and a team that eats, sleeps, and breathes{" "}
             <span className="text-white/90 font-semibold">EVs.</span>
-          </p>
+          </motion.p>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 justify-center ">
             <motion.button
-              whileHover={{
-                scale: 1.05,
-                textShadow: "0px 0px 2px rgb(255,255,255)",
-              }}
+              variants={btnVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              whileTap="rest"
+              onHoverEnd={() => {}}
             >
               <Link
                 to="/services"
@@ -90,10 +133,12 @@ const Header = () => {
               </Link>
             </motion.button>
             <motion.button
-              whileHover={{
-                scale: 1.05,
-                textShadow: "0px 0px 4px rgb(255,255,255)",
-              }}
+              variants={btnVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              whileTap="rest"
+              onHoverEnd={() => {}}
             >
               <Link
                 to="/contact"

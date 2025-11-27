@@ -46,8 +46,21 @@ const Our_Team = () => {
         <section id="team" className="py-2 md:py-4 lg:py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {memberDetails.map((member) => (
-                <Ourteam_Card member={member} />
+              {memberDetails.map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: "-10vh" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.5 + index * 0.2,
+                    type: "tween",
+                    stiffness: 100,
+                  }}
+                  className=""
+                >
+                  <Ourteam_Card member={member} />
+                </motion.div>
               ))}
             </div>
           </div>

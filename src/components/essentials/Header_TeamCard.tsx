@@ -1,46 +1,72 @@
-import { MdArrowOutward } from "react-icons/md";
-import type { Member } from "../../assets/data/team";
-
-interface Props {
-  member: Member;
-}
-const Header_TeamCard = ({ member }: Props) => {
+import { memberDetails } from "../../assets/data/team";
+import HomeCard from "./HomeCard";
+const Header_TeamCard = () => {
+  const date = new Date().getDate();
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = monthNames[new Date().getMonth()].toUpperCase();
   return (
     <>
-      <div className="card card-side shadow-lg w-[20em] md:w-[35em] mt-5 bg-[#0a0f2d] text-white rounded-xl h-60">
-        <div className="rounded-l-xl overflow-hidden">
-          <img
-            src={member.photo}
-            alt={member.name}
-            className="w-70 h-70 object-cover"
-          />
-        </div>
-        <div className="card-body mt-2">
-          <div className="grid grid-cols-1 gap-2 justify-items-start">
-            <h2 className="card-title pr-3 flex justify-start">
-              {member.name}
+      <section className="bg-slate-200 min-h-screen py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-4xl font-bold">
+              Lorem ipsum, dolor sit amet consectetur
             </h2>
-            <div>
-              <span
-                className={`rounded-md bg-${member.badge_color}-400/10 mt-2 p-1 text-xs font-medium text-${member.badge_color}-400 inset-ring inset-ring-${member.badge_color}-400/20`}
-              >
-                {member.badge}
-              </span>
-              <p className="text-md font-semibold mt-2 hidden md:block">
-                {member.designation}
-              </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Main Featured Card */}
+            <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-md relative flex items-end p-6 h-[500px] min-w-[340px]">
+              <img
+                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
+                alt="Business Meeting"
+                className="absolute inset-0 w-full h-full object-cover opacity-90"
+              />
+              <div className="relative z-10">
+                <span className="bg-gray-800 text-white px-3 py-1 rounded mr-2 text-sm">
+                  Lorem
+                </span>
+                <span className="text-white text-sm">
+                  Lorem ipsum dolor sit.
+                </span>
+                <h3 className="text-2xl font-bold mt-3 text-white max-w-xs">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </h3>
+                <a
+                  href="#"
+                  className="mt-4 inline-flex items-center font-semibold text-[#00ff99] hover:underline"
+                >
+                  Read More <span className="ml-2">→</span>
+                </a>
+              </div>
+              <div className="absolute top-6 text-center right-6 bg-white/80 text-[#0a0f2d] text-md rounded-xl px-4 py-2 shadow">
+                {date}
+                <br />
+                <span className="text-sm font-bold text-[#00ff99]">
+                  {month}
+                </span>
+              </div>
             </div>
-            <p className="text-xs hidden md:block">{member.para_short}</p>
-            <button
-              className={`bg-${member.badge_color}-500 text-white rounded p-1 pl-2 pr-2`}
-            >
-              <span className="items-center hidden md:block">
-                Read More <MdArrowOutward className="ml-2" />
-              </span>
-            </button>
+
+            <div className="flex flex-col gap-6 flex-[0.7] h-[500px]">
+              <HomeCard member={memberDetails[0]} />
+              <HomeCard member={memberDetails[1]} />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

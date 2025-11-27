@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { PiTargetBold } from "react-icons/pi";
 import video from "../assets/video/background_video.mp4";
 import { steps } from "./essentials/Card";
@@ -8,7 +9,11 @@ const About = () => {
       <div className="relative top-20">
         <section id="about" className="py-16">
           <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, scale: 1, y: "-5vh" }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.55, stiffness: 20 }}
+            >
               <h2 className="text-3xl font-bold">
                 Pure Velocity - Sri Lanka’s Home of Tesla Expertise
               </h2>
@@ -49,10 +54,26 @@ const About = () => {
                 </p>
                 <div className="grid md:grid-cols-4 gap-6 mt-4 max-w-7xl mx-auto">
                   {steps.map((step, index) => (
-                    <div
+                    <motion.div
                       key={index}
+                      initial={{
+                        scale: 0.9,
+                        opacity: 0,
+                        y: "-10vh",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                      }}
+                      transition={{
+                        duration: 0.7,
+                        delay: 0.5 + index * 0.2,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
                       className="group bg-white p-4 rounded-xl shadow-2xl relative text-[#007bff]
-                 hover:bg-[#007bff] transition-all duration-300"
+                 hover:bg-[#007bff] duration-500"
                     >
                       <h3
                         className="text-4xl font-bold text-[#0a0f2d] bg-clip-text 
@@ -68,31 +89,18 @@ const About = () => {
                       <p className="mt-4 text-sm text-[#0a0f2d] leading-relaxed group-hover:text-white">
                         {step.text}
                       </p>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-              {/* <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#00ff99] font-bold">✓</span> Honest
-                  work
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#00ff99] font-bold">✓</span>{" "}
-                  Cutting-edge diagnostics
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#00ff99] font-bold">✓</span> Global
-                  knowledge
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#00ff99] font-bold">✓</span> Local
-                  trust
-                </li>
-              </ul> */}
-            </div>
+            </motion.div>
 
-            <div className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl">
+            <motion.div
+              initial={{ opacity: 0, scale: 1, y: "-10vh" }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: "spring", delay: 1, stiffness: 100 }}
+              className="rounded-xl overflow-hidden shadow-lg bg-white h-full w-85 md:w-3xl"
+            >
               <span className="w-fit">
                 <video
                   autoPlay
@@ -104,7 +112,7 @@ const About = () => {
                   <source src={video} type="video/mp4" />
                 </video>
               </span>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
