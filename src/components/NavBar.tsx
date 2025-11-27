@@ -1,44 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useContext } from "react";
 import { BiMapPin, BiSun } from "react-icons/bi";
-import { FaMobileAlt } from "react-icons/fa";
-import { IoClose, IoHomeOutline } from "react-icons/io5";
-import { MdMenu, MdMiscellaneousServices } from "react-icons/md";
-import { RiMoonFill, RiTeamFill } from "react-icons/ri";
-import { SiTarget } from "react-icons/si";
-import { TbListDetails } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
+import { MdMenu } from "react-icons/md";
+import { RiMoonFill } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
+import { navHome, navItems } from "../assets/data/navdata";
 
 interface NavBarProps {
   toggleTheme: () => void;
   logo: string;
   theme: "light" | "dark";
 }
-
-export const navItems = [
-  {
-    label: "Services",
-    href: "/services",
-    element: <MdMiscellaneousServices />,
-  },
-  { label: "About", href: "/about", element: <TbListDetails /> },
-  { label: "Team", href: "/our-team", element: <RiTeamFill /> },
-  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
-  { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
-];
-export const navHome = [
-  { label: "Home", href: "/", element: <IoHomeOutline /> },
-  {
-    label: "Services",
-    href: "/services",
-    element: <MdMiscellaneousServices />,
-  },
-  { label: "About", href: "/about", element: <TbListDetails /> },
-  { label: "Team", href: "/our-team", element: <RiTeamFill /> },
-  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
-  { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
-];
 
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   const { pathname } = useLocation();
@@ -146,9 +120,9 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         <motion.section>
           <AnimatePresence>
             <motion.div
-              initial={{ opacity: 0, x: "20vw" }}
-              animate={{ opacity: 1, x: "0vw" }}
-              exit={{ opacity: 0, x: "20vw" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{
                 duration: 1,
                 type: "spring",
