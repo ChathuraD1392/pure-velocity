@@ -12,10 +12,10 @@ const Map = () => {
         ></iframe>
       </div>
       <div className="justify-end pr-6 card-actions my-4">
-        <button>
+        <button className="inline-flex items-center rounded-md bg-[#007bff] border-0 text-white">
           <a
             href="https://maps.app.goo.gl/Uzteec3TboEPRFPD7"
-            className="btn bg-[#007bff] border-0 text-sm"
+            className="btn bg-[#007bff] border-0 "
           >
             <TbZoom />
             View on Google Maps

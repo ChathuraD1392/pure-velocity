@@ -14,7 +14,7 @@ const Header = () => {
 
     hover: {
       scale: 1.1,
-      textShadow: "0px 0px 4px white",
+      textShadow: "0px 0px 1px white",
       transition: {
         duration: 0.3,
       },
@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <>
       <motion.section
-        className="relative w-full min-h-[80vh] sm:min-h-screen overflow-hidden "
+        className="w-full min-h-[80vh] sm:min-h-screen overflow-hidden"
         initial={{ opacity: 0, y: "-10vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -76,7 +76,7 @@ const Header = () => {
         <div className="absolute inset-0 bg-[#0a0f2d]/50"></div>
         {/* Hero Content */}
         <div
-          className={`relative  z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20  ${
+          className={`relative  z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${
             isMenuVisible ? "opacity-45" : ""
           }`}
         >
@@ -154,8 +154,8 @@ const Header = () => {
                 to="/services"
                 className="hidden sm:inline-block px-9 py-3 rounded-md border border-[#007bff] bg-[#007bff] "
               >
-                <div className="flex item-center space-x-2 text-md text-white font-extralight">
-                  <HiOutlineCog6Tooth className="text-lg mt-0.75" />
+                <div className="flex items-center text-center space-x-2 text-md text-white font-medium">
+                  <HiOutlineCog6Tooth className="text-2xl" />
                   <span>Services</span>
                 </div>
               </Link>
@@ -172,8 +172,8 @@ const Header = () => {
                 to="/contact"
                 className="hidden sm:inline-block px-9 py-3 rounded-md border border-white"
               >
-                <div className="flex item-center space-x-2 text-md text-white font-extralight">
-                  <BsTelephone className="mt-0.75" />
+                <div className="flex items-center space-x-2 text-md text-white font-medium">
+                  <BsTelephone className="text-lg" />
                   <span>Contact</span>
                 </div>
               </Link>

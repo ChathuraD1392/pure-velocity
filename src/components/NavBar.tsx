@@ -48,12 +48,12 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           <nav className="hidden md:flex items-center gap-6 text-md text-white font-light">
             {navItems.map((item, index) => (
               <motion.button
+                key={index}
                 whileHover={{ scale: 1.05, originX: 0, originY: 0 }}
                 transition={{ type: "keyframes", stiffness: 100 }}
                 className="hover:font-medium p-1"
               >
                 <Link
-                  key={index}
                   to={item.href}
                   className={`${pathname === item.href ? "font-medium" : ""}`}
                 >

@@ -17,11 +17,11 @@ const About = () => {
               <h2 className="text-3xl font-bold">
                 Pure Velocity - Sri Lanka’s Home of Tesla Expertise
               </h2>
-              <p className="mt-4 leading-relaxed  md:font-semibold w-full hidden md:block">
-                <div className="badge border-0 bg-[#007bff] text-white text-[7px] md:text-xl">
-                  <PiTargetBold className="text-xs md:text-lg" />
-                  Pure Velocity began with a simple idea: To bring world-class
-                  Tesla servicing to Sri Lanka
+              <p className="mt-4 w-full hidden md:block">
+                <div className="badge border-0 bg-[#007bff] text-white text-[7px] md:text-sm md:font-normal">
+                  <PiTargetBold className="text-xs md:text-sm" />
+                  Pure Velocity began with a simple idea:{" "}
+                  <span>To bring world-class Tesla servicing to Sri Lanka</span>
                 </div>
               </p>
 

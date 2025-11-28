@@ -35,15 +35,15 @@ const Contact = () => {
           </h1>
           <p className="mt-4 text-sm md:text-md lg:text-xl font-extralight max-w-3xl tracking-wide">
             <span>
-              Whether your Tesla{" "}
+              Whether your Tesla
               <span className="text-white/90 font-semibold">
                 needs a quick check-up
-              </span>{" "}
-              or a{" "}
+              </span>
+              or a
               <span className="text-white/90 font-semibold">
                 full diagnostic deep dive
               </span>
-              , our team is here to{" "}
+              , our team is here to
               <span className="text-white/90 font-semibold"> help</span>.
             </span>
           </p>
@@ -129,9 +129,9 @@ const Contact = () => {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    className="inline-flex items-center rounded-md bg-[#007bff] border-0 text-white px-4 py-2"
+                    className="inline-flex items-center rounded-md bg-[#007bff] border-0 text-white px-4 py-2 text-sm font-semibold"
                   >
-                    <AiOutlineMail className="mr-2" />
+                    <AiOutlineMail className="mr-2 font-medium" />
                     Send Message
                   </button>
                 </div>

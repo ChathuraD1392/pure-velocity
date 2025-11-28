@@ -11,7 +11,7 @@ const Ourteam_Card = ({ member }: Props) => {
         <div
           className={`w-28 h-28 mx-auto rounded-full bg-white overflow-hidden p-1 mb-4 border-3 border-${
             badgeColors[member.badge_color]
-          }-400`}
+          }-100`}
         >
           <img
             src={member.photo}
@@ -27,7 +27,7 @@ const Ourteam_Card = ({ member }: Props) => {
           {member.para_3}
           <br />
           <span
-            className={`inline-flex items-center rounded-md mt-2 px-2 py-1 text-xs font-medium ring-1 ${
+            className={`inline-flex items-center rounded-md mt-2 px-2 py-1 text-xs ring-2 ${
               badgeColors[member.badge_color]
             }`}
           >

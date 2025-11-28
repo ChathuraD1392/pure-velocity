@@ -19,19 +19,19 @@ export interface Member {
   circleColor:"red"|"purple"|"green"|"blue"|"amber";
 }
 export const badgeColors = {
-  red: "bg-red-600/20 text-red-400 ring-red-600/20",
-  purple: "bg-purple-600/20 text-purple-400 ring-purple-600/20",
-  green: "bg-green-600/20 text-green-400 ring-green-600/20",
-  amber: "bg-amber-600/20 text-amber-400 ring-amber-600/20",
-  blue: "bg-blue-600/20 text-blue-400 ring-blue-600/20",
+  red: "bg-red-100 text-red-700 ring-red-600/80",
+  purple: "bg-purple-100 text-purple-700 ring-purple-600/80",
+  green: "bg-green-100 text-green-700 ring-green-600/80",
+  amber: "bg-amber-100 text-amber-700 ring-amber-600/80",
+  blue: "bg-blue-100 text-blue-700 ring-blue-600/80",
 } ;
 
 export const btnColors = {
-    red: "bg-red-400",
-    purple: "bg-purple-400",
-    green: "bg-green-400",
-    amber: "bg-amber-400",
-    blue: "bg-blue-400"
+    red: "bg-red-100",
+    purple: "bg-purple-100",
+    green: "bg-green-100",
+    amber: "bg-amber-100",
+    blue: "bg-blue-100"
 }
 export const memberDetails:Member[] =[
     {
