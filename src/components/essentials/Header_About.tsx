@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
-import photo from "../../assets/images/services_battery.png";
+import photo from "../../assets/images/Model3Standard_85.jpg";
 const Header_About = () => {
   return (
     <>
-      <section className="py-30 relative -top-25 md:-top-40 lg:-top-70">
-        <div className="max-w-400 mx-auto px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="pt-30 relative w-full -mt-50">
+        <div className="max-w-400 mx-auto px-10 mb-15 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             className="rounded-lg"
             initial={{ opacity: 0, y: "-10vh" }}
@@ -17,10 +17,10 @@ const Header_About = () => {
               stiffness: 100,
             }}
           >
-            <img src={photo} alt="photo" className="rounded-xl" />
+            <img src={photo} alt="photo" className="rounded-xl h-[500px]" />
           </motion.div>
           <motion.div
-            className="grid text-center md:text-left space-y-4 mx-25 md:mx-15 pt-30 md:mr-50"
+            className="grid text-center md:text-left space-y-4 md:mr-40"
             initial={{ opacity: 0, scale: 1, y: "-5vh" }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.55, stiffness: 20 }}
@@ -37,8 +37,8 @@ const Header_About = () => {
               dolorem animi! Consequuntur, quis, eaque magni voluptatem officia
               quos fugit sit vel illo mollitia molestiae laudantium aperiam cum.
             </p>
-            <div>
-              <button className="bg-[#0a0f2d]/80 p-3 rounded-lg text-white font-semibold inline-flex items-center">
+            <div className="mt-1">
+              <button className="bg-[#0a0f2d] p-2 pl-3 pr-3 rounded-lg text-white font-semibold inline-flex items-center">
                 Read More
                 <BsArrowRightCircle className="ml-2 font-semibold" />
               </button>

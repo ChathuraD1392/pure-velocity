@@ -18,7 +18,7 @@ const HomeCard = ({ member }: { member: Member }) => {
         <span className="text-gray-800 text-xs w-full">
           {member.para_short}
         </span>
-        <button className="mt-4 inline-flex items-center border border-[#00ff99] font-semibold rounded-lg p-2 hover:bg-[#00ff99]">
+        <button className="mt-4 inline-flex items-center border border-[#007bff] font-semibold rounded-lg p-2 hover:bg-[#007bff] hover:text-white">
           Read More <span className="ml-2">→</span>
         </button>
       </div>

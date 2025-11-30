@@ -10,6 +10,9 @@ export interface Service {
   title: string;
   bullets: string[];
   image: string;
+  hasgTag?:string;
+  beforeHashTag?:string;
+  afterHasgTag?:string;
 };
 
 export const services: Service[] = [
@@ -22,6 +25,9 @@ export const services: Service[] = [
       "HVIL, BMS, PCS, inverter & CAN bus interpretation",
     ],
     image: advanced,
+    hasgTag:"slide1",
+    beforeHashTag:"#",
+    afterHasgTag:"slide2"
   },
   {
     id: 2,
@@ -32,6 +38,9 @@ export const services: Service[] = [
       "DC-DC and pack level diagnostics",
     ],
     image: voltage,
+    hasgTag:"slide2",
+    beforeHashTag:"slide1",
+    afterHasgTag:"slide3"
   },
   {
     id: 3,
@@ -42,6 +51,9 @@ export const services: Service[] = [
       "Body harness and connector repairs",
     ],
     image: electrical,
+    hasgTag:"slide3",
+    beforeHashTag:"slide2",
+    afterHasgTag:"slide4"
   },
   {
     id: 4,
@@ -52,6 +64,9 @@ export const services: Service[] = [
       "General vehicle inspections",
     ],
     image: maintenance,
+    hasgTag:"slide4",
+    beforeHashTag:"slide3",
+    afterHasgTag:"slide5"
   },
   {
     id: 5,
@@ -62,6 +77,9 @@ export const services: Service[] = [
       "Charging behaviour diagnostics",
     ],
     image: battery,
+    hasgTag:"slide5",
+    beforeHashTag:"slide4",
+    afterHasgTag:"slide6"
   },
   {
     id: 6,
@@ -71,5 +89,8 @@ export const services: Service[] = [
       "Connectivity, configuration & firmware support",
     ],
     image: software,
+    hasgTag:"slide6",
+    beforeHashTag:"slide5",
+    afterHasgTag:"#"
   },
 ];

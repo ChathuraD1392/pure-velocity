@@ -1,5 +1,6 @@
 import { memberDetails } from "../../assets/data/team";
 import HomeCard from "./HomeCard";
+import image from "../../assets/images/team_2.webp";
 const Header_TeamCard = () => {
   const date = new Date().getDate();
   const monthNames = [
@@ -19,18 +20,18 @@ const Header_TeamCard = () => {
   const month = monthNames[new Date().getMonth()].toUpperCase();
   return (
     <>
-      <section className="bg-slate-200 min-h-screen py-8 px-4">
+      <section className="w-full bg-white pt-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-bold text-[#007bff]">
               Lorem ipsum, dolor sit amet consectetur
             </h2>
           </div>
           <div className="flex flex-col md:flex-row gap-8">
             {/* Main Featured Card */}
-            <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-md relative flex items-end p-6 h-[500px] min-w-[340px]">
+            <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-md relative flex items-end p-6 h-[500px] min-w-[340px] mb-10">
               <img
-                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
+                src={image}
                 alt="Business Meeting"
                 className="absolute inset-0 w-full h-full object-cover opacity-90"
               />
@@ -54,7 +55,7 @@ const Header_TeamCard = () => {
               <div className="absolute top-6 text-center right-6 bg-white/80 text-[#0a0f2d] text-md rounded-xl px-4 py-2 shadow">
                 {date}
                 <br />
-                <span className="text-sm font-bold text-[#00ff99]">
+                <span className="text-sm font-bold text-[#007bff]">
                   {month}
                 </span>
               </div>

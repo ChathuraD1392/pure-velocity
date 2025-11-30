@@ -48,11 +48,16 @@ body.dark {
 }
 
 .clip-slant {
-  clip-path: polygon(0 9%, 100% 0, 100% 91%, 0% 100%);
+  clip-path: polygon(0 5%, 100% 0, 100% 90%, 0% 100%);
+  transition: clip-path 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.clip-slant1 {
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
   transition: clip-path 0.2s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .clip-normal {
-  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 7%, 100% 0, 100% 100%, 0% 100%);
   transition: clip-path 0.5s ease-in-out;
 }

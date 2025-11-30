@@ -4,22 +4,23 @@ import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GoClockFill } from "react-icons/go";
 import { MdMedicalServices } from "react-icons/md";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 w-full bg-[#0a0f2d]/70">
       {/* TOP BAR */}
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-5 bg-[#0a0f2d]/80 pt-10 px-6 md:px-12 lg:px-10 pb-10 mt-5">
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-5 bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5 ">
         <div className="text-sm text-white flex flex-col text-start justify-start md:justify-start">
           <img
             src={logo}
             alt="logo"
-            className="h-16 w-full sm:h-14  md:h-20 lg:h-24 xl:h-28 object-contain"
+            className="h-16 w-full sm:h-14 mt-5 md:h-20 lg:h-24 xl:h-28 object-contain"
           />
-          <p className="hidden md:block text-[10px] px-5">
-            We specialise 100% in Tesla vehicles — nothing else.
+          <p className="hidden md:block text-[10px] text-center">
+            To bring world-class Tesla servicing to Sri Lanka.
           </p>
-          <div className="flex items-center justify-center md:justify-start gap-5 text-3xl text-white mt-2 ml-10 md:mt-5 md:ml-15">
+          <div className="flex items-center justify-center gap-5 text-3xl text-white my-2 md:mt-5 md:ml-5">
             <FaFacebookSquare className="hover:text-[#007bff] cursor-pointer duration-200" />
             <FaInstagram className="hover:text-[#007bff] cursor-pointer duration-200" />
             <FaLinkedin className="hover:text-[#007bff] cursor-pointer duration-200" />
@@ -45,41 +46,41 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="text-white text-center md:text-left pt-5 grid grid-cols-1 ">
-          <div className="text-white">
-            <div className="flex items-center space-x-3">
-              <h3 className="font-semibold text-sm md:text-lg ml-25 md:ml-0">
+        <div className="text-white text-center md:text-left pt-5 grid grid-cols-1">
+          <div className="items-center md:items-start space-x-3 ">
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
+              <h3 className="font-semibold text-sm md:text-lg md:mr-0">
                 Find us
               </h3>
-              <BsFillPinMapFill className="text-lg md:text-2xl" />
+              <BsFillPinMapFill className="text-lg md:text-2xl ml-2" />
             </div>
+          </div>
 
-            <div className="py-1 pr-2 md:pr-10 mt-2 space-y-2 font-extralight text-xs">
-              <p>
-                <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
-              </p>
-              <p>
-                <span className="font-semibold">Our Office : </span> 11/3/2,
-                Marine Drive, Wellawatte Colombo 06
-              </p>
-              <p>
-                <span className="font-semibold">Service Centre : </span> 75,
-                Station Road, Kandana, Sri Lanka
-              </p>
-              <p className="flex w-fit items-center rounded-md ml-5 md:ml-0 px-2 py-1 bg-[#007bff] text-[10px] font-medium mt-2 text-white">
-                <GoClockFill />
-                <span className="pl-2">
-                  We respond fast — usually within minutes.
-                </span>
-              </p>
-            </div>
+          <div className="py-1 pr-2 md:pr-10 mt-2 space-y-2 font-extralight text-[11px]">
+            <p>
+              <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
+            </p>
+            <p>
+              <span className="font-semibold">Our Office : </span> 11/3/2,
+              Marine Drive, Wellawatte, Colombo 06
+            </p>
+            <p>
+              <span className="font-semibold">Service Centre : </span> 75,
+              Station Road, Kandana, Sri Lanka
+            </p>
+            <p className="flex w-fit items-center rounded-md ml-8 md:ml-0 justify-center px-2  py-1 bg-[#007bff] text-[10px] font-medium mt-2 text-white">
+              <GoClockFill />
+              <span className="pl-2 text-center">
+                We respond fast — usually within minutes.
+              </span>
+            </p>
           </div>
         </div>
       </div>
 
       {/* BOTTOM BAR */}
       <div className="w-full mx-auto px-4 py-4 grid grid-cols-1 md:grid-cols-3 bg-[#0a0f2d]/80 border-t border-slate-200 items-center">
-        <div className="text-[10px] md:text-xs text-white text-start">
+        <div className="text-[10px] md:text-xs text-white text-center mb-1 md:mb-0 md:text-start">
           © {new Date().getFullYear()} Pure Velocity — Powering Sri Lanka’s EV
           future.
         </div>
@@ -88,9 +89,21 @@ const Footer = () => {
         </div>
         <div className="hidden md:block text-xs text-white pr-6">
           <div className="flex justify-end space-y-1 space-x-3 text-semibold">
-            <p>Services</p>
-            <p>About</p>
-            <p>Our Team</p>
+            <Link to="/services">
+              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
+                Services
+              </p>
+            </Link>
+            <Link to="/about">
+              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
+                About
+              </p>
+            </Link>
+            <Link to="/our-team">
+              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
+                Our Team
+              </p>
+            </Link>
           </div>
         </div>
       </div>

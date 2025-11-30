@@ -6,7 +6,7 @@ import { steps } from "./essentials/Card";
 const About = () => {
   return (
     <>
-      <div className="relative top-20">
+      <div className="relative mt-20">
         <section id="about" className="py-16">
           <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div

@@ -68,7 +68,7 @@ const Header = () => {
       </video> */}
         <img
           src={video}
-          alt=""
+          alt="video"
           className="absolute inset-0 min-h-[30em] md:w-full h-full object-cover "
         />
 
@@ -76,7 +76,7 @@ const Header = () => {
         <div className="absolute inset-0 bg-[#0a0f2d]/50"></div>
         {/* Hero Content */}
         <div
-          className={`relative  z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${
+          className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${
             isMenuVisible ? "opacity-45" : ""
           }`}
         >
@@ -102,25 +102,11 @@ const Header = () => {
               <motion.span
                 key={index}
                 variants={letterVariant}
-                transition={{ delay: index * 0.1 }} // delay each letter
+                transition={{ delay: 0.5 + index * 0.1 }}
               >
                 {char}
               </motion.span>
             ))}
-
-            {/* <motion.span
-              className="text-white"
-              initial={{ opacity: 0, y: "200vh" }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.75,
-                type: "spring",
-                stiffness: 100,
-              }}
-            >
-              PURE VELOCITY
-            </motion.span> */}
           </motion.h1>
 
           <motion.p

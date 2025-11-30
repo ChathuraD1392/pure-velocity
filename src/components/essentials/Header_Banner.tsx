@@ -1,34 +1,50 @@
-import { motion } from "framer-motion";
+import { animate, motion, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
+import photo from "../../assets/images/sketch2.svg";
 
 const Header_Banner = ({ isScrolled }: { isScrolled: boolean }) => {
+  const count = useMotionValue(0);
+  const [displayedValue, setDisplayedValue] = useState(0);
+
+  useEffect(() => {
+    const controls = animate(count, 100, {
+      duration: 2,
+      delay: 0.5,
+      ease: "easeInOut",
+      onUpdate: (l) => setDisplayedValue(Math.round(l)),
+    });
+    return controls.stop;
+  }, []);
   return (
     <>
       <motion.section
-        initial={{ opacity: 0, scale: 1, y: "-5vh" }}
+        initial={{ opacity: 0, scale: 1, y: "-10vh" }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ delay: 0.55, stiffness: 20 }}
-        className={`bg-[#007bff] min-h-1/4 md:min-h-2/4 py-8 px-4 ${
-          isScrolled ? "clip-slant" : "clip-slant"
-        } relative -top-8 md:-top-12`}
+        transition={{ delay: 0.55, duration: 1.5, stiffness: 400 }}
+        className="w-full overflow-visible relative"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 1, y: "-5vh" }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1, stiffness: 20 }}
-          className="max-w-7xl mx-auto py-20"
+        <div className="relative w-full -mt-10">
+          <div className="bg-[#007bff] clip-slant h-[800px] w-full relative flex items-center justify-center pt-10">
+            <img
+              src={photo}
+              alt=""
+              className="absolute w-full h-full object-cover filter invert hue-rotate-180 opacity-9 inset-0 stroke-[0.25]"
+            />
 
-          // style={{ backgroundImage: `url(${photo})`, zIndex: 100 }}
-        >
-          <div className="text-center space-y-5">
-            <h1 className="text-5xl md:text-8xl text-white font-medium">
-              We specialise{" "}
-              <span className="bg-[#0a0f2d]/70 p-4 rounded-lg font-semibold">
-                100%
-              </span>{" "}
-              in Tesla vehicles, nothing else.
-            </h1>
+            <div className="text-center space-y-1 z-10 text-white px-4 mb-20">
+              <h1 className="text-5xl md:text-8xl font-medium leading-tight">
+                We specialise <br />
+                <span className="text-[#0a0f2d] p-4 rounded-lg font-semibold">
+                  {displayedValue}%
+                </span>
+                <br />
+                in Tesla vehicles,
+                <br />
+                nothing else.
+              </h1>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </motion.section>
     </>
   );
