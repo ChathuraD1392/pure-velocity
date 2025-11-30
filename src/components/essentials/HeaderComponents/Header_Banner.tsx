@@ -1,8 +1,8 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import photo from "../../assets/images/sketch2.svg";
+import photo from "../../../assets/images/sketch2.svg";
 
-const Header_Banner = ({ isScrolled }: { isScrolled: boolean }) => {
+const Header_Banner = () => {
   const count = useMotionValue(0);
   const [displayedValue, setDisplayedValue] = useState(0);
 

@@ -90,19 +90,13 @@ const Footer = () => {
         <div className="hidden md:block text-xs text-white pr-6">
           <div className="flex justify-end space-y-1 space-x-3 text-semibold">
             <Link to="/services">
-              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
-                Services
-              </p>
+              <p className="hover:underline underline-offset-4">Services</p>
             </Link>
             <Link to="/about">
-              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
-                About
-              </p>
+              <p className="hover:underline underline-offset-4">About</p>
             </Link>
             <Link to="/our-team">
-              <p className="hover:underline underline-offset-4 hover:text-[#007bff]">
-                Our Team
-              </p>
+              <p className="hover:underline underline-offset-4">Our Team</p>
             </Link>
           </div>
         </div>

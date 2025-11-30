@@ -1,6 +1,6 @@
-import { memberDetails } from "../../assets/data/team";
-import HomeCard from "./HomeCard";
-import image from "../../assets/images/team_2.webp";
+import { memberDetails } from "../../../assets/data/team";
+import image from "../../../assets/images/team_2.webp";
+import HomeCard from "../HomeCard";
 const Header_TeamCard = () => {
   const date = new Date().getDate();
   const monthNames = [

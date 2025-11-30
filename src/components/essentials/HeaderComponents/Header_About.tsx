@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
-import photo from "../../assets/images/Model3Standard_85.jpg";
+import photo from "../../../assets/images/Model3Standard_95.jpg";
 const Header_About = () => {
   return (
     <>
@@ -26,10 +26,10 @@ const Header_About = () => {
             transition={{ delay: 0.55, stiffness: 20 }}
           >
             <h2 className="text-2xl text-[#007bff] font-semibold">ABOUT US</h2>
-            <h1 className="text-4xl font-semibold">
+            <h1 className="text-4xl font-semibold text-[#0a0f2d]">
               We’re a name you can trust!
             </h1>
-            <p className="font-light">
+            <p className="font-light text-[#0a0f2d]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               blanditiis, quisquam eligendi corrupti molestias eius quia beatae!
               Explicabo doloribus soluta at vel repellendus, tempore a

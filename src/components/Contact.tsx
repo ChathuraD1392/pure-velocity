@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import contact from "../assets/images/contact.avif";
-import Map from "./essentials/Map";
-import { GoClockFill } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
+import { GoClockFill } from "react-icons/go";
+import contact from "../assets/images/contact.avif";
 
 const Contact = () => {
   return (
@@ -52,9 +51,7 @@ const Contact = () => {
       <div className="relative top-10 mb-8">
         <section id="contact" className="py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div>
-              <Map />
-            </div>
+            <div>{/* <Map /> */}</div>
 
             <div className="rounded-2xl ">
               <div className="space-y-4 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white shadow-xl">

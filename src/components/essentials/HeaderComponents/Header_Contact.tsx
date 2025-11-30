@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { BsArrowRightCircle } from "react-icons/bs";
-import video from "../../assets/images/dog.png";
-import MapCard from "./MapCard";
+import { BsTelephone } from "react-icons/bs";
+import video from "../../../assets/images/dog.png";
+import MapCard from "../MapCard";
 
 const Header_Contact = () => {
   return (
@@ -33,27 +33,33 @@ const Header_Contact = () => {
 
             <p className="text-6xl">Visit Our Service Center!</p>
 
-            <button className="bg-[#00ff99] p-2 pl-5 pr-5 rounded-md text-[#0a0f2d] font-semibold inline-flex items-center">
+            <button className="bg-[#00ff99] p-3 pl-7 pr-7 rounded-md text-[#0a0f2d] font-semibold inline-flex items-center">
+              <BsTelephone className="mr-2 font-semibold" />
               Contact us Today
-              <BsArrowRightCircle className="ml-2 font-semibold" />
             </button>
           </div>
-          <div className="col-start-2 col-span-1 mr-5 mt-13">
+          <div className="col-start-2 col-span-1 mr-5 mt-10">
             <MapCard
               height={500}
               width={100}
               title="Service Center"
               mobile="Tel: (+94) 11 234 5556"
               address={"75, Station Road, Kandana, Sri Lanka"}
+              btnColor="#00ff99"
+              textColor="#0a0f2d"
+              opacity={50}
             />
           </div>
-          <div className="col-start-3 col-span-1 ml-5 mt-13">
+          <div className="col-start-3 col-span-1 ml-5 mt-10">
             <MapCard
               height={500}
               width={100}
               title="Co-operate Office"
               mobile="Tel: (+94) 11 234 5556"
               address="11/3/2, Marine Drive, Wellawatte Colombo 06"
+              btnColor="#00ff99"
+              textColor="#0a0f2d"
+              opacity={50}
             />
           </div>
         </div>

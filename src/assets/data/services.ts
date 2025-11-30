@@ -4,6 +4,7 @@ import maintenance from "../images/service_maintenance.webp";
 import electrical from "../images/services_electrical.png";
 import battery from "../images/services_battery.png";
 import software from "../images/services_software.webp";
+import remote from '../images/Model3Standard_95.jpg'
 
 export interface Service {
   id: number;
@@ -21,8 +22,11 @@ export const services: Service[] = [
     title: "Advanced Diagnostics & Troubleshooting",
     bullets: [
       "Full Tesla Toolbox diagnostics",
-      "Remote support & sensor/module testing",
-      "HVIL, BMS, PCS, inverter & CAN bus interpretation",
+      "Remote support",
+      "Sensor/module testing",
+      "HVIL, BMS, PCS, charge port, and inverter issues",
+      "Drivetrain fault tracing",
+      "CAN bus error interpretation",
     ],
     image: advanced,
     hasgTag:"slide1",
@@ -33,9 +37,11 @@ export const services: Service[] = [
     id: 2,
     title: "High Voltage System Repairs",
     bullets: [
-      "HV battery analysis & main pack troubleshooting",
-      "Contactor, fuse inspections & HV wiring",
-      "DC-DC and pack level diagnostics",
+      "HV battery analysis",
+      "Contactor & fuse inspections",
+      "HV wiring, HVIL loop testing",
+      "DC-DC converter faults",
+      "Main pack troubleshooting",
     ],
     image: voltage,
     hasgTag:"slide2",
@@ -46,8 +52,10 @@ export const services: Service[] = [
     id: 3,
     title: "Electrical & Mechanical Repairs",
     bullets: [
-      "Steering, suspension & braking systems",
-      "AC / HVAC, cooling systems, 12V faults",
+      "Steering, suspension, braking systems",
+      "AC / HVAC repairs",
+      "Cooling systems",
+      "12V system faults",
       "Body harness and connector repairs",
     ],
     image: electrical,
@@ -59,9 +67,12 @@ export const services: Service[] = [
     id: 4,
     title: "Preventative Maintenance",
     bullets: [
-      "Brake servicing & coolant checks",
-      "Suspension checks & cabin filters",
-      "General vehicle inspections",
+      "Brake servicing",
+      "Coolant system checks",
+      "Suspension checks",
+      "Cabin filters",
+      "General inspections",
+
     ],
     image: maintenance,
     hasgTag:"slide4",
@@ -73,8 +84,10 @@ export const services: Service[] = [
     title: "Battery & Range Health Evaluation",
     bullets: [
       "SOH (State of Health) reports",
-      "Thermal performance & efficiency checks",
+      "Efficiency checks",
+      "Thermal performance testing",
       "Charging behaviour diagnostics",
+
     ],
     image: battery,
     hasgTag:"slide5",
@@ -85,10 +98,25 @@ export const services: Service[] = [
     id: 6,
     title: "Software & Configuration Support",
     bullets: [
-      "Software-related troubleshooting & OTA help",
-      "Connectivity, configuration & firmware support",
+      "Software-related troubleshooting",
+      "OTA update assistance",
+      "Connectivity and configuration issues",
+
     ],
     image: software,
+    hasgTag:"slide6",
+    beforeHashTag:"slide5",
+    afterHasgTag:"#"
+  },
+
+  {
+    id: 7,
+    title: "Remote Diagnostics",
+    bullets: [
+      "Our international EV technicians connect directly to your vehicle for deep-dive analysis and expert-level troubleshooting — something no other workshop in Sri Lanka offers.",
+
+    ],
+    image: remote,
     hasgTag:"slide6",
     beforeHashTag:"slide5",
     afterHasgTag:"#"

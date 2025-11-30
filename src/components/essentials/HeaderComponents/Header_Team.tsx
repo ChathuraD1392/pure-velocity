@@ -1,4 +1,4 @@
-import team from "../../assets/images/team_2.webp";
+import team from "../../../assets/images/team_2.webp";
 
 const Header_Team = () => {
   return (
