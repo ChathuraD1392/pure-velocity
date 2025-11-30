@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AiOutlineMail } from "react-icons/ai";
 import { GoClockFill } from "react-icons/go";
 import contact from "../assets/images/contact.avif";
+import MapCard from "./essentials/MapCard";
 
 const Contact = () => {
   return (
@@ -50,12 +51,60 @@ const Contact = () => {
       </motion.section>
       <div className="relative top-10 mb-8">
         <section id="contact" className="py-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div>{/* <Map /> */}</div>
+          <div className="w-full mx-auto px-4 sm:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-start mb-5">
+            <div>
+              <div className="ml-3 mb-2">
+                <h1 className="text-lg font-bold">Our Service Center</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  repudiandae incidunt velit id eligendi, cupiditate voluptatem
+                  ad deleniti totam dolore.
+                </p>
+              </div>
+              <MapCard
+                height={500}
+                width={100}
+                title="Service Center"
+                mobile="Tel: (+94) 11 234 5556"
+                address={"75, Station Road, Kandana, Sri Lanka"}
+                btnColor="#00ff99"
+                textColor="#0a0f2d"
+                opacity={50}
+                backgroundColor="black"
+                paraColor="#0a0f2d"
+                footerColor="white"
+              />
+            </div>
+            <div className="h-full">
+              <div className="ml-3 mb-2">
+                <h1 className="text-lg font-bold">Our Cooperate Office</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  repudiandae incidunt velit id eligendi, cupiditate voluptatem
+                  ad deleniti totam dolore.
+                </p>
+              </div>
+              <MapCard
+                height={500}
+                width={100}
+                title="Service Center"
+                mobile="Tel: (+94) 11 234 5556"
+                address={"75, Station Road, Kandana, Sri Lanka"}
+                btnColor="#00ff99"
+                textColor="#0a0f2d"
+                opacity={50}
+                backgroundColor="black"
+                paraColor="#0a0f2d"
+                footerColor="white"
+              />
+            </div>
 
             <div className="rounded-2xl ">
-              <div className="space-y-4 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white shadow-xl">
-                <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-7 leading-tight text-black">
+              <div className="ml-3 mb-2">
+                <h1 className="text-lg font-bold">Our Service Center</h1>
+              </div>
+              {/* <div className="space-y-1 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white shadow-xl">
+                <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-2 leading-tight text-black">
                   Contact Details
                 </h1>
                 <p>
@@ -84,13 +133,13 @@ const Contact = () => {
                     We respond fast — usually within minutes.
                   </span>
                 </p>
-              </div>
+              </div> */}
               <form
-                className="bg-white rounded-xl p-6 space-y-4 border border-slate-100 shadow-xl"
+                className="bg-white rounded-xl p-6 space-y-2 border border-slate-100 shadow-xl"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div>
-                  <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-7 leading-tight text-black">
+                  <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-2 leading-tight text-black">
                     Send us Your Thoughts
                   </h1>
                   <label className="block text-sm font-medium text-gray-700">

@@ -9,6 +9,9 @@ interface Props {
   btnColor: string;
   textColor: string;
   opacity: number;
+  backgroundColor: string;
+  paraColor: string;
+  footerColor: string;
 }
 
 const MapCard = ({
@@ -20,11 +23,14 @@ const MapCard = ({
   btnColor,
   textColor,
   opacity,
+  backgroundColor,
+  paraColor,
+  footerColor,
 }: Props) => {
   return (
     <>
-      <div className={`bg-white rounded-xl`}>
-        <div className="text-[#0a0f2d] pt-1 pb-1 text-center">
+      <div className={`bg-${backgroundColor} rounded-xl`}>
+        <div className={`text-[${paraColor}] pt-1 pb-1 text-center`}>
           <h1 className="text-xl">{title}</h1>
           <p>{mobile}</p>
           <p>{address}</p>
@@ -39,7 +45,7 @@ const MapCard = ({
             allowFullScreen
           ></iframe>
         </div>
-        <div className="text-center mt-2">
+        <div className={`text-center mt-2 bg-[${footerColor}]`}>
           <button
             className={`bg-[${btnColor}] text-[${textColor}]  p-2 pl-4 pr-4 mb-2 rounded-lg cursor-pointer`}
           >

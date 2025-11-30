@@ -85,9 +85,9 @@ const Services = () => {
               <h1 className="text-white text-center text-2xl font-bold bg-[#0a0f2d] pt-3 ">
                 {selected.service.title}
               </h1>
-              <div className="grid grid-cols-4 bg-[#0a0f2d]">
-                <div className="pb-3 rounded-b-lg col-start-2 col-span-2">
-                  <ul className="mt-3 text-sm space-y-2 text-white ">
+              <div className="grid grid-cols-6 bg-[#0a0f2d]">
+                <div className="pb-3 rounded-b-lg col-start-2 col-span-4">
+                  <ul className="mt-3 ml-5 text-sm space-y-2 text-white ">
                     {selected.service.bullets.map((b, i) => (
                       <li key={i} className="gap-2 ">
                         <span className="text-green-600 font-bold mr-3">✓</span>

@@ -1,5 +1,5 @@
 import { BsArrowRightCircle } from "react-icons/bs";
-import type { Service } from "../../assets/data/services";
+import type { Service } from "../../../assets/data/services";
 
 interface Props {
   service: Service;

@@ -48,6 +48,9 @@ const Header_Contact = () => {
               btnColor="#00ff99"
               textColor="#0a0f2d"
               opacity={50}
+              backgroundColor="white"
+              paraColor="#0a0f2d"
+              footerColor="black"
             />
           </div>
           <div className="col-start-3 col-span-1 ml-5 mt-10">
@@ -60,6 +63,9 @@ const Header_Contact = () => {
               btnColor="#00ff99"
               textColor="#0a0f2d"
               opacity={50}
+              backgroundColor="white"
+              paraColor="#0a0f2d"
+              footerColor="black"
             />
           </div>
         </div>
