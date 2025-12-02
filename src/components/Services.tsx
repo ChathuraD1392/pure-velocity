@@ -3,7 +3,6 @@ import { useState } from "react";
 import type { Service } from "../assets/data/services";
 import { services } from "../assets/data/services";
 import Service_Card from "./essentials/Service_Card";
-import { motion } from "framer-motion";
 import MotionUpDown from "./Motion/MotionUpDown";
 
 type Selected = {

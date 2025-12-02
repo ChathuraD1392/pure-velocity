@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import video from "../assets/video/background_video.mp4";
 import About_Card from "./essentials/About_Card";
 import { philosophyDetails } from "./essentials/Card";
+import video from "../assets/video/background_video.mp4";
 
 const About = () => {
   return (
@@ -66,7 +66,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, scale: 1, y: "-10vh" }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ type: "spring", delay: 1, stiffness: 100 }}
@@ -83,7 +83,7 @@ const About = () => {
                   <source src={video} type="video/mp4" />
                 </video>
               </span>
-            </motion.div> */}
+            </motion.div>
           </div>
         </section>
       </div>

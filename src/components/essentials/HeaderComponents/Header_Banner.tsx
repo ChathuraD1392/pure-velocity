@@ -1,7 +1,6 @@
 import { animate, motion, useInView, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import photo from "../../../assets/images/sketch2.svg";
-import ScrollEffect from "../../Scrolling/ScrollEffect";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 
 const Header_Banner = () => {

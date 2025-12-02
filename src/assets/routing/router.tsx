@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../../Layout/Layout";
-import Home from "../../components/Home";
 import About from "../../components/About";
 import Contact from "../../components/Contact";
-import Why_Evs from "../../components/Why_Evs";
-import Services from "../../components/Services";
+import Home from "../../components/Home";
 import Our_Team from "../../components/Our_Team";
-import CardCarousel from "../../components/CardCarousel";
+import Services from "../../components/Services";
+import Why_Evs from "../../components/Why_Evs";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +18,6 @@ export const router = createBrowserRouter([
       { path: "our-team", element: <Our_Team /> },
       { path: "why-evs", element: <Why_Evs /> },
       { path: "services", element: <Services /> },
-      { path: "test", element: <CardCarousel /> },
     ],
   },
 ]);

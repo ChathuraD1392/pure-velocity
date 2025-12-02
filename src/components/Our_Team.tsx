@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { memberDetails } from "../assets/data/team";
-import our_team from "../assets/images/Model3Standard_88.jpg";
 import Ourteam_Card from "./essentials/Ourteam_Card";
 
 const Our_Team = () => {

@@ -7,7 +7,7 @@ import Header_TeamCard from "./essentials/HeaderComponents/Header_TeamCard";
 import Header_Services from "./essentials/HeaderComponents/Header_Services";
 
 const Home = () => {
-  const [isScrolled, setScrolled] = useState(false);
+  const [_, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 500);
     window.addEventListener("scroll", handleScroll);

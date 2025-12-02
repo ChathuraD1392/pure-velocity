@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
-import MotionUpDown from "../Motion/MotionUpDown";
 import type { ReactNode } from "react";
-import { div } from "framer-motion/client";
+import MotionUpDown from "../Motion/MotionUpDown";
 
 interface Props {
   element: ReactNode;
