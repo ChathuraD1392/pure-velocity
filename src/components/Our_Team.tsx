@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { memberDetails } from "../assets/data/team";
+import MotionUpDown from "./Motion/MotionUpDown";
+import TeamCarousel from "./Test";
 
 const Our_Team = () => {
   return (
@@ -38,8 +38,11 @@ const Our_Team = () => {
           </p>
         </div>
       </motion.section> */}
+      <MotionUpDown initialY="-20vh" delay={0.5} duration={1}>
+        <TeamCarousel />
+      </MotionUpDown>
 
-      <div className="relative top-2 md:top-6 lg:top-20 mb-20">
+      {/* <div className="relative top-2 md:top-6 lg:top-20 mb-20">
         <section id="team" className="py-2 md:py-4 lg:py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -56,13 +59,13 @@ const Our_Team = () => {
                   }}
                   className=""
                 >
-                  {/* <Ourteam_Card member={member} /> */}
+                  <Ourteam_Card member={member} />
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
     </>
   );
 };

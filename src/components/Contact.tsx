@@ -20,7 +20,7 @@ const Contact = () => {
         <img
           src={contact}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover pt-10"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Dark Overlay */}

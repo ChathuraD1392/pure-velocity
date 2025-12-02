@@ -6,8 +6,8 @@ import video from "../assets/video/background_video.mp4";
 const About = () => {
   return (
     <>
-      <div className="relative mt-15">
-        <section id="about" className="py-15">
+      <div className="relative">
+        <section id="about" className="py-35">
           <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 1, y: "-5vh" }}

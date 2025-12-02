@@ -22,18 +22,13 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   return (
     <>
       <motion.header
-        className={`fixed top-0 z-50 w-full ${
-          pathname === "/why-evs" ||
-          pathname == "/about" ||
-          pathname == "/services"
-            ? "bg-[#0a0f2d]"
-            : "bg-[#0a0f2d]/40"
-        } backdrop-blur-md px-1`}
+        className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 
+    rounded-3xl w-[90%] max-w-[1400px] bg-[#0a0f2d]`}
         initial={{ opacity: 0, scale: 1, y: "-5vh" }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between ">
+        <div className="flex items-center justify-between h-20 px-6">
           {/* Logo */}
           <Link to="/">
             <motion.img
@@ -78,15 +73,15 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                   to="/contact"
                   className="hidden sm:inline-block px-4 py-2 rounded-md border border-white text-sm text-white font-extralight"
                 >
-                  <span className="flex item-center space-x-2">
+                  <span className="flex items-center space-x-2">
                     <span>Open Location</span>
-                    <span className="pt-0.5">
-                      <BiMapPin />
-                    </span>
+                    <BiMapPin className="pt-0.5" />
                   </span>
                 </Link>
               </motion.button>
             )}
+
+            {/* Theme Toggle */}
             <motion.button
               className={`inline-flex items-center border rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
                 theme === "light" ? "border-white" : "border-amber-300"
@@ -100,6 +95,8 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
                 <RiMoonFill className="text-lg text-amber-300" />
               )}
             </motion.button>
+
+            {/* Mobile Menu */}
             <div className="md:hidden sm:inline-block">
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -116,6 +113,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           </div>
         </div>
       </motion.header>
+
       {isMenuVisible && (
         <motion.section>
           <AnimatePresence>

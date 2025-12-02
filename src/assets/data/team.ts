@@ -1,8 +1,4 @@
-import image_1 from '../images/p1.webp'
-import image_2 from '../images/p2.webp'
 import image_3 from '../images/p3.webp'
-import image_4 from '../images/p4.webp'
-import image_5 from '../images/p5.webp'
 
 export interface Member {
   id:number;
@@ -19,24 +15,24 @@ export interface Member {
   circleColor:"red"|"purple"|"green"|"blue"|"amber";
 }
 export const badgeColors = {
-  red: "bg-red-100 text-red-700 ring-red-600/80",
-  purple: "bg-purple-100 text-purple-700 ring-purple-600/80",
-  green: "bg-green-100 text-green-700 ring-green-600/80",
-  amber: "bg-amber-100 text-amber-700 ring-amber-600/80",
-  blue: "bg-blue-100 text-blue-700 ring-blue-600/80",
+  red: "bg-red-200 text-red-700 ring-red-600/80",
+  purple: "bg-purple-200 text-purple-700 ring-purple-600/80",
+  green: "bg-green-200 text-green-700 ring-green-600/80",
+  amber: "bg-amber-200 text-amber-700 ring-amber-600/80",
+  blue: "bg-blue-200 text-blue-700 ring-blue-600/80",
 } ;
 
 export const btnColors = {
-    red: "bg-red-100",
-    purple: "bg-purple-100",
-    green: "bg-green-100",
-    amber: "bg-amber-100",
-    blue: "bg-blue-100"
+    red: "bg-red-200",
+    purple: "bg-purple-200",
+    green: "bg-green-200",
+    amber: "bg-amber-200",
+    blue: "bg-blue-200"
 }
 export const memberDetails:Member[] =[
     {
         id:1,
-        photo:image_1,
+        photo:image_3,
         name : "Shanil Wijewardena",
         designation:"Co-Founder / Growth, Technology & Finance Director",
         para_short:"Shanil is the brains, calculator, and turbocharger behind Pure Velocity. A lifelong Apple loyalist...",
@@ -50,7 +46,7 @@ export const memberDetails:Member[] =[
     },
     {
         id:2,
-        photo:image_2,
+        photo:image_3,
         name:"Dilin Arambewela",
         designation:"Co-Founder / Growth, Sales & Operations Director",
         para_short:"Dilin is the sales powerhouse of Pure Velocity — a man who could sell...",
@@ -78,7 +74,7 @@ export const memberDetails:Member[] =[
     },
     {
         id:4,
-        photo:image_4,
+        photo:image_3,
         name:"Dinesh Wijewardena",
         designation:"Servicing & Finance Manager",
         para_short:"Dinesh is the man who can look at a ledger and instantly spot a missing rupee...",
@@ -92,7 +88,7 @@ export const memberDetails:Member[] =[
     },
     {
         id:5,
-        photo:image_5,
+        photo:image_3,
         name:"Rukshan Hewage",
         designation:"Sales, Support & Administration Manager",
         para_short:"Rukshan may not know much about cars (yet), but he knows everything...",

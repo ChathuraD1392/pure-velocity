@@ -12,17 +12,17 @@ const Why_Evs = () => {
       transition={{ delay: 0.55, duration: 1.5, stiffness: 400 }}
       className="w-full overflow-visible relative"
     >
-      <div className="w-full mt-10">
-        <div className="w-full relative flex items-center justify-center">
+      <div className="w-full">
+        <div className="w-full relative flex items-center justify-center pt-35">
           <img
             src={background}
             alt=""
             className="absolute w-full h-full object-cover hue-rotate-180 opacity-5 inset-0 stroke-[0.25]"
           />
 
-          <div className="text-center space-y-1 z-10 text-white pt-4 mb-20 bg-white/90 h-full">
+          <div className="text-center space-y-1 z-10 text-white mb-20 bg-white/90 h-full">
             {/* <div className="absolute inset-0 bg-[#0a0f2d]/50"></div> */}
-            <div className="z-10 max-w-6xl pt-10 mx-auto px-1 sm:px-2 lg:px-2 mb-5">
+            <div className="z-10 max-w-6xl mx-auto px-1 sm:px-2 lg:px-2 mb-5">
               <h2 className="text-black text-3xl font-bold text-center pt-5 pb-5">
                 Why EVs?
               </h2>
