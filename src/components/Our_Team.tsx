@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { memberDetails } from "../assets/data/team";
-import Ourteam_Card from "./essentials/Ourteam_Card";
 
 const Our_Team = () => {
   return (
@@ -44,7 +43,7 @@ const Our_Team = () => {
         <section id="team" className="py-2 md:py-4 lg:py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {memberDetails.map((member, index) => (
+              {memberDetails.map((_, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: "-10vh" }}
@@ -57,7 +56,7 @@ const Our_Team = () => {
                   }}
                   className=""
                 >
-                  <Ourteam_Card member={member} />
+                  {/* <Ourteam_Card member={member} /> */}
                 </motion.div>
               ))}
             </div>

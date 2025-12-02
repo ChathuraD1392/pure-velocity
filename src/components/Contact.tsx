@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { AiOutlineMail } from "react-icons/ai";
 import contact from "../assets/images/Model3Standard_91.jpg";
 import MapCard from "./essentials/MapCard";
 import ScrollEffect from "./Scrolling/ScrollEffect";
@@ -104,7 +103,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="rounded-2xl ">
+            {/* <div className="rounded-2xl ">
               <div className="ml-3 mb-2">
                 <h1 className="text-lg font-bold">Our Service Center</h1>
               </div>
@@ -156,7 +155,7 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
