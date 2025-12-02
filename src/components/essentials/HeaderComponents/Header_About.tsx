@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
 import photo from "../../../assets/images/Model3Standard_95.jpg";
+import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 const Header_About = () => {
   return (
     <>
@@ -17,14 +18,11 @@ const Header_About = () => {
               stiffness: 100,
             }}
           >
-            <img src={photo} alt="photo" className="rounded-xl h-[500px]" />
+            <ScrollingOneSide y={100} duration={1}>
+              <img src={photo} alt="photo" className="rounded-xl h-[500px]" />
+            </ScrollingOneSide>
           </motion.div>
-          <motion.div
-            className="grid text-center md:text-left space-y-4 md:mr-40"
-            initial={{ opacity: 0, scale: 1, y: "-5vh" }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.55, stiffness: 20 }}
-          >
+          <ScrollingOneSide y={100} duration={1}>
             <h2 className="text-2xl text-[#007bff] font-semibold">ABOUT US</h2>
             <h1 className="text-4xl font-semibold text-[#0a0f2d]">
               We’re a name you can trust!
@@ -43,7 +41,7 @@ const Header_About = () => {
                 <BsArrowRightCircle className="ml-2 font-semibold" />
               </button>
             </div>
-          </motion.div>
+          </ScrollingOneSide>
         </div>
       </section>
     </>

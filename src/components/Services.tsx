@@ -3,6 +3,8 @@ import { useState } from "react";
 import type { Service } from "../assets/data/services";
 import { services } from "../assets/data/services";
 import Service_Card from "./essentials/Service_Card";
+import { motion } from "framer-motion";
+import MotionUpDown from "./Motion/MotionUpDown";
 
 type Selected = {
   service: Service;
@@ -40,24 +42,29 @@ const Services = () => {
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Service_Card
-                key={s.id}
-                service={s}
-                onOpen={() => openAtViewportCenter(s)}
-              />
+            {services.map((s, index) => (
+              <MotionUpDown
+                index={index}
+                initialY="100vh"
+                initialScale={0.5}
+                delay={0.3}
+                duration={1}
+              >
+                <Service_Card
+                  service={s}
+                  onOpen={() => openAtViewportCenter(s)}
+                />
+              </MotionUpDown>
             ))}
           </div>
         </div>
 
-        {/* Backdrop (fixed). It dims viewport; modal itself will be absolutely positioned in the document. */}
         {selected && (
           <div className="fixed inset-0 z-40" onClick={closeModal} aria-hidden>
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
           </div>
         )}
 
-        {/* Absolute-positioned modal placed at document coordinates captured on click */}
         {selected && (
           <div
             // position relative to document: top/left are in px (document coords)
@@ -70,9 +77,9 @@ const Services = () => {
               // ensure pointer events reach modal (backdrop is below with z-40)
             }}
           >
-            <div className="shadow-2xl max-w-3xl w-[600px] grid grid-cols-1">
+            <div className="shadow-2xl max-w-3xl w-[600px] grid grid-cols-1 border-8 border-white rounded-xl bg-[#0a0f2d] overflow-hidden">
               <button
-                className=" bg-[#0a0f2d] btn border-0 btn-circle absolute top-3 right-3 text-2xl inline-flex items-center justify-center text-white cursor-pointer"
+                className=" bg-[#0a0f2d] btn border-0 btn-circle absolute top-3 right-3 text-2xl inline-flex items-center justify-center text-white cursor-pointer border-[#0a0f2d] "
                 onClick={closeModal}
               >
                 ×
@@ -80,19 +87,30 @@ const Services = () => {
               <img
                 src={selected.service.image}
                 alt={selected.service.title}
-                className="w-full h-fit rounded-t-lg"
+                className="w-full h-fit rounded-t-lg border-[#0a0f2d] border"
               />
-              <h1 className="text-white text-center text-2xl font-bold bg-[#0a0f2d] pt-3 ">
-                {selected.service.title}
-              </h1>
-              <div className="grid grid-cols-6 bg-[#0a0f2d]">
+              <MotionUpDown initialY="-20vh" delay={0.3} duration={0.25}>
+                <h1 className="text-white text-center text-2xl font-bold pt-3 underline underline-offset-4">
+                  {selected.service.title}
+                </h1>
+              </MotionUpDown>
+              <div className="grid grid-cols-6 bg-[#0a0f2d] rounded-b-lg">
                 <div className="pb-3 rounded-b-lg col-start-2 col-span-4">
                   <ul className="mt-3 ml-5 text-sm space-y-2 text-white ">
-                    {selected.service.bullets.map((b, i) => (
-                      <li key={i} className="gap-2 ">
-                        <span className="text-green-600 font-bold mr-3">✓</span>
-                        <span>{b}</span>
-                      </li>
+                    {selected.service.bullets.map((b, index) => (
+                      <MotionUpDown
+                        index={index}
+                        initialY="-20vh"
+                        delay={0}
+                        duration={0.5}
+                      >
+                        <li className="gap-2 ">
+                          <span className="text-green-600 font-bold mr-3">
+                            ✓
+                          </span>
+                          <span>{b}</span>
+                        </li>
+                      </MotionUpDown>
                     ))}
                   </ul>
                 </div>

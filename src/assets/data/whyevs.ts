@@ -12,7 +12,7 @@ export interface WhyEv {
 export const whyevs:WhyEv[] = [
     {   
         id:1,
-        title:"EVs Are Cheaper to Run — By a Mile Say goodbye to",
+        title:"EVs Are Cheaper to Run - By a Mile Say goodbye to,",
         points_1:["Oil changes","Spark plugs","Radiators","Timing belts","Gearbox issues"],
         desc_2:"Your Tesla has fewer moving parts, meaning:",
         points_2:["Less maintenance","Fewer breakdowns","Lower long-term cost"],

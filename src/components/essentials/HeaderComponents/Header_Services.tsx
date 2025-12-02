@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { services } from "../../assets/data/services";
+
 import Header_Service_Card from "./Header_Service_Card";
+import { services } from "../../../assets/data/services";
 const Header_Services = () => {
   return (
     <>

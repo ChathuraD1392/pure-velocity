@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Our_Team from "./components/Our_Team";
 import Services from "./components/Services";
 import Why_Evs from "./components/Why_Evs";
+import CardCarousel from "./components/CardCarousel";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,7 @@ function App() {
         { path: "our-team", element: <Our_Team /> },
         { path: "why-evs", element: <Why_Evs /> },
         { path: "services", element: <Services /> },
+        { path: "test", element: <CardCarousel /> },
       ],
     },
   ]);

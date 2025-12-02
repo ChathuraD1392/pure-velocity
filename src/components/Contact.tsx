@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { AiOutlineMail } from "react-icons/ai";
-import { GoClockFill } from "react-icons/go";
-import contact from "../assets/images/contact.avif";
+import contact from "../assets/images/Model3Standard_91.jpg";
 import MapCard from "./essentials/MapCard";
+import ScrollEffect from "./Scrolling/ScrollEffect";
 
 const Contact = () => {
   return (
     <>
       <motion.section
         className="relative w-full min-h-[30em] md:min-h-[45em]  overflow-hidden"
-        initial={{ opacity: 0, y: "-10vh" }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
-          duration: 1,
+          duration: 1.5,
           delay: 0.5,
           // type: "spring",
           stiffness: 100,
@@ -21,25 +21,25 @@ const Contact = () => {
         <img
           src={contact}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover pt-10"
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         {/* Hero Content */}
         <div
           className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-6 md:px-4 lg:px-8 text-white space-y-5 py-32 md:py-25 top-10 md:top-25`}
         >
-          <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold leading-tight">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight">
             Get in Touch With Us
           </h1>
-          <p className="mt-4 text-sm md:text-md lg:text-xl font-extralight max-w-3xl tracking-wide">
+          <p className="mt-4 text-sm md:text-md lg:text-2xl font-extralight max-w-3xl tracking-wide">
             <span>
-              Whether your Tesla
+              Whether your Tesla{" "}
               <span className="text-white/90 font-semibold">
                 needs a quick check-up
-              </span>
-              or a
+              </span>{" "}
+              or a{" "}
               <span className="text-white/90 font-semibold">
                 full diagnostic deep dive
               </span>
@@ -61,19 +61,23 @@ const Contact = () => {
                   ad deleniti totam dolore.
                 </p>
               </div>
-              <MapCard
-                height={500}
-                width={100}
-                title="Service Center"
-                mobile="Tel: (+94) 11 234 5556"
-                address={"75, Station Road, Kandana, Sri Lanka"}
-                btnColor="#00ff99"
-                textColor="#0a0f2d"
-                opacity={50}
-                backgroundColor="black"
-                paraColor="#0a0f2d"
-                footerColor="white"
-              />
+              <ScrollEffect y={100} duration={0.5}>
+                <MapCard
+                  height={500}
+                  width={100}
+                  title="Service Center"
+                  mobile="Tel: (+94) 11 234 5556"
+                  address={"75, Station Road, Kandana, Sri Lanka"}
+                  btnColor="#00ff99"
+                  textColor="#0a0f2d"
+                  opacity={50}
+                  backgroundColor="white"
+                  paraColor="#0a0f2d"
+                  footerColor="white"
+                  borderColor="black"
+                  isBtnAvailable={false}
+                />
+              </ScrollEffect>
             </div>
             <div className="h-full">
               <div className="ml-3 mb-2">
@@ -93,9 +97,10 @@ const Contact = () => {
                 btnColor="#00ff99"
                 textColor="#0a0f2d"
                 opacity={50}
-                backgroundColor="black"
+                backgroundColor="white"
                 paraColor="#0a0f2d"
                 footerColor="white"
+                isBtnAvailable={false}
               />
             </div>
 
@@ -103,37 +108,6 @@ const Contact = () => {
               <div className="ml-3 mb-2">
                 <h1 className="text-lg font-bold">Our Service Center</h1>
               </div>
-              {/* <div className="space-y-1 text-sm text-gray-700 mb-5 border border-slate-100 p-5 rounded-2xl bg-white shadow-xl">
-                <h1 className="text-2xl sm:text-2xl md:text-3xl font-semibold mb-2 leading-tight text-black">
-                  Contact Details
-                </h1>
-                <p>
-                  <strong>Hotline:</strong> +94 XXXXXXXX
-                </p>
-                <p>
-                  <strong>Corporate Office:</strong> 11/3/2, Marine Drive,
-                  Wellawatte Colombo 06
-                </p>
-                <p>
-                  <strong>Service Centre:</strong> 75, Station Road, Kandana,
-                  Sri Lanka
-                </p>
-                <p>
-                  <strong>Email: </strong>
-                  <a
-                    href="mailto:headoffice@purevelocity.lk"
-                    className="text-blue-600 underline"
-                  >
-                    headoffice@purevelocity.lk
-                  </a>
-                </p>
-                <p className="flex w-fit items-center rounded-md px-2 py-1 bg-[#0a0f2d] text-[10px] font-medium mt-2 text-white">
-                  <GoClockFill />
-                  <span className="pl-2">
-                    We respond fast — usually within minutes.
-                  </span>
-                </p>
-              </div> */}
               <form
                 className="bg-white rounded-xl p-6 space-y-2 border border-slate-100 shadow-xl"
                 onSubmit={(e) => e.preventDefault()}

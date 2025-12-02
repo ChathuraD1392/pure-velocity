@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
 import { useState } from "react";
 import MenuContext from "../StateManagement/contexts/menuContext";
+import ScrollTop from "../components/Scrolling/ScrollTop";
 
 const Layout = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -20,6 +21,7 @@ const Layout = () => {
       <MenuContext.Provider value={{ isMenuVisible, setMenuVisible }}>
         <NavBar toggleTheme={toggleTheme} logo={logo} theme={theme} />
         <main>
+          <ScrollTop />
           <Outlet />
         </main>
         <Footer />

@@ -7,7 +7,7 @@ interface Props {
 const Ourteam_Card = ({ member }: Props) => {
   return (
     <>
-      <div className="rounded-xl p-6 shadow-sm text-center border border-slate-100 h-full">
+      <div className="rounded-xl p-6 shadow-sm text-center border border-slate-100 h-full bg-[#0a0f2d] text-white">
         <div
           className={`w-28 h-28 mx-auto rounded-full bg-white overflow-hidden p-1 mb-4 border-3 border-${
             badgeColors[member.badge_color]
@@ -20,10 +20,10 @@ const Ourteam_Card = ({ member }: Props) => {
           />
         </div>
         <h4 className="font-semibold text-2xl mb-2">{member.name}</h4>
-        <p className="text-sm font-bold text-gray-600">{member.designation}</p>
-        <p className="mt-3 text-sm text-gray-700">{member.para_1}</p>
-        <p className="mt-3 text-sm text-gray-700">{member.para_2}</p>
-        <p className="mt-3 text-sm text-gray-700">
+        <p className="text-sm font-bold text-white">{member.designation}</p>
+        <p className="mt-3 text-sm text-white">{member.para_1}</p>
+        <p className="mt-3 text-sm text-white">{member.para_2}</p>
+        <p className="mt-3 text-sm text-white">
           {member.para_3}
           <br />
           <span

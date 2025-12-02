@@ -3,7 +3,7 @@ import { CiTrophy } from "react-icons/ci";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { IoBookOutline } from "react-icons/io5";
 
-export const steps = [
+export const philosophyDetails = [
   {
     element: <CiTrophy />,
     title: "Honest work",
@@ -48,7 +48,7 @@ export default function Card() {
 
       {/* STEPS SECTION */}
       <div className="grid md:grid-cols-4 gap-6 mt-16 max-w-7xl mx-auto relative hover:bg-amber-200">
-        {steps.map((step, index) => (
+        {philosophyDetails.map((step, index) => (
           <div
             key={index}
             className="bg-white p-10 rounded-xl shadow-sm relative"
