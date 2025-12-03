@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
 import photo from "../../../assets/images/Model3Standard_95.jpg";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
+import { Link } from "react-router-dom";
 const Header_About = () => {
   return (
     <>
@@ -36,8 +37,8 @@ const Header_About = () => {
               quos fugit sit vel illo mollitia molestiae laudantium aperiam cum.
             </p>
             <div className="mt-1">
-              <button className="bg-[#0a0f2d] p-2 pl-3 pr-3 rounded-lg text-white font-semibold inline-flex items-center">
-                Read More
+              <button className="bg-[#0a0f2d] p-2 pl-3 pr-3 rounded-lg text-white font-semibold inline-flex items-center cursor-pointer">
+                <Link to="/about"> Read More</Link>
                 <BsArrowRightCircle className="ml-2 font-semibold" />
               </button>
             </div>

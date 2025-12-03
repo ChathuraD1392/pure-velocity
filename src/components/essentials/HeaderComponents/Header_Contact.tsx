@@ -8,7 +8,7 @@ const Header_Contact = () => {
   return (
     <>
       <motion.section
-        className="w-full h-[80em] relative"
+        className="w-full h-[75em] relative bg-[#0a0f2d]"
         initial={{ opacity: 0, y: "-10vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -46,11 +46,11 @@ const Header_Contact = () => {
           <div className="col-start-2 col-span-1 mr-5 mt-10">
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
-                height={500}
-                width={90}
+                height={400}
+                width={450}
                 title="Service Center"
+                address="75, Station Road, Kandana, Sri Lanka"
                 mobile="Tel: (+94) 11 234 5556"
-                address={"75, Station Road, Kandana, Sri Lanka"}
                 btnColor="#00ff99"
                 textColor="#0a0f2d"
                 opacity={50}
@@ -64,8 +64,8 @@ const Header_Contact = () => {
           <div className="col-start-3 col-span-1 ml-5 mt-10">
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
-                height={500}
-                width={100}
+                height={400}
+                width={400}
                 title="Co-operate Office"
                 mobile="Tel: (+94) 11 234 5556"
                 address="11/3/2, Marine Drive, Wellawatte Colombo 06"

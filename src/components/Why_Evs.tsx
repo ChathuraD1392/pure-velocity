@@ -13,7 +13,7 @@ const Why_Evs = () => {
       className="w-full overflow-visible relative"
     >
       <div className="w-full">
-        <div className="w-full relative flex items-center justify-center pt-35">
+        <div className="w-full relative flex items-center justify-center pt-30">
           <img
             src={background}
             alt=""
@@ -21,14 +21,34 @@ const Why_Evs = () => {
           />
 
           <div className="text-center space-y-1 z-10 text-white mb-20 bg-white/90 h-full">
-            {/* <div className="absolute inset-0 bg-[#0a0f2d]/50"></div> */}
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))]"></div>
             <div className="z-10 max-w-6xl mx-auto px-1 sm:px-2 lg:px-2 mb-5">
-              <h2 className="text-black text-3xl font-bold text-center pt-5 pb-5">
+              <motion.h2
+                initial={{ opacity: 0, y: "-10vh" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 200,
+                }}
+                className="text-black text-5xl font-bold text-center pt-5 pb-5"
+              >
                 Why EVs?
-              </h2>
-              <p className="text-center text-gray-600 mt-2 text-5xl">
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: "-10vh" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 200,
+                }}
+                className="text-center text-gray-600 mt-2 text-3xl"
+              >
                 The Future Isn’t Coming - It’s Parked in Your Garage.
-              </p>
+              </motion.p>
 
               <p className="p-2 bg-[#00ff99] text-black rounded-lg mt-5">
                 Electric vehicles aren’t just a trend. They’re a worldwide shift
@@ -45,7 +65,7 @@ const Why_Evs = () => {
                     animate={{ opacity: 1 }}
                     transition={{
                       duration: 0.3,
-                      delay: 0.4 + index * 0.3,
+                      delay: 0.1 + index * 0.3,
                     }}
                     className="h-full"
                   >

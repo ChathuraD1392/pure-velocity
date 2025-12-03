@@ -4,68 +4,9 @@ import TeamCarousel from "./Test";
 const Our_Team = () => {
   return (
     <>
-      {/* <motion.section
-        className="relative w-full min-h-[30em] md:min-h-[45em]  overflow-hidden"
-        initial={{ opacity: 0, y: "-10vh" }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-          // type: "spring",
-          stiffness: 100,
-        }}
-      >
-        <img
-          src={our_team}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/30"></div>
-
-        <div
-          className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-6 md:px-4 lg:px-8 text-white space-y-5 py-32 md:py-25 top-10 md:top-25`}
-        >
-          <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Our Team
-          </h1>
-          <p className="mt-4 text-md md:text-lg lg:text-2xl font-extralight max-w-3xl tracking-wide">
-            <span>
-              Passionate people building a better
-              <span className="text-white/90 font-semibold">EV experience</span>
-              for Sri Lanka.
-            </span>
-          </p>
-        </div>
-      </motion.section> */}
       <MotionUpDown initialY="-20vh" delay={0.5} duration={1}>
         <TeamCarousel />
       </MotionUpDown>
-
-      {/* <div className="relative top-2 md:top-6 lg:top-20 mb-20">
-        <section id="team" className="py-2 md:py-4 lg:py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {memberDetails.map((_, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: "-10vh" }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.5 + index * 0.2,
-                    type: "tween",
-                    stiffness: 100,
-                  }}
-                  className=""
-                >
-                  <Ourteam_Card member={member} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div> */}
     </>
   );
 };

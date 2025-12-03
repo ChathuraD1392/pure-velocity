@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { badgeColors, memberDetails } from "../assets/data/team";
 import MotionUpDown from "./Motion/MotionUpDown";
-import { AnimatePresence, motion } from "framer-motion";
 
 export default function TeamCarousel() {
   const [index, setIndex] = useState(0);
-  const [_, setFade] = useState(true);
+  //const [_, setFade] = useState(true);
 
   const cardVariants = {
     initial: { opacity: 0.5 },
@@ -18,31 +19,51 @@ export default function TeamCarousel() {
     setIndex((i) => (i - 1 + memberDetails.length) % memberDetails.length);
 
   // Auto‑run every 3 seconds with fade effect
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setFade(false); // start fade out
-      setTimeout(() => {
-        next(); // change index
-        setFade(true); // fade in
-      }, 600); // fade duration
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setFade(false); // start fade out
+  //     setTimeout(() => {
+  //       next(); // change index
+  //       setFade(true); // fade in
+  //     }, 600); // fade duration
+  //   }, 5000);
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-start pt-32 bg-gray-100 overflow-hidden">
+    <div className="relative w-full h-full flex flex-col items-center justify-start pt-32 bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))] overflow-hidden">
       {/* Heading */}
-      <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight">
+      <motion.h1
+        initial={{ opacity: 0, y: "-10vh" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.75,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 200,
+        }}
+        className="sm:text-3xl md:text-5xl font-bold leading-tight"
+      >
         Our Team
-      </h1>
-      <p className="mt-4 text-md md:text-lg lg:text-3xl font-extralight max-w-3xl tracking-wide text-center">
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: "-10vh" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.75,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 200,
+        }}
+        className="mt-4 text-md md:text-lg lg:text-3xl font-extralight max-w-3xl tracking-wide text-center"
+      >
         <span>
           Passionate people building a better
           <span className="font-semibold"> EV experience </span>
           for <span className="font-semibold">Sri Lanka.</span>
         </span>
-      </p>
+      </motion.p>
 
       {/* Background Big Image Black/White with Fade */}
       <AnimatePresence mode="wait">
@@ -71,7 +92,7 @@ export default function TeamCarousel() {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="relative z-10 card w-[420px] h-[450px] bg-white shadow-xl p-6 rounded-2xl border-2 border-[#0a0f2d] transition-all duration-1000 mt-20 mb-5"
+            className="relative z-10 card w-[420px] h-[450px] bg-white shadow-[#0a0f2d] shadow p-6 rounded-2xl  border-[#0a0f2d] transition-all duration-1000 mt-20 mb-5"
           >
             {/* Card content remains the same */}
             <div className="flex items-center gap-4">
@@ -93,11 +114,11 @@ export default function TeamCarousel() {
               <p className="text-xs mt-4 opacity-80">
                 {memberDetails[index].para_1}
               </p>
-              <p className="text-xs mt-4 opacity-80">
+              <p className="text-xs mt-2 opacity-80">
                 {memberDetails[index].para_2}
               </p>
               <div className="grid grid-cols-1 text-center items-center">
-                <p className="text-xs mt-1 mb-1 opacity-80">
+                <p className="text-xs mt-3 mb-1 opacity-80">
                   {memberDetails[index].para_3}
                 </p>
                 <div>
@@ -117,13 +138,13 @@ export default function TeamCarousel() {
                 className="btn btn-circle bg-white text-[#0a0f2d] hover:bg-[#0a0f2d] hover:text-white"
                 onClick={prev}
               >
-                ←
+                <SlArrowLeft />
               </button>
               <button
                 className="btn btn-circle bg-white text-[#0a0f2d] hover:bg-[#0a0f2d] hover:text-white"
                 onClick={next}
               >
-                →
+                <SlArrowRight />
               </button>
             </div>
           </motion.div>

@@ -17,23 +17,14 @@ const About_Card = ({ element, title, text }: Props) => {
       stiffness={200}
     >
       <div
-        className="group p-4 rounded-xl shadow-2xl relative text-white
-                 bg-[#007bff] duration-500 h-full hover:bg-[#0a0f2d]/90 hover:scale-105"
+        className="w-[200px] p-4 rounded-xl shadow-2xl relative text-white hover:text-white
+                 bg-[#0a0f2d]/40 duration-500 h-full hover:bg-[#0a0f2d] hover:scale-105 justify-self-center"
       >
-        <h3
-          className="text-4xl font-bold bg-clip-text 
-                     group-hover:text-white"
-        >
-          {element}
-        </h3>
+        <h3 className="text-5xl font-light bg-clip-text">{element}</h3>
 
-        <h4 className="mt-4 text-md text-white font-semibold group-hover:text-white">
-          {title}
-        </h4>
+        <h4 className="mt-4 text-lg font-semibold ">{title}</h4>
 
-        <p className="mt-4 text-sm text-white leading-relaxed group-hover:text-white">
-          {text}
-        </p>
+        <p className="mt-4 text-sm leading-relaxed ">{text}</p>
       </div>
     </MotionUpDown>
   );

@@ -5,15 +5,21 @@ const WEV = ({ item }: { item: WhyEv }) => {
     <div className={`text-white rounded-xl p-6 shadow-sm h-full ${item.bg}`}>
       <h3 className="font-semibold text-2xl">{item.title}</h3>
       <p className="mt-2">{item.desc_1}</p>
-      <ul className="list-disc list-inside">
+      <ul className="list-inside list-none">
         {item.points_1.map((p, index) => (
-          <li key={index}>{p}</li>
+          <li key={index}>
+            <span className="text-green-300 font-bold mr-3">✓</span>
+            {p}
+          </li>
         ))}
       </ul>
       <p className="mt-2">{item.desc_2}</p>
-      <ul className="list-disc list-inside">
+      <ul className="list-inside list-none">
         {item.points_2?.map((p, index) => (
-          <li key={index}>{p}</li>
+          <li key={index}>
+            <span className="text-green-300 font-bold mr-3">✓</span>
+            {p}
+          </li>
         ))}
       </ul>
       <p className="mt-2">{item.desc_3}</p>

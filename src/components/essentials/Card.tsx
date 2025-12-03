@@ -5,22 +5,22 @@ import { IoBookOutline } from "react-icons/io5";
 
 export const philosophyDetails = [
   {
-    element: <CiTrophy />,
+    element: <CiTrophy className="text-green-500" />,
     title: "Honest work",
     text: "Trust begins with honest, reliable service",
   },
   {
-    element: <HiOutlineCog6Tooth />,
+    element: <HiOutlineCog6Tooth className="text-red-500" />,
     title: "ECutting-edge diagnostics",
     text: "Precision technology ensures flawless troubleshooting",
   },
   {
-    element: <IoBookOutline />,
+    element: <IoBookOutline className="text-blue-500" />,
     title: "Global knowledge",
     text: "International EV knowledge, delivered locally",
   },
   {
-    element: <AiOutlineSafetyCertificate />,
+    element: <AiOutlineSafetyCertificate className="text-amber-500" />,
     title: " Local trust",
     text: "Local service backed by strong community trust",
   },

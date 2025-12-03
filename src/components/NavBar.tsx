@@ -23,7 +23,11 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
     <>
       <motion.header
         className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 
-    rounded-3xl w-[90%] max-w-[1400px] bg-[#0a0f2d]`}
+    rounded-3xl w-[90%] max-w-[1400px] ${
+      pathname === "/" || pathname === "/contact"
+        ? "bg-[#0a0f2d]/40"
+        : "bg-[#0a0f2d]"
+    }`}
         initial={{ opacity: 0, scale: 1, y: "-5vh" }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}

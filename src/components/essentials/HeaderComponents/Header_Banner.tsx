@@ -13,12 +13,12 @@ const Header_Banner = () => {
   useEffect(() => {
     const controls = animate(count, 100, {
       duration: 2,
-      delay: 1,
+      delay: 2,
       ease: "easeInOut",
       onUpdate: (l) => setDisplayedValue(Math.round(l)),
     });
     return controls.stop;
-  }, [isInView]);
+  }, [isInView, count]);
   return (
     <>
       <motion.section
@@ -43,7 +43,7 @@ const Header_Banner = () => {
             <div className="text-center space-y-1 z-10 text-white px-4 mb-20">
               <ScrollingOneSide y={100} duration={1}>
                 <h1 className="text-5xl md:text-8xl font-medium leading-tight">
-                  We specialise <br />
+                  We specialize <br />
                   <span className="text-[#0a0f2d] p-4 rounded-lg font-semibold">
                     {displayedValue}%
                   </span>

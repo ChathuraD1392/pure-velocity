@@ -11,9 +11,9 @@ export const navItems = [
     href: "/services",
     element: <MdMiscellaneousServices />,
   },
-  { label: "About", href: "/about", element: <TbListDetails /> },
-  { label: "Team", href: "/our-team", element: <RiTeamFill /> },
   { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
+  { label: "About", href: "/about", element: <TbListDetails /> },
+  { label: "Our Team", href: "/our-team", element: <RiTeamFill /> },
   { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
 ];
 export const navHome = [
@@ -23,8 +23,8 @@ export const navHome = [
     href: "/services",
     element: <MdMiscellaneousServices />,
   },
+  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
   { label: "About", href: "/about", element: <TbListDetails /> },
   { label: "Team", href: "/our-team", element: <RiTeamFill /> },
-  { label: "Why EVs ?", href: "/why-evs", element: <SiTarget /> },
   { label: "Contact", href: "/contact", element: <FaMobileAlt /> },
 ];
