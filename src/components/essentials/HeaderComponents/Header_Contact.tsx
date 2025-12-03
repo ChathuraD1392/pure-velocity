@@ -46,8 +46,8 @@ const Header_Contact = () => {
           <div className="col-start-2 col-span-1 mr-5 mt-10">
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
-                height={400}
-                width={450}
+                height={500}
+                width={500}
                 title="Service Center"
                 address="75, Station Road, Kandana, Sri Lanka"
                 mobile="Tel: (+94) 11 234 5556"
@@ -64,8 +64,8 @@ const Header_Contact = () => {
           <div className="col-start-3 col-span-1 ml-5 mt-10">
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
-                height={400}
-                width={400}
+                height={500}
+                width={500}
                 title="Co-operate Office"
                 mobile="Tel: (+94) 11 234 5556"
                 address="11/3/2, Marine Drive, Wellawatte Colombo 06"
