@@ -8,7 +8,7 @@ const Header_Contact = () => {
   return (
     <>
       <motion.section
-        className="w-full h-[75em] relative bg-[#0a0f2d]"
+        className="w-full h-[80em] relative bg-[#0a0f2d]"
         initial={{ opacity: 0, y: "-10vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
