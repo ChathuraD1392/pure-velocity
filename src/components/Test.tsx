@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { badgeColors, memberDetails } from "../assets/data/team";
+import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { memberDetails } from "../assets/data/team";
 import MotionUpDown from "./Motion/MotionUpDown";
 
 export default function TeamCarousel() {
@@ -14,9 +14,9 @@ export default function TeamCarousel() {
     exit: { opacity: 0.5 },
   };
 
-  const next = () => setIndex((i) => (i + 1) % memberDetails.length);
-  const prev = () =>
-    setIndex((i) => (i - 1 + memberDetails.length) % memberDetails.length);
+  // const next = () => setIndex((i) => (i + 1) % memberDetails.length);
+  // const prev = () =>
+  //   setIndex((i) => (i - 1 + memberDetails.length) % memberDetails.length);
 
   // Auto‑run every 3 seconds with fade effect
   // useEffect(() => {
@@ -32,7 +32,7 @@ export default function TeamCarousel() {
   // }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-start pt-32 bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))] overflow-hidden">
+    <div className="relative w-full h-full flex flex-col items-center justify-start pt-32 bg-[#0a0f2d]/40 overflow-hidden">
       {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: "-10vh" }}
@@ -92,9 +92,10 @@ export default function TeamCarousel() {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="relative z-10 card w-[420px] h-[450px] bg-white shadow-[#0a0f2d] shadow p-6 rounded-2xl  border-[#0a0f2d] transition-all duration-1000 mt-20 mb-5"
+            className="relative z-10 card w-[600px] h-[350px] bg-white/20 shadow-[#0a0f2d] shadow p-6 rounded-2xl  border-[#0a0f2d] transition-all duration-1000 mt-40 mb-5"
           >
             {/* Card content remains the same */}
+
             <div className="flex items-center gap-4">
               <img
                 src={memberDetails[index].photo}
@@ -104,36 +105,37 @@ export default function TeamCarousel() {
                 <h2 className="text-xl font-bold">
                   {memberDetails[index].name}
                 </h2>
-                <p className="text-sm opacity-70 text-slate-700">
+                <p className="text-sm opacity-70">
                   {memberDetails[index].designation}
+                </p>
+                <p className="flex">
+                  <BsFacebook className="m-1" />
+                  <BsLinkedin className="m-1" />
                 </p>
               </div>
             </div>
             <div className="mt-5 h-[360px]">
               <hr />
-              <p className="text-xs mt-4 opacity-80">
+              <p className="text-sm mt-4 opacity-80 font-semibold">
                 {memberDetails[index].para_1}
               </p>
-              <p className="text-xs mt-2 opacity-80">
+              <p className="text-sm mt-2 opacity-80">
                 {memberDetails[index].para_2}
               </p>
               <div className="grid grid-cols-1 text-center items-center">
-                <p className="text-xs mt-3 mb-1 opacity-80">
+                <p className="text-sm mt-3 mb-1 opacity-80 font-semibold">
                   {memberDetails[index].para_3}
-                </p>
-                <div>
+
                   <span
-                    className={`inline-flex items-center rounded-md mt-1 px-2 py-1 text-xs ring-2 ${
-                      badgeColors[memberDetails[index].badge_color]
-                    }`}
+                    className={`inline-flex items-center rounded-md ml-2 mt-1 px-2 py-1 text-xs ring-2 bg-[#0a0f2d] text-white ring-[#0a0f2d]`}
                   >
                     {memberDetails[index].badge}
                   </span>
-                </div>
+                </p>
               </div>
             </div>
 
-            <div className="flex justify-center gap-6 mt-2">
+            {/* <div className="flex justify-center gap-6 mt-2">
               <button
                 className="btn btn-circle bg-white text-[#0a0f2d] hover:bg-[#0a0f2d] hover:text-white"
                 onClick={prev}
@@ -146,63 +148,9 @@ export default function TeamCarousel() {
               >
                 <SlArrowRight />
               </button>
-            </div>
+            </div> */}
           </motion.div>
         </AnimatePresence>
-        {/* <div className="relative z-10 card w-[420px] h-[450px] bg-white shadow-xl p-6 rounded-2xl border-2 border-[#0a0f2d] transition-all duration-1000 mt-20 mb-5">
-          <div className="flex items-center gap-4">
-            <img
-              src={memberDetails[index].photo}
-              className="w-20 h-20 rounded-xl object-cover transition-all duration-500"
-            />
-            <div className="">
-              <h2 className="text-xl font-bold ">
-                {memberDetails[index].name}
-              </h2>
-              <p className="text-sm opacity-70 text-slate-700">
-                {memberDetails[index].designation}
-              </p>
-            </div>
-          </div>
-          <div className="mt-5 h-[360px]">
-            <hr />
-            <p className="text-xs mt-4 opacity-80">
-              {memberDetails[index].para_1}
-            </p>
-            <p className="text-xs mt-4 opacity-80">
-              {memberDetails[index].para_2}
-            </p>
-            <div className="grid grid-cols-1 text-center items-center">
-              <p className="text-xs mt-1 mb-1 opacity-80">
-                {memberDetails[index].para_3}
-              </p>
-              <div>
-                <span
-                  className={`inline-flex items-center rounded-md mt-1 px-2 py-1 text-xs ring-2 ${
-                    badgeColors[memberDetails[index].badge_color]
-                  }`}
-                >
-                  {memberDetails[index].badge}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center gap-6 mt-2">
-            <button
-              className="btn btn-circle bg-white text-[#0a0f2d] hover:bg-[#0a0f2d] hover:text-white"
-              onClick={prev}
-            >
-              ←
-            </button>
-            <button
-              className="btn btn-circle bg-white text-[#0a0f2d] hover:bg-[#0a0f2d] hover:text-white"
-              onClick={next}
-            >
-              →
-            </button>
-          </div>
-        </div> */}
       </MotionUpDown>
 
       {/* Small Floating Profile Circles */}
@@ -215,9 +163,10 @@ export default function TeamCarousel() {
               className={`w-20 h-20 rounded-full object-cover p-1 transition-all duration-500 
               ${
                 i === index
-                  ? "scale-110 border-[#0a0f2d] border-4"
-                  : "border-gray-500 opacity-60 border-2"
+                  ? "scale-110 border-4"
+                  : "border-gray-500 opacity-90 border-2"
               }`}
+              onClick={() => setIndex(i)}
             />
           ))}
         </div>

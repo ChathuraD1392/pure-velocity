@@ -1,142 +1,84 @@
 // Services.tsx
-import { useState } from "react";
-import type { Service } from "../assets/data/services";
-import { services } from "../assets/data/services";
-import Service_Card from "./essentials/Service_Card";
-import MotionUpDown from "./Motion/MotionUpDown";
 import { motion } from "framer-motion";
-
-type Selected = {
-  service: Service;
-  x: number; // document x coordinate (center)
-  y: number; // document y coordinate (center)
-} | null;
+import MotionUpDown from "./Motion/MotionUpDown";
+import service from "../assets/images/service.jpg";
+import { services } from "../assets/data/services";
+import { Link } from "react-router-dom";
 
 const Services = () => {
-  const [selected, setSelected] = useState<Selected>(null);
-
-  // open modal at the center of the current viewport (document coordinates)
-  const openAtViewportCenter = (service: Service) => {
-    const x = window.scrollX + window.innerWidth / 2;
-    const y = window.scrollY + window.innerHeight / 2;
-    setSelected({ service, x, y });
-
-    // optionally lock scroll:
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeModal = () => {
-    setSelected(null);
-    document.body.style.overflow = "";
-  };
-
   return (
-    <div className="relative">
-      <section
-        id="services"
-        className="pb-16 pt-25 bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))]"
+    <>
+      <motion.section
+        className="relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden bg-amber-500"
+        initial={{ opacity: 0, y: "-20vh" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 2,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 50,
+        }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
-          <motion.h2
-            initial={{ opacity: 0, y: "-10vh" }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.75,
-              delay: 0.5,
-              type: "spring",
-              stiffness: 200,
-            }}
-            className="text-5xl font-bold text-center"
-          >
-            Tesla Services & Repairs
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: "-10vh" }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.75,
-              delay: 0.5,
-              type: "spring",
-              stiffness: 200,
-            }}
-            className="text-center mt-3 text-gray-600 text-3xl"
-          >
-            We specialise 100% in Tesla vehicles — nothing else.
-          </motion.p>
+        <img
+          src={service}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, index) => (
-              <MotionUpDown
-                index={index}
-                initialY="100vh"
-                initialScale={0.5}
-                delay={0.3}
-                duration={1}
-              >
-                <Service_Card
-                  service={s}
-                  onOpen={() => openAtViewportCenter(s)}
-                />
-              </MotionUpDown>
-            ))}
-          </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Hero Content */}
+        <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold">Services & Repairs</h1>
+          <p className="max-w-3xl text-sm md:text-2xl font-light leading-relaxed text-white/80">
+            We specialise <span className="text-white font-medium">100%</span>{" "}
+            in Tesla vehicles - nothing else.
+          </p>
         </div>
+      </motion.section>
+      <MotionUpDown initialY="-10vh" delay={1} duration={1}>
+        <div className="relative">
+          <section id="contact" className="pt-4">
+            <div className="pl-4 max-w-7xl mx-auto mt-10 mb-5 justify-center items-center text-left overflow-hidden text-black">
+              <h1 className="text-5xl font-bold mb-4">
+                All Tesla services and Repairs
+              </h1>
+              <h4 className="text-xl font-light mb-5">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+                quia incidunt et corporis tempora in, repudiandae eos! Sequi,
+                repudiandae minima dicta atque illo aperiam voluptatem accusamus
+                neque eaque perferendis illum nemo ducimus amet consequatur
+                nobis odit nihil quibusdam recusandae sapiente?
+              </h4>
+              <div className="grid grid-cols-4 grid-rows-4">
+                {services.map((service) => (
+                  <div
+                    className={`relative group col-span-${
+                      service.col
+                    } row-span-${service.col} w-full h-[${
+                      250 * service.col!
+                    }px] rounded-lg overflow-hidden p-1`}
+                    key={service.id}
+                  >
+                    <Link to={service.href!}>
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="object-cover h-full w-full rounded-lg"
+                      />
 
-        {selected && (
-          <div className="fixed inset-0 z-40" onClick={closeModal} aria-hidden>
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-          </div>
-        )}
-
-        {selected && (
-          <div
-            // position relative to document: top/left are in px (document coords)
-            style={{
-              position: "absolute",
-              top: `${selected.y}px`,
-              left: `${selected.x}px`,
-              transform: "translate(-50%, -50%)",
-              zIndex: 50,
-              // ensure pointer events reach modal (backdrop is below with z-40)
-            }}
-          >
-            <div className="shadow-2xl max-w-3xl w-[600px] grid grid-cols-1 border-2 border-white rounded-xl bg-[#0a0f2d] overflow-hidden">
-              <button
-                className=" bg-[#0a0f2d] btn btn-circle absolute top-3 right-3 text-2xl inline-flex items-center justify-center text-white cursor-pointer"
-                onClick={closeModal}
-              >
-                ×
-              </button>
-              <img
-                src={selected.service.image}
-                alt={selected.service.title}
-                className="w-full h-fit rounded-t-lg border-[#0a0f2d] border"
-              />
-              <MotionUpDown initialY="-5vh" delay={0.3} duration={0.5}>
-                <h1 className="text-white text-center text-2xl font-bold pt-3 underline underline-offset-4">
-                  {selected.service.title}
-                </h1>
-
-                <div className="grid grid-cols-6 bg-[#0a0f2d] rounded-b-lg">
-                  <div className="pb-3 rounded-b-lg col-start-2 col-span-4">
-                    <ul className="mt-3 ml-5 text-sm space-y-2 text-white ">
-                      {selected.service.bullets.map((b) => (
-                        <li className="gap-2 ">
-                          <span className="text-green-600 font-bold mr-3">
-                            ✓
-                          </span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      <div className="absolute m-1 text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white text-lg font-semibold cursor-pointer">
+                        {service.title}
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              </MotionUpDown>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </section>
-    </div>
+          </section>
+        </div>
+      </MotionUpDown>
+    </>
   );
 };
 

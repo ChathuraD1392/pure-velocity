@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { BsTelephone } from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import video from "../../../assets/images/dog.png";
-import MapCard from "../MapCard";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
+import MapCard from "../MapCard";
 
 const Header_Contact = () => {
   return (
@@ -38,8 +38,8 @@ const Header_Contact = () => {
             </ScrollingOneSide>
             <ScrollingOneSide y={100} duration={1}>
               <button className="bg-[#00ff99] p-3 pl-7 pr-7 rounded-md text-[#0a0f2d] font-semibold inline-flex items-center">
-                <BsTelephone className="mr-2 font-semibold" />
-                Contact us Today
+                <BsFillTelephoneFill className="mr-2 font-semibold" />
+                CONTACT US TODAY
               </button>
             </ScrollingOneSide>
           </div>
@@ -47,7 +47,7 @@ const Header_Contact = () => {
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
                 height={500}
-                width={500}
+                width={400}
                 title="Service Center"
                 address="75, Station Road, Kandana, Sri Lanka"
                 mobile="Tel: (+94) 11 234 5556"
@@ -65,7 +65,7 @@ const Header_Contact = () => {
             <ScrollingOneSide y={100} duration={1}>
               <MapCard
                 height={500}
-                width={500}
+                width={400}
                 title="Co-operate Office"
                 mobile="Tel: (+94) 11 234 5556"
                 address="11/3/2, Marine Drive, Wellawatte Colombo 06"

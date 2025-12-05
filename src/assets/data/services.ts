@@ -14,6 +14,9 @@ export interface Service {
   hasgTag?:string;
   beforeHashTag?:string;
   afterHasgTag?:string;
+  href?:string;
+  col?:number;
+  row?:number;
 };
 
 export const services: Service[] = [
@@ -31,7 +34,10 @@ export const services: Service[] = [
     image: advanced,
     hasgTag:"slide1",
     beforeHashTag:"#",
-    afterHasgTag:"slide2"
+    afterHasgTag:"slide2",
+    href:"trouble-shooting",
+    col:1,
+    row:1,
   },
   {
     id: 2,
@@ -46,7 +52,10 @@ export const services: Service[] = [
     image: voltage,
     hasgTag:"slide2",
     beforeHashTag:"slide1",
-    afterHasgTag:"slide3"
+    afterHasgTag:"slide3",
+    href:"high-voltage",
+    col:1,
+    row:1,
   },
   {
     id: 3,
@@ -61,7 +70,10 @@ export const services: Service[] = [
     image: electrical,
     hasgTag:"slide3",
     beforeHashTag:"slide2",
-    afterHasgTag:"slide4"
+    afterHasgTag:"slide4",
+    href:"repairs",
+    col:2,
+    row:2,
   },
   {
     id: 4,
@@ -77,7 +89,10 @@ export const services: Service[] = [
     image: maintenance,
     hasgTag:"slide4",
     beforeHashTag:"slide3",
-    afterHasgTag:"slide5"
+    afterHasgTag:"slide5",
+    href:"maintenance",
+    col:2,
+    row:2,
   },
   {
     id: 5,
@@ -92,7 +107,10 @@ export const services: Service[] = [
     image: battery,
     hasgTag:"slide5",
     beforeHashTag:"slide4",
-    afterHasgTag:"slide6"
+    afterHasgTag:"slide6",
+    href:"evaluation",
+    col:1,
+    row:1,
   },
   {
     id: 6,
@@ -106,7 +124,10 @@ export const services: Service[] = [
     image: software,
     hasgTag:"slide6",
     beforeHashTag:"slide5",
-    afterHasgTag:"#"
+    afterHasgTag:"#",
+    href:"support",
+    col:1,
+    row:1,
   },
 
   {
@@ -119,6 +140,9 @@ export const services: Service[] = [
     image: remote,
     hasgTag:"slide6",
     beforeHashTag:"slide5",
-    afterHasgTag:"#"
+    afterHasgTag:"#",
+    href:"remote-diagnostic",
+    col:1,
+    row:1,
   },
 ];

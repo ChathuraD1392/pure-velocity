@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
-import photo from "../../../assets/images/Model3Standard_95.jpg";
+import photo from "../../../assets/images/Model3Standard_96.jpg";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 import { Link } from "react-router-dom";
 const Header_About = () => {
@@ -20,15 +20,21 @@ const Header_About = () => {
             }}
           >
             <ScrollingOneSide y={100} duration={1}>
-              <img src={photo} alt="photo" className="rounded-xl h-[500px]" />
+              <img
+                src={photo}
+                alt="photo"
+                className="rounded-xl h-[500px] shadow-2xl shadow-black"
+              />
             </ScrollingOneSide>
           </motion.div>
           <ScrollingOneSide y={100} duration={1}>
-            <h2 className="text-2xl text-[#007bff] font-semibold">ABOUT US</h2>
-            <h1 className="text-4xl font-semibold text-[#0a0f2d]">
+            <h2 className="text-2xl text-[#007bff] font-semibold pt-2 pb-2">
+              ABOUT US
+            </h2>
+            <h1 className="text-4xl font-semibold text-[#0a0f2d] mt-2 mb-2">
               We’re a name you can trust!
             </h1>
-            <p className="font-light text-[#0a0f2d]">
+            <p className="font-light text-[#0a0f2d] mb-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               blanditiis, quisquam eligendi corrupti molestias eius quia beatae!
               Explicabo doloribus soluta at vel repellendus, tempore a
@@ -37,7 +43,7 @@ const Header_About = () => {
               quos fugit sit vel illo mollitia molestiae laudantium aperiam cum.
             </p>
             <div className="mt-1">
-              <button className="bg-[#0a0f2d] p-2 pl-3 pr-3 rounded-lg text-white font-semibold inline-flex items-center cursor-pointer">
+              <button className="bg-[#007bff] p-3 pr-8 pl-8 rounded-md text-white font-semibold inline-flex items-center cursor-pointer">
                 <Link to="/about"> Read More</Link>
                 <BsArrowRightCircle className="ml-2 font-semibold" />
               </button>

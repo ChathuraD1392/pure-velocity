@@ -4,6 +4,7 @@ import { FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import contact from "../assets/images/Model3Standard_91.jpg";
+import Form from "./essentials/Form";
 import MapCard from "./essentials/MapCard";
 import MotionUpDown from "./Motion/MotionUpDown";
 
@@ -11,7 +12,7 @@ const Contact = () => {
   return (
     <>
       <motion.section
-        className="relative w-full min-h-[30em] md:min-h-[45em]  overflow-hidden bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))]"
+        className="relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden bg-amber-500"
         initial={{ opacity: 0, y: "-20vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -30,7 +31,7 @@ const Contact = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center pt-70 mb-20 px-6 text-white space-y-5 text-center">
+        <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">
             Get in Touch With Us
           </h1>
@@ -49,13 +50,26 @@ const Contact = () => {
         </div>
       </motion.section>
       <MotionUpDown initialY="-10vh" delay={1} duration={1}>
-        <div className="relative bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))]">
-          <section id="contact" className="py-4">
-            <div className="max-w-6xl mx-auto mb-5 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden text-white">
+        <div className="relative">
+          <section id="contact" className="pt-4">
+            <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 justify-center items-center text-left overflow-hidden text-black">
+              <h1 className="text-5xl font-bold mb-4">How to find us</h1>
+              <h4 className="text-xl font-light">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+                quia incidunt et corporis tempora in, repudiandae eos! Sequi,
+                repudiandae minima dicta atque illo aperiam voluptatem accusamus
+                neque eaque perferendis illum nemo ducimus amet consequatur
+                nobis odit nihil quibusdam recusandae sapiente?
+              </h4>
+            </div>
+
+            <div className="max-w-6xl mx-auto grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden text-white">
               <div className="h-full text-black">
                 <div className="p-3">
-                  <h1 className="text-2xl font-bold">Co-operate Office</h1>
-                  <div className="mt-2 space-y-3 border w-[380px] p-5 rounded-md">
+                  <h1 className="text-2xl font-bold bg-[#0a0f2d]/80 w-[380px] p-2 pl-5 text-white rounded">
+                    Co-operate Office
+                  </h1>
+                  <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
                     <p className="flex items-center text-sm">
                       <BsFillTelephoneFill className="mr-3 text-xl" /> +94
                       XXXXXXXX
@@ -76,8 +90,10 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="p-3">
-                  <h1 className="text-2xl font-bold">Service Center</h1>
-                  <div className="mt-2 space-y-3 border w-[380px] p-5 rounded-md">
+                  <h1 className="text-2xl font-bold bg-[#0a0f2d]/80 w-[380px] p-2 pl-5 text-white rounded">
+                    Service Center
+                  </h1>
+                  <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
                     <p className="flex items-center text-sm">
                       <BsFillTelephoneFill className="mr-3 text-xl" /> +94
                       XXXXXXXX
@@ -99,10 +115,10 @@ const Contact = () => {
                 </div>
               </div>
               <div className="h-full p-2">
-                <div id="mapsection">
+                <div id="mapsection w-full">
                   <MapCard
                     height={500}
-                    width={500}
+                    width={"full"}
                     btnColor="#00ff99"
                     textColor="#0a0f2d"
                     opacity={50}
@@ -114,6 +130,13 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+            <div className="pl-4 max-w-6xl mx-auto mt-10 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden text-black">
+              {/* <img src={contact1} alt="" className="rounded-xl" /> */}
+              <h2></h2>
+              <div className="mr-2">
+                <Form />
+              </div>
+            </div>
           </section>
         </div>
       </MotionUpDown>
@@ -122,58 +145,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-//  <div className="ml-3 mb-2 text-black">
-//                   <h1 className="text-lg font-bold">Send Us a Message</h1>
-//                 </div>
-
-//                 <form
-//                   className="bg-white h-fit flex flex-col justify-between rounded-2xl shadow-2xl p-5"
-//                   onSubmit={(e) => e.preventDefault()}
-//                 >
-//                   <div className="space-y-3">
-//                     {/* Name */}
-//                     <div>
-//                       <label className="block text-sm font-light text-gray-700">
-//                         Name
-//                       </label>
-//                       <input
-//                         type="text"
-//                         className="mt-1 w-full rounded-lg border border-gray-300 text-sm font-light px-3 py-2 focus:ring-1 focus:ring-black/30 outline-none"
-//                         placeholder="Enter your name"
-//                       />
-//                     </div>
-
-//                     {/* Mobile */}
-//                     <div>
-//                       <label className="block text-sm font-light text-gray-700">
-//                         Mobile
-//                       </label>
-//                       <input
-//                         type="tel"
-//                         className="mt-1 w-full rounded-lg border border-gray-300 text-sm font-light px-3 py-2 focus:ring-1 focus:ring-black/30 outline-none"
-//                         placeholder="07X XXX XXXX"
-//                       />
-//                     </div>
-
-//                     {/* Description */}
-//                     <div>
-//                       <label className="block text-sm font-light text-gray-700">
-//                         Description
-//                       </label>
-//                       <textarea
-//                         rows={7}
-//                         className="mt-1 w-full rounded-lg border border-gray-300 text-sm font-light px-3 py-2 focus:ring-1 focus:ring-black/30 outline-none"
-//                         placeholder="How can we help?"
-//                       ></textarea>
-//                     </div>
-//                   </div>
-
-//                   {/* Button */}
-//                   <button
-//                     type="submit"
-//                     className="w-full bg-black text-white py-2 rounded-lg font-light hover:bg-black/90 transition"
-//                   >
-//                     Send Message
-//                   </button>
-//                 </form>
