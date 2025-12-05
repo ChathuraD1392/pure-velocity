@@ -1,10 +1,10 @@
+import remote from '../images/Model3Standard_95.jpg';
 import advanced from "../images/service_diagnostic.jpg";
 import voltage from "../images/service_highvoltage.jpg";
 import maintenance from "../images/service_maintenance.webp";
-import electrical from "../images/services_electrical.png";
 import battery from "../images/services_battery.png";
+import electrical from "../images/services_electrical.png";
 import software from "../images/services_software.webp";
-import remote from '../images/Model3Standard_95.jpg'
 
 export interface Service {
   id: number;
@@ -145,4 +145,5 @@ export const services: Service[] = [
     col:2,
     row:1,
   },
+  
 ];

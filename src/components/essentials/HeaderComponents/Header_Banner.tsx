@@ -56,8 +56,8 @@ const Header_Banner = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full overflow-visible relative"
       >
-        <div className="relative w-full -mt-10">
-          <div className="bg-[#007bff] clip-slant h-[800px] w-full relative flex items-center justify-center pt-10">
+        <div className="relative w-full md:-mt-10">
+          <div className="bg-[#007bff] clip-slant h-[900px] md:h-[800px] w-full relative flex items-center justify-center md:pt-10">
             {/* Light GPU-friendly BG image */}
             <img
               src={photo}
@@ -65,12 +65,12 @@ const Header_Banner = () => {
               className="absolute w-full h-full object-cover opacity-10 inset-0 will-change-transform"
             />
 
-            <div className="text-center space-y-1 z-10 text-white mb-20 grid grid-cols-1">
-              <h4 className="text-5xl w-full font-light mb-5 ">
+            <div className="text-center space-y-1 z-10 text-white md:mb-20 grid grid-cols-1">
+              <h4 className="text-2xl md:text-5xl w-full font-light mt-5 mb-0 md:mb-5 ">
                 We’re not just a workshop
               </h4>
 
-              <h4 className="text-2xl max-w-5xl font-light mt-1 mb-5 h-[100px] justify-self-center">
+              <h4 className="text-sm md:text-2xl max-w-5xl font-light mt-3 mb-4 md:mb-5 h-[100px] justify-self-center">
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={index}
@@ -78,18 +78,20 @@ const Header_Banner = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-lg md:text-xl font-medium px-4"
+                    className="text-md md:text-xl font-sm md:font-medium px-4"
                   >
                     {paragraphs[index]}
                   </motion.p>
                 </AnimatePresence>
               </h4>
 
-              <h4 className="text-5xl font-semibold mt-5 mb-10">What We Do?</h4>
+              <h4 className="text-2xl md:text-5xl font-semibold md:mt-5 mb-5 md:mb-10">
+                What We Do?
+              </h4>
 
               {/* Smooth service animation */}
               <motion.div
-                className="grid grid-cols-4 gap-4 max-w-7xl mb-5"
+                className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mb-5 md:mb-5"
                 initial="hidden"
                 animate={isInView ? "show" : "hidden"}
                 variants={{
@@ -110,7 +112,7 @@ const Header_Banner = () => {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                   >
                     <Link to={`services/${service.href}`}>
-                      <button className="w-full h-full px-4 py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-lg">
+                      <button className=" w-3/4 md:w-full h-full md:px-4 py-4 md:py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-sm md:text-lg">
                         {service.title.toUpperCase()}
                       </button>
                     </Link>
@@ -118,7 +120,7 @@ const Header_Banner = () => {
                 ))}
               </motion.div>
 
-              <div className="p-2 mt-4 text-xl font-semibold">
+              <div className="p-1 md:p-2 mt-1 md:mt-4 text-md md:text-xl font-semibold">
                 If it has a battery, a motor, and a Tesla badge – we’ve got it
                 covered.
               </div>

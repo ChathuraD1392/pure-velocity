@@ -66,10 +66,12 @@ const Why_Evs = () => (
                 }}
                 className="text-black text-5xl font-bold text-center pt-5 pb-5"
               ></motion.h2>
-
-              <p className="p-2 text-lg text-black rounded-lg mt-5">
+              <h1 className="text-5xl font-bold mb-5 text-black text-center md:text-left">
+                Why Electric Vehicles?
+              </h1>
+              <p className="p-2 text-lg text-black font-light rounded-lg mt-5 text-center md:text-left">
                 Electric vehicles aren’t just a trend. They’re a worldwide shift
-                in how we drive, maintain, and experience cars — and Sri Lanka
+                in how we drive, maintain, and experience cars - and Sri Lanka
                 is catching up fast. At Pure Velocity, we don’t just repair EVs.
                 We’re here to educate, empower, and excite the next generation
                 of drivers.
@@ -79,26 +81,27 @@ const Why_Evs = () => (
                 <WEVCard key={w.id} whyev={w} index={w.id} />
               ))}
 
-              <div className="felx items-center justify-center text-center text-white mt-10 bg-[#0a0f2d] rounded-xl pt-5 pb-5">
-                <h1 className="font-semibold text-3xl">
+              <div className="felx items-center justify-center text-center text-black mt-10 bg-blue-200/50 rounded-xl pt-5 pb-5 ml-1 mr-1">
+                <h1 className="font-semibold text-xl md:text-3xl">
                   <span>Pure Velocity</span> : Because Sri Lanka Deserves
                   World-Class EV Care
                 </h1>
-                <h4 className="font-light text-2xl mt-5">
+                <h4 className="font-light text-lg md:text-2xl mt-5">
                   We’re here to make the EV journey,
                 </h4>
 
-                <div className="text-center">
-                  <div className="text-center font-bold">Easier</div>
-                  <div className="text-center font-bold">Cheaper</div>
-                  <div className="text-center font-bold">Smarter</div>
-                  <div className="text-center font-bold">
-                    And a lot more exciting
+                <div className="text-center mt-2 mb-2">
+                  <div className="text-center font-semibold">Easier,</div>
+                  <div className="text-center font-semibold">Cheaper,</div>
+                  <div className="text-center font-semibold">Smarter,</div>
+                  <div className="text-center font-semibold">
+                    And a lot more exciting...
                   </div>
                 </div>
-                <h4 className="font-light text-xl mt-5">
+                <h4 className="font-light text-lg md:text-xl mt-5">
                   Whether you're already an EV owner or thinking about switching
-                  - you’re in the right place.
+                  -{" "}
+                  <span className="font-bold">you’re in the right place.</span>
                 </h4>
               </div>
             </div>

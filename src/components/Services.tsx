@@ -38,26 +38,26 @@ const Services = () => {
       </motion.section>
       <MotionUpDown initialY="-10vh" delay={1} duration={1}>
         <div className="relative">
-          <section id="contact" className="pt-4">
-            <div className="pl-4 max-w-7xl mx-auto mt-10 justify-center items-center text-left overflow-hidden text-black">
+          <section id="contact" className="pt-0 md:pt-4">
+            <div className="pl-0 md:pl-4 max-w-7xl mx-auto mt-10 justify-center items-center text-center md:text-left overflow-hidden text-black">
               <h1 className="text-5xl font-bold mb-4">
                 All Tesla services and Repairs
               </h1>
-              <h4 className="text-xl font-light mb-5 ">
+              <h4 className="text-xl font-light mb-5 p-3 md:p-0">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
                 quia incidunt et corporis tempora in, repudiandae eos! Sequi,
                 repudiandae minima dicta atque illo aperiam voluptatem accusamus
                 neque eaque perferendis illum nemo ducimus amet consequatur
                 nobis odit nihil quibusdam recusandae sapiente?
               </h4>
-              <div className="grid grid-cols-4 grid-rows-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 md:grid-rows-4">
                 {services.map((service) => (
                   <div
                     className={`relative group col-span-${
                       service.col
-                    } row-span-${service.col} w-full h-[${
+                    } row-span-${service.col} w-full h-full md:h-[${
                       246 * service.col!
-                    }px] rounded-lg overflow-hidden p-1`}
+                    }px] rounded-lg overflow-hidden p-1 md:p-1`}
                     key={service.id}
                   >
                     <Link to={service.href!}>
@@ -67,7 +67,7 @@ const Services = () => {
                         className="object-cover h-full w-full rounded-lg"
                       />
 
-                      <div className="absolute m-1 p-2 text-2xl text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white font-semibold cursor-pointer">
+                      <div className="absolute m-1 p-4 md:p-2 text-2xl text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white font-semibold cursor-pointer">
                         {service.title}
                       </div>
                     </Link>

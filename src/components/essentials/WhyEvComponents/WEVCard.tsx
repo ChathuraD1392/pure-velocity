@@ -6,7 +6,7 @@ const WEVCard = ({ whyev, index }: { whyev: WhyEv; index: number }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mt-5 mb-3 max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 items-center mt-5 mb-3 max-w-7xl">
         {/* IMAGE */}
         <div
           className={`order-1 ${
@@ -26,7 +26,7 @@ const WEVCard = ({ whyev, index }: { whyev: WhyEv; index: number }) => {
             !isEven ? "md:order-2" : "md:order-1"
           } mt-3 mb-3`}
         >
-          <p className="pt-2 pb-2 text-black font-semibold text-md bg-blue-200/50 rounded-xl p-1 pl-3">
+          <p className="pt-2 pb-2 text-black font-semibold text-md bg-blue-200/50 rounded-lg p-1 pl-3">
             {whyev.title}
           </p>
 
@@ -44,7 +44,7 @@ const WEVCard = ({ whyev, index }: { whyev: WhyEv; index: number }) => {
                     className="w-5 h-5 rounded-md bg-black/90"
                   />
                 </span>
-                <span className=" text-black rounded-lg p-1.5 shadow-xl pl-3 pr-3 font-semibold text-sm">
+                <span className=" text-black rounded-lg p-1.5 shadow-lg pl-3 pr-3 font-semibold text-sm">
                   {i}
                 </span>
               </li>

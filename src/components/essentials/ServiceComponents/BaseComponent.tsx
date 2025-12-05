@@ -64,7 +64,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
                           className="w-9 h-9 rounded-md bg-black/90"
                         />
                       </span>
-                      <span className="bg-[#007bff] text-white rounded-lg p-2 shadow-2xl">
+                      <span className="bg-[#007bff]/90 text-white rounded-lg p-2 shadow-2xl">
                         {b}
                       </span>
                     </li>

@@ -13,7 +13,7 @@ export default function TeamCarousel() {
     animate: { opacity: 1 },
     exit: { opacity: 0.5 },
   };
-
+  const [time, setTime] = useState(5000);
   const next = () => setIndex((i) => (i + 1) % memberDetails.length);
   // const prev = () =>
   //   setIndex((i) => (i - 1 + memberDetails.length) % memberDetails.length);
@@ -26,10 +26,10 @@ export default function TeamCarousel() {
         next(); // change index
         setFade(true); // fade in
       }, 600); // fade duration
-    }, 5000);
+    }, time);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [time]);
 
   return (
     <div
@@ -98,7 +98,7 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
         w-[90%] sm:w-[450px] md:w-[600px]
         h-[370px] md:h-auto bg-white/20 shadow-[#0a0f2d]  
         p-4 sm:p-6 rounded-2xl border-[#0a0f2d]
-        backdrop-blur-md mt-5 md:mt-40 mb-2 md:mb-5 ml-5 md:ml-0"
+        backdrop-blur-md mt-5 md:mt-60 mb-2 md:mb-5 ml-5 md:ml-0"
           >
             {/* TOP: Name + Image */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -135,7 +135,7 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
                   {memberDetails[index].para_3}
 
                   <span
-                    className="inline-flex items-center rounded-md ml-2 px-2 py-1 
+                    className="inline-flex items-center rounded-md ml-2 px-2 py-1 mt-2
                 text-[10px] sm:text-xs ring-2 bg-[#0a0f2d] text-white ring-[#0a0f2d]"
                   >
                     {memberDetails[index].badge}
@@ -150,19 +150,16 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
       {/* Profile Circles */}
       <div className="relative z-10 flex flex-col items-center mt-3 sm:mt-5">
         <div className="flex gap-3 sm:gap-6 mb-6 sm:mb-8 opacity-80">
-          {memberDetails.map((m, i) => (
-            <img
-              key={i}
-              src={m.photo}
-              className={`w-12 h-12 sm:w-20 sm:h-20 rounded-full object-cover 
-          p-0.5 sm:p-1 transition-all duration-500 
-          ${
-            i === index
-              ? "scale-110 border-2 sm:border-4"
-              : "border-gray-500 opacity-90 border"
-          }`}
+          {memberDetails.map((_, i) => (
+            <button
+              className={`btn btn-circle w-3 h-3 border-0 cursor-pointer
+                 ${i === index ? "bg-white" : "bg-black"}`}
               onClick={() => setIndex(i)}
-            />
+              onMouseOver={() => {
+                setIndex(i);
+                setTime(10000);
+              }}
+            ></button>
           ))}
         </div>
       </div>

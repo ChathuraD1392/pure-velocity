@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Header_About = () => {
   return (
     <>
-      <section className="pt-30 relative w-full -mt-50">
-        <div className="max-w-400 mx-auto px-10 mb-15 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="pt-30 relative w-full -mt-30 md:-mt-50">
+        <div className="max-w-400 mx-auto px-4 md:px-10 mb-15 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             className="rounded-lg"
             initial={{ opacity: 0, y: "-10vh" }}
@@ -23,7 +23,7 @@ const Header_About = () => {
               <img
                 src={photo}
                 alt="photo"
-                className="rounded-xl h-[500px] shadow-2xl shadow-black"
+                className="hidden md:block rounded-xl h-[500px] shadow-2xl shadow-black"
               />
             </ScrollingOneSide>
           </motion.div>
@@ -31,7 +31,7 @@ const Header_About = () => {
             <h2 className="text-2xl text-[#007bff] font-semibold pt-2 pb-2">
               ABOUT US
             </h2>
-            <h1 className="text-4xl font-semibold text-[#0a0f2d] mt-2 mb-2">
+            <h1 className="text-2xl md:text-4xl font-semibold text-[#0a0f2d] mt-2 mb-2">
               We’re a name you can trust!
             </h1>
             <p className="font-light text-[#0a0f2d] mb-4">

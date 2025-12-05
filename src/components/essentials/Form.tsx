@@ -2,15 +2,15 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Form = () => {
   return (
-    <div className="shadow-black p-5 w-full rounded-xl shadow-xs mb-10">
-      <h2 className="pl-3 font-bold text-2xl mb-5">Having an Issue?</h2>
+    <div className="shadow-black p-10 pl-15 pr-15 w-full rounded-lg shadow-xs mb-10 bg-[#007bff] text-white">
+      <h2 className="font-bold text-2xl mb-5">Having an Issue?</h2>
       <h2 className="mb-5">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
         aliquid non omnis molestias nesciunt quasi voluptates fuga voluptas qui
         dignissimos?
       </h2>
       <form className="">
-        <div className="grid md:grid-cols-2 md:gap-6">
+        <div className="grid md:grid-cols-3 md:gap-6">
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
@@ -37,20 +37,19 @@ const Form = () => {
               Mobile
             </label>
           </div>
-        </div>
-
-        <div className="relative z-0 w-full mb-5 group">
-          <input
-            type="email"
-            name="floating_email"
-            id="floating_email"
-            className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-            placeholder=" "
-            required
-          />
-          <label className="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
-            Email address
-          </label>
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="email"
+              name="floating_email"
+              id="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+              placeholder=" "
+              required
+            />
+            <label className="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+              Email
+            </label>
+          </div>
         </div>
 
         <div className="relative z-0 w-full mb-5 group">
@@ -58,7 +57,7 @@ const Form = () => {
             name="floating_email"
             id="floating_email"
             className="block py-4.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-            placeholder=" "
+            placeholder=""
             required
           />
           <label className="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 mt-4 peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">

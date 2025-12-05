@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useContext } from "react";
-import { BiMapPin, BiSun } from "react-icons/bi";
+import { BiSun } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 import { RiMoonFill } from "react-icons/ri";
@@ -22,8 +22,8 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   return (
     <>
       <motion.header
-        className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 
-    rounded-3xl w-[90%] max-w-[1400px] ${
+        className={`fixed top-3 md:top-5 left-1/2 transform -translate-x-1/2 z-50 
+    rounded-xl md:rounded-3xl w-[90%] h-[60px] md:h-fit max-w-[1400px] ${
       pathname === "/" || pathname === "/contact"
         ? "bg-[#0a0f2d]/40"
         : "bg-[#0a0f2d]"
@@ -32,7 +32,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
       >
-        <div className="flex items-center justify-between h-20 px-6">
+        <div className="flex items-center justify-between h-15 md:h-20 px-4 md:px-6">
           {/* Logo */}
           <Link to="/">
             <motion.img
@@ -64,27 +64,6 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
 
           {/* Buttons */}
           <div className="flex items-center gap-3">
-            {pathname === "/contact" ? (
-              <span className="w-40 h-1"></span>
-            ) : (
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  textShadow: "0px 0px 4px rgb(255,255,255)",
-                }}
-              >
-                <Link
-                  to="/contact"
-                  className="hidden sm:inline-block px-4 py-2 rounded-md border border-white text-sm text-white font-extralight"
-                >
-                  <span className="flex items-center space-x-2">
-                    <span>Open Location</span>
-                    <BiMapPin className="pt-0.5" />
-                  </span>
-                </Link>
-              </motion.button>
-            )}
-
             {/* Theme Toggle */}
             <motion.button
               className={`inline-flex items-center  rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
