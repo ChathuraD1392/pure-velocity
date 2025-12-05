@@ -142,7 +142,7 @@ export const services: Service[] = [
     beforeHashTag:"slide5",
     afterHasgTag:"#",
     href:"remote-diagnostic",
-    col:1,
+    col:2,
     row:1,
   },
 ];

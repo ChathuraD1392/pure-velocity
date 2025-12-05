@@ -87,7 +87,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
 
             {/* Theme Toggle */}
             <motion.button
-              className={`inline-flex items-center border rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
+              className={`inline-flex items-center  rounded px-2 py-2 text-sm font-medium text-white cursor-pointer ${
                 theme === "light" ? "border-white" : "border-amber-300"
               }`}
               onClick={toggleTheme}
@@ -104,7 +104,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
             <div className="md:hidden sm:inline-block">
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                className="inline-flex items-center border border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
+                className="inline-flex items-center border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"
                 onClick={() => setMenuVisible(!isMenuVisible)}
               >
                 {!isMenuVisible ? (

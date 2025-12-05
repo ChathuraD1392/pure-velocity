@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import type { Service } from "../../../assets/data/services";
-import MotionUpDown from "../../Motion/MotionUpDown";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import type { Service } from "../../../assets/data/services";
+import logo from "../../../assets/images/Icon white and gradient.svg";
+import MotionUpDown from "../../Motion/MotionUpDown";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 
 const BaseComponent = ({ service }: { service: Service }) => {
@@ -53,11 +54,19 @@ const BaseComponent = ({ service }: { service: Service }) => {
 
             <div className="pl-4 max-w-6xl mx-auto mt-10 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden text-black">
               <div className="mr-2">
-                <ul>
+                <ul className="space-y-5 ml-5 font-medium">
                   {service.bullets.map((b) => (
-                    <li key={b}>
-                      <span className="text-green-300 font-bold mr-3">✓</span>
-                      {b}
+                    <li key={b} className="flex items-center ">
+                      <span className=" text-green-300 font-bold pr-5">
+                        <img
+                          src={logo}
+                          alt="log"
+                          className="w-9 h-9 rounded-md bg-black/90"
+                        />
+                      </span>
+                      <span className="bg-[#007bff] text-white rounded-lg p-2 shadow-2xl">
+                        {b}
+                      </span>
                     </li>
                   ))}
                 </ul>

@@ -1,15 +1,15 @@
 // Services.tsx
 import { motion } from "framer-motion";
-import MotionUpDown from "./Motion/MotionUpDown";
-import service from "../assets/images/service.jpg";
-import { services } from "../assets/data/services";
 import { Link } from "react-router-dom";
+import { services } from "../assets/data/services";
+import service from "../assets/images/service.jpg";
+import MotionUpDown from "./Motion/MotionUpDown";
 
 const Services = () => {
   return (
     <>
       <motion.section
-        className="relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden bg-amber-500"
+        className={`relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden `}
         initial={{ opacity: 0, y: "-20vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -39,11 +39,11 @@ const Services = () => {
       <MotionUpDown initialY="-10vh" delay={1} duration={1}>
         <div className="relative">
           <section id="contact" className="pt-4">
-            <div className="pl-4 max-w-7xl mx-auto mt-10 mb-5 justify-center items-center text-left overflow-hidden text-black">
+            <div className="pl-4 max-w-7xl mx-auto mt-10 justify-center items-center text-left overflow-hidden text-black">
               <h1 className="text-5xl font-bold mb-4">
                 All Tesla services and Repairs
               </h1>
-              <h4 className="text-xl font-light mb-5">
+              <h4 className="text-xl font-light mb-5 ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
                 quia incidunt et corporis tempora in, repudiandae eos! Sequi,
                 repudiandae minima dicta atque illo aperiam voluptatem accusamus
@@ -56,7 +56,7 @@ const Services = () => {
                     className={`relative group col-span-${
                       service.col
                     } row-span-${service.col} w-full h-[${
-                      250 * service.col!
+                      246 * service.col!
                     }px] rounded-lg overflow-hidden p-1`}
                     key={service.id}
                   >
@@ -67,7 +67,7 @@ const Services = () => {
                         className="object-cover h-full w-full rounded-lg"
                       />
 
-                      <div className="absolute m-1 text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white text-lg font-semibold cursor-pointer">
+                      <div className="absolute m-1 p-2 text-2xl text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white font-semibold cursor-pointer">
                         {service.title}
                       </div>
                     </Link>
