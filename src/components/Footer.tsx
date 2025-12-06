@@ -37,7 +37,7 @@ const Footer = () => {
                 <MdMedicalServices className="text-3xl" />
               </div>
 
-              <div className="py-4 space-y-2 text-[14px] font-extralight grid">
+              <div className="py-4 space-y-2 text-[13px] font-extralight grid">
                 <Link
                   to="services/trouble-shooting"
                   className="hover:underline hover:underline-offset-4"

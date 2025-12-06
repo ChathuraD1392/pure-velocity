@@ -3,6 +3,7 @@ import { whyevs } from "../assets/data/whyevs";
 import whyevs_image from "../assets/images/Model3Standard_89.jpg";
 import background from "../assets/images/page_2137_b7a1265fed.svg";
 import WEVCard from "./essentials/WhyEvComponents/WEVCard";
+import ScrollingOneSide from "./Scrolling/ScrollingOneSide";
 
 motion;
 const Why_Evs = () => (
@@ -80,30 +81,33 @@ const Why_Evs = () => (
               {whyevs.map((w) => (
                 <WEVCard key={w.id} whyev={w} index={w.id} />
               ))}
+              <ScrollingOneSide y={100} duration={1}>
+                <div className="felx items-center justify-center text-center text-black mt-10 bg-blue-200/50 rounded-xl pt-5 pb-5 ml-1 mr-1">
+                  <h1 className="font-semibold text-xl md:text-3xl">
+                    <span>Pure Velocity</span> : Because Sri Lanka Deserves
+                    World-Class EV Care
+                  </h1>
+                  <h4 className="font-light text-lg md:text-2xl mt-5">
+                    We’re here to make the EV journey,
+                  </h4>
 
-              <div className="felx items-center justify-center text-center text-black mt-10 bg-blue-200/50 rounded-xl pt-5 pb-5 ml-1 mr-1">
-                <h1 className="font-semibold text-xl md:text-3xl">
-                  <span>Pure Velocity</span> : Because Sri Lanka Deserves
-                  World-Class EV Care
-                </h1>
-                <h4 className="font-light text-lg md:text-2xl mt-5">
-                  We’re here to make the EV journey,
-                </h4>
-
-                <div className="text-center mt-2 mb-2">
-                  <div className="text-center font-semibold">Easier,</div>
-                  <div className="text-center font-semibold">Cheaper,</div>
-                  <div className="text-center font-semibold">Smarter,</div>
-                  <div className="text-center font-semibold">
-                    And a lot more exciting...
+                  <div className="text-center mt-2 mb-2">
+                    <div className="text-center font-semibold">Easier,</div>
+                    <div className="text-center font-semibold">Cheaper,</div>
+                    <div className="text-center font-semibold">Smarter,</div>
+                    <div className="text-center font-semibold">
+                      And a lot more exciting...
+                    </div>
                   </div>
+                  <h4 className="font-light text-lg md:text-xl mt-5">
+                    Whether you're already an EV owner or thinking about
+                    switching -{" "}
+                    <span className="font-bold">
+                      you’re in the right place.
+                    </span>
+                  </h4>
                 </div>
-                <h4 className="font-light text-lg md:text-xl mt-5">
-                  Whether you're already an EV owner or thinking about switching
-                  -{" "}
-                  <span className="font-bold">you’re in the right place.</span>
-                </h4>
-              </div>
+              </ScrollingOneSide>
             </div>
           </div>
         </div>

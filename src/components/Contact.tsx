@@ -137,7 +137,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="pl-4 max-w-6xl mx-auto mt-10 grid grid-cols-1 gap-1 justify-center items-center text-left overflow-hidden text-black">
+            <div className=" max-w-6xl mx-auto mt-10 grid grid-cols-1 gap-1 justify-center items-center text-left overflow-hidden text-black">
               {/* <img src={contact1} alt="" className="rounded-xl" /> */}
               <h2></h2>
               <div className="mr-2">
