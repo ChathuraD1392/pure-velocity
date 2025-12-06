@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import video from "../../../assets/images/dog.png";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
-import MapCard from "../MapCard";
+import MapPage from "../MapPage";
 
 const Header_Contact = () => {
   return (
     <>
       <motion.section
-        className="w-full h-[80em] relative bg-[#0a0f2d]"
+        className="w-full h-[75em] relative bg-[#0a0f2d]"
         initial={{ opacity: 0, y: "-10vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -18,15 +18,13 @@ const Header_Contact = () => {
           stiffness: 100,
         }}
       >
-        <div className="w-full h-[1100] overflow-hidden">
+        <div className="w-full overflow-hidden">
           <img src={video} alt="" className="inset-0 object-cover object-top" />
         </div>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#0a0f2d]/50"></div>
         {/* Hero Content */}
-        <div
-          className={`absolute z-10 grid grid-cols-4 text-white space-y-5 top-70 w-full`}
-        >
+        <div className={`absolute z-10  text-white space-y-5 top-65 w-full`}>
           <div className="col-start-2 items-center text-center col-span-2 space-y-6">
             <ScrollingOneSide y={100} duration={1}>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-extralight leading-tight">
@@ -43,40 +41,9 @@ const Header_Contact = () => {
               </button>
             </ScrollingOneSide>
           </div>
-          <div className="col-start-2 col-span-1 mr-5 mt-10">
+          <div className="flex items-center justify-center">
             <ScrollingOneSide y={100} duration={1}>
-              <MapCard
-                height={500}
-                width={400}
-                title="Service Center"
-                address="75, Station Road, Kandana, Sri Lanka"
-                mobile="Tel: (+94) 11 234 5556"
-                btnColor="#00ff99"
-                textColor="#0a0f2d"
-                opacity={100}
-                backgroundColor="white"
-                paraColor="#0a0f2d"
-                footerColor="black"
-                isBtnAvailable={true}
-              />
-            </ScrollingOneSide>
-          </div>
-          <div className="col-start-3 col-span-1 ml-5 mt-10">
-            <ScrollingOneSide y={100} duration={1}>
-              <MapCard
-                height={500}
-                width={400}
-                title="Co-operate Office"
-                mobile="Tel: (+94) 11 234 5556"
-                address="11/3/2, Marine Drive, Wellawatte Colombo 06"
-                btnColor="#00ff99"
-                textColor="#0a0f2d"
-                opacity={100}
-                backgroundColor="white"
-                paraColor="#0a0f2d"
-                footerColor="black"
-                isBtnAvailable={true}
-              />
+              <MapPage />
             </ScrollingOneSide>
           </div>
         </div>

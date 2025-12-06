@@ -1,65 +1,30 @@
-import { motion } from "framer-motion";
 import { aboutData } from "../assets/data/aboutData";
-import sideImage_2 from "../assets/images/Model3Standard_88.jpg";
+import backgroundImage from "../assets/images/Model3Standard_88.jpg";
 import AboutContainer from "./essentials/AboutComponents/AboutContainer";
+import ImageHeader from "./ImageHeader";
+import MotionUpDown from "./Motion/MotionUpDown";
 import ScrollingOneSide from "./Scrolling/ScrollingOneSide";
 
 const About = () => {
   return (
     <>
-      <motion.section
-        className={`relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden `}
-        initial={{ opacity: 0, y: "-20vh" }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 2,
-          delay: 0.5,
-          type: "spring",
-          stiffness: 50,
-        }}
-      >
-        <img
-          src={sideImage_2}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">About</h1>
-          <p className="max-w-3xl text-sm md:text-2xl font-light leading-relaxed text-white/80">
+      <ImageHeader
+        backgroundImage={backgroundImage}
+        title="About"
+        text={
+          <>
             Pure Velocity -{" "}
             <span className="text-white font-medium">
               Sri Lanka’s Home of Tesla Expertise
             </span>
-          </p>
-        </div>
-      </motion.section>
+          </>
+        }
+      />
 
-      <div className="w-full">
-        <div className="w-full relative flex items-center justify-center">
-          <img
-            src={sideImage_2}
-            alt=""
-            className="absolute w-full h-full object-cover hue-rotate-180 opacity-2 inset-0 stroke-[0.25]"
-          />
-
-          <div className="text-left max-w-8xl space-y-1 z-10 text-black mb-5 bg-white/60 h-full">
-            {/* <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,123,255,0.2),rgba(0,0,0,0))]"></div> */}
-            <div className="z-10 max-w-6xl mx-auto px-1 sm:px-2 lg:px-2 mb-5">
-              <motion.h2
-                initial={{ opacity: 0, y: "-10vh" }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.75,
-                  delay: 0.5,
-                  type: "spring",
-                  stiffness: 200,
-                }}
-                className="text-black text-5xl font-bold text-center pt-5 pb-5"
-              ></motion.h2>
+      <div className="relative">
+        <section id="contact" className="pt-5">
+          <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 justify-center items-center text-left overflow-hidden text-black">
+            <MotionUpDown initialY="100vh" delay={1} duration={1}>
               <h1 className="text-5xl font-bold mb-5 text-black text-center md:text-left">
                 Sri Lanka’s Home of Tesla Expertise
               </h1>
@@ -86,14 +51,14 @@ const About = () => {
                 troubleshooting, and software-level repair workflows used
                 internationally.
               </p>
-              <ScrollingOneSide y={100} duration={1}>
-                {aboutData.map((about) => (
-                  <AboutContainer about={about} />
-                ))}
-              </ScrollingOneSide>
-            </div>
+            </MotionUpDown>
+            <ScrollingOneSide y={100} duration={1}>
+              {aboutData.map((about) => (
+                <AboutContainer about={about} />
+              ))}
+            </ScrollingOneSide>
           </div>
-        </div>
+        </section>
       </div>
     </>
   );

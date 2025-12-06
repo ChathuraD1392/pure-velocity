@@ -80,7 +80,7 @@ const Header_Banner = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="text-md md:text-xl font-sm md:font-medium px-4"
+                      className="text-md md:text-xl font-sm md:font-extralight px-4"
                     >
                       {paragraphs[index]}
                     </motion.p>

@@ -10,12 +10,12 @@ const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 w-full bg-[#0a0f2d]/70">
       {/* TOP BAR */}
-      <div className="w-full mx-auto flex justify-between items-center bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5">
+      <div className="w-full mx-auto flex justify-between items-center bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5 pt-10">
         <div className="text-sm text-white flex flex-col text-start justify-start md:justify-start">
           <img
             src={logo}
             alt="logo"
-            className="h-20 w-full sm:h-14 mt-5 md:h-20 lg:h-24 xl:h-28 object-contain"
+            className="h-20 w-full sm:h-14  md:h-20 lg:h-24 xl:h-28 object-contain"
           />
           <p className="hidden md:block text-[13px] text-center">
             To bring world-class Tesla servicing to Sri Lanka.
