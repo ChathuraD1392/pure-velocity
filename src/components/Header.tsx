@@ -73,7 +73,7 @@ const Header = () => {
         /> */}
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#0a0f2d]/30"></div>
+        <div className="absolute inset-0 bg-[#0a0f2d]/40"></div>
         {/* Hero Content */}
         <div
           className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${

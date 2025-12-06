@@ -10,17 +10,18 @@ interface Props {
 
 const ScrollingOneSide = ({ children, y, duration, x }: Props) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-10px" });
+  const isInView = useInView(ref, { once: true, margin: "-3%" });
 
   return (
     <motion.div
       ref={ref}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y, x }}
+      initial={{ opacity: 0, x, y }}
+      animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
       transition={{
-        delay: 0,
+        delay: 0.25,
         duration,
-        stiffness: 400,
-        ease: "easeOut",
+        stiffness: 50,
+        type: "spring",
       }}
     >
       {children}

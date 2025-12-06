@@ -17,13 +17,12 @@ interface NavBarProps {
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
   const { pathname } = useLocation();
   const { isMenuVisible, setMenuVisible } = useContext(MenuContext);
-  console.log(pathname);
 
   return (
     <>
       <motion.header
         className={`fixed top-3 md:top-5 left-1/2 transform -translate-x-1/2 z-50 
-    rounded-xl md:rounded-3xl w-[90%] h-[60px] md:h-fit max-w-[1400px] bg-[#0a0f2d]/60`}
+    rounded-xl md:rounded-3xl w-[90%] h-[60px] md:h-fit max-w-[1400px] bg-[#0a0f2d]/70`}
         initial={{ opacity: 0, scale: 1, y: "-5vh" }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
@@ -40,7 +39,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-6 text-md text-white font-light">
+          <nav className="hidden lg:flex items-center gap-6 text-md text-white font-light">
             {navItems.map((item, index) => (
               <motion.button
                 key={index}
@@ -76,7 +75,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
             </motion.button>
 
             {/* Mobile Menu */}
-            <div className="md:hidden sm:inline-block">
+            <div className="lg:hidden sm:inline-block">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 className="inline-flex items-center border-white rounded px-2 py-2 text-sm font-medium text-white cursor-pointer"

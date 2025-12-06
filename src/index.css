@@ -2,8 +2,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @font-face {
   font-family: "Belamor";
   src: url("/src/assets/fonts/Belamor.ttf") format("truetype");
@@ -16,7 +14,7 @@
   font-style: normal;
 }
 
-.bg-primary {
+/* .bg-primary {
   background-color: #0a0f2d;
 }
 .bg-secondary {
@@ -30,7 +28,7 @@
 }
 .fontColor {
   color: #007bff;
-}
+} */
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -41,10 +39,22 @@ body {
   /* #d8e5e5; */
 }
 
+.bg-primary {
+  background-color: #0a0f2d;
+}
+.bg-background {
+  background-color: #ffffff;
+}
+body {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* Dark mode styles applied when the 'dark' class is on the body/html tag */
+
 body.dark {
-  background-color: #000000; /* or any dark background */
-  color: #ffffff; /* optional */
-  font-family: "Montserrat", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .clip-slant {

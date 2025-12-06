@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import ScrollManage from "../Scrolling/ScrollManage";
 
 interface Props {
   children: ReactNode;
@@ -24,20 +25,22 @@ const MotionUpDown = ({
   stiffness,
 }: Props) => {
   return (
-    <motion.div
-      key={index}
-      initial={{ opacity: initialOpacity, scale: initialScale, y: initialY }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{
-        duration: duration,
-        delay: delay + 0.1 * index!,
-        type,
-        stiffness,
-      }}
-      className="h-full"
-    >
-      {children}
-    </motion.div>
+    <ScrollManage>
+      <motion.div
+        key={index}
+        initial={{ opacity: initialOpacity, scale: initialScale, y: initialY }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{
+          duration: duration,
+          delay: delay + 0.1 * index!,
+          type,
+          stiffness,
+        }}
+        className="h-full"
+      >
+        {children}
+      </motion.div>
+    </ScrollManage>
   );
 };
 

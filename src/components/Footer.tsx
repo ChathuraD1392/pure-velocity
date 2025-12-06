@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 w-full bg-[#0a0f2d]/70">
       {/* TOP BAR */}
-      <div className="w-full mx-auto flex justify-between items-center bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5 pt-10">
+      <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-center bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5 pt-10">
         <div className="text-sm text-white flex flex-col text-start justify-start md:justify-start">
           <img
             src={logo}
@@ -31,7 +31,7 @@ const Footer = () => {
         {/* Centered About Text (On large move to right) */}
         <div className="flex">
           <div className="text-white text-center md:text-left pt-5 pr-10">
-            <div className="text-white hidden md:block">
+            <div className="text-white hidden md:hidden lg:block">
               <div className="flex items-center space-x-3">
                 <h3 className="font-semibold text-sm md:text-xl">Services</h3>
                 <MdMedicalServices className="text-3xl" />
@@ -87,7 +87,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="py-1 pr-2 md:pr-5 mt-2 space-y-3 font-extralight text-sm">
+            <div className="py-1 pr-5 md:pr-0 mt-2 space-y-3 font-extralight text-sm">
               <p>
                 <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
               </p>
@@ -104,7 +104,7 @@ const Footer = () => {
                 <span className="font-semibold">Service Centre : </span> 75,
                 Station Road, Kandana, Sri Lanka
               </p>
-              <p className="flex w-fit items-center rounded-md ml-8 md:ml-0 justify-center px-2  py-1 bg-[#007bff] text-[10px] font-medium mt-7 text-white">
+              <p className="flex w-fit items-center rounded-md ml-8 md:ml-0 justify-center px-2  py-1 bg-[#007bff] text-[8px] md:text-[10px] font-medium mt-7 text-white">
                 <GoClockFill />
                 <span className="pl-2 text-center">
                   We respond fast — usually within minutes.

@@ -104,7 +104,7 @@ const Header_Banner = () => {
                       transition={{ duration: 1.5, ease: "easeOut" }}
                     >
                       <Link to={`services/${service.href}`}>
-                        <button className=" w-3/4 md:w-full h-full md:px-4 py-4 md:py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-sm md:text-lg">
+                        <button className="cursor-pointer w-3/4 md:w-full h-full md:px-4 py-4 md:py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-sm md:text-lg">
                           {service.title.toUpperCase()}
                         </button>
                       </Link>

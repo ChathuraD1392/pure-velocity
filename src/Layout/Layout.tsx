@@ -1,10 +1,10 @@
-import { Outlet } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import logo from "../assets/images/Logo Horizontal white@300x.png";
 import { useState } from "react";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
-import ScrollTop from "../components/Scrolling/ScrollTop";
+import logo from "../assets/images/Logo Horizontal white@300x.png";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
+import ThemeContext from "../StateManagement/contexts/themeContext";
 
 const Layout = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -20,10 +20,12 @@ const Layout = () => {
     <>
       <MenuContext.Provider value={{ isMenuVisible, setMenuVisible }}>
         <NavBar toggleTheme={toggleTheme} logo={logo} theme={theme} />
-        <main>
-          <ScrollTop />
-          <Outlet />
-        </main>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+          <main>
+            <Outlet />
+            <ScrollRestoration />
+          </main>
+        </ThemeContext.Provider>
         <Footer />
       </MenuContext.Provider>
     </>
