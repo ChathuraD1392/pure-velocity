@@ -25,7 +25,7 @@ const Why_Evs = () => (
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
         <h1 className="text-4xl md:text-5xl font-bold"> Why EVs?</h1>

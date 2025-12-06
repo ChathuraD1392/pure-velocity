@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { services } from "../../../assets/data/services";
 import photo from "../../../assets/images/sketch2.svg";
+import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 
 const Header_Banner = () => {
   const count = useMotionValue(0);
@@ -66,60 +67,51 @@ const Header_Banner = () => {
             />
 
             <div className="text-center space-y-1 z-10 text-white md:mb-20 grid grid-cols-1">
-              <h4 className="text-2xl md:text-5xl w-full font-light mt-5 mb-0 md:mb-5 ">
-                We’re not just a workshop
-              </h4>
+              <ScrollingOneSide y={100} duration={1}>
+                <h4 className="text-2xl md:text-5xl w-full font-light mt-5 mb-0 md:mb-5 ">
+                  We’re not just a workshop
+                </h4>
 
-              <h4 className="text-sm md:text-2xl max-w-5xl font-light mt-3 mb-4 md:mb-5 h-[100px] justify-self-center">
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-md md:text-xl font-sm md:font-medium px-4"
-                  >
-                    {paragraphs[index]}
-                  </motion.p>
-                </AnimatePresence>
-              </h4>
+                <h4 className="text-sm md:text-2xl max-w-5xl font-light mt-3 mb-4 md:mb-5 h-[100px] justify-self-center">
+                  <AnimatePresence mode="wait">
+                    <motion.p
+                      key={index}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="text-md md:text-xl font-sm md:font-medium px-4"
+                    >
+                      {paragraphs[index]}
+                    </motion.p>
+                  </AnimatePresence>
+                </h4>
 
-              <h4 className="text-2xl md:text-5xl font-semibold md:mt-5 mb-5 md:mb-10">
-                What We Do?
-              </h4>
-
+                <h4 className="text-2xl md:text-5xl font-semibold md:mt-5 mb-5 md:mb-10">
+                  What We Do?
+                </h4>
+              </ScrollingOneSide>
               {/* Smooth service animation */}
-              <motion.div
-                className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mb-5 md:mb-5"
-                initial="hidden"
-                animate={isInView ? "show" : "hidden"}
-                variants={{
-                  hidden: { opacity: 0 },
-                  show: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.08 },
-                  },
-                }}
-              >
-                {services.map((service) => (
-                  <motion.div
-                    key={service.id}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: { opacity: 1, y: 0 },
-                    }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                  >
-                    <Link to={`services/${service.href}`}>
-                      <button className=" w-3/4 md:w-full h-full md:px-4 py-4 md:py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-sm md:text-lg">
-                        {service.title.toUpperCase()}
-                      </button>
-                    </Link>
-                  </motion.div>
-                ))}
-              </motion.div>
-
+              <ScrollingOneSide y={100} duration={1}>
+                <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mb-5 md:mb-5">
+                  {services.map((service) => (
+                    <motion.div
+                      key={service.id}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0 },
+                      }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                    >
+                      <Link to={`services/${service.href}`}>
+                        <button className=" w-3/4 md:w-full h-full md:px-4 py-4 md:py-6 bg-[#0a0f2d]/70 rounded-lg hover:bg-[#0a0f2d]/90 hover:scale-105 duration-300 text-sm md:text-lg">
+                          {service.title.toUpperCase()}
+                        </button>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollingOneSide>
               <div className="p-1 md:p-2 mt-1 md:mt-4 text-md md:text-xl font-semibold">
                 If it has a battery, a motor, and a Tesla badge – we’ve got it
                 covered.

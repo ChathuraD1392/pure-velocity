@@ -7,6 +7,7 @@ import contact from "../assets/images/Model3Standard_91.jpg";
 import Form from "./essentials/Form";
 import MapCard from "./essentials/MapCard";
 import MotionUpDown from "./Motion/MotionUpDown";
+import ScrollingOneSide from "./Scrolling/ScrollingOneSide";
 
 const Contact = () => {
   return (
@@ -29,7 +30,7 @@ const Contact = () => {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">
@@ -65,68 +66,74 @@ const Contact = () => {
 
             <div className="max-w-6xl mx-auto grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden text-white">
               <div className="h-full text-black">
-                <div className="p-3">
-                  <h1 className="text-2xl font-bold bg-[#0a0f2d]/80 w-[380px] p-2 pl-5 text-white rounded">
-                    Co-operate Office
-                  </h1>
-                  <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
-                    <p className="flex items-center text-sm">
-                      <BsFillTelephoneFill className="mr-3 text-xl" /> +94
-                      XXXXXXXX
-                    </p>
-                    <p className="flex items-center text-sm">
-                      <FaLocationDot className="mr-3 text-xl" /> 11/3/2, Marine
-                      Drive, Wellawatte Colombo 06
-                    </p>
-                    <p className="flex items-center text-sm">
-                      <MdEmail className="mr-3 text-xl" />
-                      headoffice@purevelocity.lk
-                    </p>
-                    <p className="flex items-start text-sm">
-                      <FaClock className="mr-3 text-xl" />
-                      Mon - Fri: 10am - 8pm Sat - Sun <br /> Public Holidays:
-                      10am - 7pm
-                    </p>
+                <ScrollingOneSide y={100} duration={1}>
+                  <div className="p-1">
+                    <h1 className="text-2xl font-bold w-[380px] p-2 text-black rounded">
+                      Co-operate Office
+                    </h1>
+                    <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
+                      <p className="flex items-center text-sm">
+                        <BsFillTelephoneFill className="mr-3 text-xl" /> +94
+                        XXXXXXXX
+                      </p>
+                      <p className="flex items-center text-sm">
+                        <FaLocationDot className="mr-3 text-xl" /> 11/3/2,
+                        Marine Drive, Wellawatte Colombo 06
+                      </p>
+                      <p className="flex items-center text-sm">
+                        <MdEmail className="mr-3 text-xl" />
+                        headoffice@purevelocity.lk
+                      </p>
+                      <p className="flex items-start text-sm">
+                        <FaClock className="mr-3 text-xl" />
+                        Mon - Fri: 10am - 8pm Sat - Sun <br /> Public Holidays:
+                        10am - 7pm
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="p-3">
-                  <h1 className="text-2xl font-bold bg-[#0a0f2d]/80 w-[380px] p-2 pl-5 text-white rounded">
-                    Service Center
-                  </h1>
-                  <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
-                    <p className="flex items-center text-sm">
-                      <BsFillTelephoneFill className="mr-3 text-xl" /> +94
-                      XXXXXXXX
-                    </p>
-                    <p className="flex items-center text-sm">
-                      <FaLocationDot className="mr-3 text-xl" /> 75, Station
-                      Road, Kandana, Sri Lanka
-                    </p>
-                    <p className="flex items-center text-sm">
-                      <MdEmail className="mr-3 text-xl" />
-                      headoffice@purevelocity.lk
-                    </p>
-                    <p className="flex items-start text-sm">
-                      <FaClock className="mr-3 text-xl" />
-                      Mon - Fri: 10am - 8pm Sat - Sun <br /> Public Holidays:
-                      10am - 7pm
-                    </p>
+                </ScrollingOneSide>
+                <ScrollingOneSide y={100} duration={1}>
+                  <div className="p-1">
+                    <h1 className="text-2xl font-bold  w-[380px] p-2 text-black rounded">
+                      Service Center
+                    </h1>
+                    <div className="mt-3 space-y-3 border w-[380px] p-5 rounded-md shadow-xl">
+                      <p className="flex items-center text-sm">
+                        <BsFillTelephoneFill className="mr-3 text-xl" /> +94
+                        XXXXXXXX
+                      </p>
+                      <p className="flex items-center text-sm">
+                        <FaLocationDot className="mr-3 text-xl" /> 75, Station
+                        Road, Kandana, Sri Lanka
+                      </p>
+                      <p className="flex items-center text-sm">
+                        <MdEmail className="mr-3 text-xl" />
+                        headoffice@purevelocity.lk
+                      </p>
+                      <p className="flex items-start text-sm">
+                        <FaClock className="mr-3 text-xl" />
+                        Mon - Fri: 10am - 8pm Sat - Sun <br /> Public Holidays:
+                        10am - 7pm
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ScrollingOneSide>
               </div>
-              <div className="h-full p-2">
+              <div className="h-full p-2 rounded-lg">
                 <div id="mapsection w-full">
-                  <MapCard
-                    height={500}
-                    width={"full"}
-                    btnColor="#00ff99"
-                    textColor="#0a0f2d"
-                    opacity={50}
-                    backgroundColor="white"
-                    paraColor="#0a0f2d"
-                    footerColor="white"
-                    isBtnAvailable={false}
-                  />
+                  <ScrollingOneSide y={100} duration={1}>
+                    <MapCard
+                      height={500}
+                      width={"full"}
+                      btnColor="#00ff99"
+                      textColor="#0a0f2d"
+                      opacity={100}
+                      backgroundColor="white"
+                      paraColor="#0a0f2d"
+                      footerColor="white"
+                      isBtnAvailable={false}
+                    />
+                  </ScrollingOneSide>
                 </div>
               </div>
             </div>
@@ -134,7 +141,9 @@ const Contact = () => {
               {/* <img src={contact1} alt="" className="rounded-xl" /> */}
               <h2></h2>
               <div className="mr-2">
-                <Form />
+                <ScrollingOneSide y={100} duration={1}>
+                  <Form />
+                </ScrollingOneSide>
               </div>
             </div>
           </section>

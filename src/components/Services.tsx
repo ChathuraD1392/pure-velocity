@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { services } from "../assets/data/services";
 import service from "../assets/images/service.jpg";
 import MotionUpDown from "./Motion/MotionUpDown";
+import ScrollingOneSide from "./Scrolling/ScrollingOneSide";
 
 const Services = () => {
   return (
@@ -26,7 +27,7 @@ const Services = () => {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">Services & Repairs</h1>
@@ -50,30 +51,47 @@ const Services = () => {
                 neque eaque perferendis illum nemo ducimus amet consequatur
                 nobis odit nihil quibusdam recusandae sapiente?
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 md:grid-rows-4">
-                {services.map((service) => (
-                  <div
-                    className={`relative group col-span-${
-                      service.col
-                    } row-span-${service.col} w-full h-full md:h-[${
-                      246 * service.col!
-                    }px] rounded-lg overflow-hidden p-1 md:p-1`}
-                    key={service.id}
-                  >
-                    <Link to={service.href!}>
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="object-cover h-full w-full rounded-lg"
-                      />
+              <ScrollingOneSide y={100} duration={1}>
+                <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 md:grid-rows-4">
+                  {services.map((service) => (
+                    <div
+                      className={`relative group col-span-${
+                        service.col
+                      } row-span-${service.col} w-full h-full md:h-[${
+                        246 * service.col!
+                      }px] rounded-lg overflow-hidden p-1 md:p-1`}
+                      key={service.id}
+                    >
+                      <Link
+                        to={service.href!}
+                        className="relative block h-full w-full rounded-lg overflow-hidden"
+                      >
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="object-cover h-full w-full rounded-lg"
+                        />
 
-                      <div className="absolute m-1 p-4 md:p-2 text-2xl text-center rounded-lg inset-0 bg-black/40 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center text-white font-semibold cursor-pointer">
-                        {service.title}
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                        {/* Base subtle overlay (always visible) */}
+                        <div className="absolute inset-0 bg-black/45 rounded-lg transition-all duration-300"></div>
+
+                        {/* Darker overlay ONLY on hover */}
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 rounded-lg transition-all duration-300"></div>
+
+                        {/* Centered Title */}
+                        <div className="absolute inset-0 flex items-center justify-center text-center pointer-events-none">
+                          <h1 className="text-white text-2xl md:text-2xl font-semibold drop-shadow-lg m-3">
+                            {service.title}
+                            <span className="absolute text-sm mt-8 inset-x-0  p-3 text-white text-md font-light opacity-0 group-hover:opacity-80 translate-y-3 group-hover:translate-y-0 transition-all duration-300 text-center">
+                              click for more details...
+                            </span>
+                          </h1>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </ScrollingOneSide>
             </div>
           </section>
         </div>

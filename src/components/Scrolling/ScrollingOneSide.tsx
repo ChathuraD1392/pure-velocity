@@ -5,17 +5,17 @@ interface Props {
   children: ReactNode;
   y?: number;
   duration: number;
-  //   margin?: string;
+  x?: number;
 }
 
-const ScrollingOneSide = ({ children, y, duration }: Props) => {
+const ScrollingOneSide = ({ children, y, duration, x }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   return (
     <motion.div
       ref={ref}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y, x }}
       transition={{
         delay: 0,
         duration,

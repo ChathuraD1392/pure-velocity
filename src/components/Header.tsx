@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import video from "../assets/video/alternate.webp";
+import video from "../assets/video/background_video.mp4";
 import MenuContext from "../StateManagement/contexts/menuContext";
 
 const Header = () => {
@@ -57,23 +57,23 @@ const Header = () => {
         }}
       >
         {/* Video Background */}
-        {/* <video
-        autoPlay
-        //loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={video} type="video/mp4" />
-      </video> */}
-        <img
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+        {/* <img
           src={video}
           alt="video"
           className="absolute inset-0 min-h-[30em] md:w-full h-full object-cover "
-        />
+        /> */}
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#0a0f2d]/50"></div>
+        <div className="absolute inset-0 bg-[#0a0f2d]/30"></div>
         {/* Hero Content */}
         <div
           className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${

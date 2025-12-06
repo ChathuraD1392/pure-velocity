@@ -10,14 +10,14 @@ const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 w-full bg-[#0a0f2d]/70">
       {/* TOP BAR */}
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-5 bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5 ">
+      <div className="w-full mx-auto flex justify-between items-center bg-[#0a0f2d]/80 px-6 md:px-12 lg:px-10 pb-2 md:pb-5">
         <div className="text-sm text-white flex flex-col text-start justify-start md:justify-start">
           <img
             src={logo}
             alt="logo"
-            className="h-16 w-full sm:h-14 mt-5 md:h-20 lg:h-24 xl:h-28 object-contain"
+            className="h-20 w-full sm:h-14 mt-5 md:h-20 lg:h-24 xl:h-28 object-contain"
           />
-          <p className="hidden md:block text-[10px] text-center">
+          <p className="hidden md:block text-[13px] text-center">
             To bring world-class Tesla servicing to Sri Lanka.
           </p>
           <div className="flex items-center justify-center gap-5 text-3xl text-white my-2 md:mt-5 md:ml-5">
@@ -29,51 +29,88 @@ const Footer = () => {
         </div>
 
         {/* Centered About Text (On large move to right) */}
-        <div className="text-white col-start-4 text-center md:text-left pt-5">
-          <div className="text-white hidden md:block">
-            <div className="flex items-center space-x-3">
-              <h3 className="font-semibold text-sm md:text-lg">Services</h3>
-              <MdMedicalServices className="text-3xl" />
-            </div>
+        <div className="flex">
+          <div className="text-white text-center md:text-left pt-5 pr-10">
+            <div className="text-white hidden md:block">
+              <div className="flex items-center space-x-3">
+                <h3 className="font-semibold text-sm md:text-xl">Services</h3>
+                <MdMedicalServices className="text-3xl" />
+              </div>
 
-            <div className="py-4 space-y-1 text-xs">
-              <p>Advanced Diagnostics & Troubleshooting</p>
-              <p>High Voltage System Repairs</p>
-              <p>Electrical & Mechanical Repairs</p>
-              <p>Preventative Maintenance</p>
-              <p>Battery & Range Health Evaluation</p>
-              <p>Software & Configuration Support</p>
+              <div className="py-4 space-y-2 text-[14px] font-extralight grid">
+                <Link
+                  to="services/trouble-shooting"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  Advanced Diagnostics & Troubleshooting
+                </Link>
+                <Link
+                  to="services/high-voltage"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  High Voltage System Repairs
+                </Link>
+                <Link
+                  to="services/repairs"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  Electrical & Mechanical Repairs
+                </Link>
+                <Link
+                  to="services/maintenance"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  Preventative Maintenance
+                </Link>
+                <Link
+                  to="services/evaluation"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  Battery & Range Health Evaluation
+                </Link>
+                <Link
+                  to="services/support"
+                  className="hover:underline hover:underline-offset-4"
+                >
+                  Software & Configuration Support
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="text-white text-center md:text-left pt-5 grid grid-cols-1">
-          <div className="items-center md:items-start space-x-3 ">
-            <div className="flex items-center space-x-3 justify-center md:justify-start">
-              <h3 className="font-semibold text-sm md:text-lg md:mr-0">
-                Find us
-              </h3>
-              <BsFillPinMapFill className="text-lg md:text-2xl ml-2" />
+          <div className="text-white text-center md:text-left pt-5">
+            <div className="items-center md:items-start space-x-3 ">
+              <div className="flex items-center space-x-3 justify-center md:justify-start">
+                <h3 className="font-semibold text-sm md:text-xl md:mr-0">
+                  Find us
+                </h3>
+                <BsFillPinMapFill className="text-lg md:text-2xl ml-2" />
+              </div>
             </div>
-          </div>
 
-          <div className="py-1 pr-2 md:pr-10 mt-2 space-y-2 font-extralight text-[11px]">
-            <p>
-              <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
-            </p>
-            <p>
-              <span className="font-semibold">Our Office : </span> 11/3/2,
-              Marine Drive, Wellawatte, Colombo 06
-            </p>
-            <p>
-              <span className="font-semibold">Service Centre : </span> 75,
-              Station Road, Kandana, Sri Lanka
-            </p>
-            <p className="flex w-fit items-center rounded-md ml-8 md:ml-0 justify-center px-2  py-1 bg-[#007bff] text-[10px] font-medium mt-2 text-white">
-              <GoClockFill />
-              <span className="pl-2 text-center">
-                We respond fast — usually within minutes.
-              </span>
-            </p>
+            <div className="py-1 pr-2 md:pr-5 mt-2 space-y-3 font-extralight text-sm">
+              <p>
+                <span className="font-semibold">Hotline : </span> +94 XXXXXXXX
+              </p>
+
+              <p>
+                <span className="font-semibold">Email : </span>{" "}
+                headoffice@purevelocity.lk
+              </p>
+              <p>
+                <span className="font-semibold">Our Office : </span> 11/3/2,
+                Marine Drive, Wellawatte, Colombo 06
+              </p>
+              <p>
+                <span className="font-semibold">Service Centre : </span> 75,
+                Station Road, Kandana, Sri Lanka
+              </p>
+              <p className="flex w-fit items-center rounded-md ml-8 md:ml-0 justify-center px-2  py-1 bg-[#007bff] text-[10px] font-medium mt-7 text-white">
+                <GoClockFill />
+                <span className="pl-2 text-center">
+                  We respond fast — usually within minutes.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

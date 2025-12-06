@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsTelephone } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import type { Service } from "../../../assets/data/services";
-import logo from "../../../assets/images/Icon white and gradient.svg";
 import MotionUpDown from "../../Motion/MotionUpDown";
 import ScrollingOneSide from "../../Scrolling/ScrollingOneSide";
 
@@ -9,7 +9,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
   return (
     <>
       <motion.section
-        className="relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden bg-amber-500"
+        className="relative w-full min-h-[30em] md:min-h-[50em] overflow-hidden"
         initial={{ opacity: 0, y: "-20vh" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -31,9 +31,16 @@ const BaseComponent = ({ service }: { service: Service }) => {
         <div className="relative z-10 flex flex-col items-center pt-70 px-6 text-white space-y-5 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">Services</h1>
           <ScrollingOneSide y={100} duration={1}>
-            <button className="bg-[#007bff] p-5 pl-10 pr-10 mt-5 rounded-md text-[#ffffff] font-light text-lg inline-flex items-center">
-              <BsFillTelephoneFill className="mr-2 font-semibold" />
-              CONTACT US TODAY
+            <button>
+              <Link
+                to="/contact"
+                className="hidden sm:inline-block px-9 py-3 rounded-md border border-white hover:bg-[#007bff] hover:border-[#007bff]"
+              >
+                <div className="pl-3 pr-3 p-1 flex items-center space-x-2 text-md text-white text-xl">
+                  <BsTelephone className="text-lg" />
+                  <span>Contact us Today</span>
+                </div>
+              </Link>
             </button>
           </ScrollingOneSide>
         </div>
@@ -57,14 +64,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
                 <ul className="space-y-5 ml-5 font-medium">
                   {service.bullets.map((b) => (
                     <li key={b} className="flex items-center ">
-                      <span className=" text-green-300 font-bold pr-5">
-                        <img
-                          src={logo}
-                          alt="log"
-                          className="w-9 h-9 rounded-md bg-black/90"
-                        />
-                      </span>
-                      <span className="bg-[#007bff]/90 text-white rounded-lg p-2 shadow-2xl">
+                      <span className=" text-black font-semibold ml-5 rounded-lg p-2">
                         {b}
                       </span>
                     </li>
@@ -73,21 +73,21 @@ const BaseComponent = ({ service }: { service: Service }) => {
               </div>
             </div>
 
-            <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 grid grid-cols-3 gap-3 justify-center items-center text-left overflow-hidden text-black">
+            <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 grid grid-cols-3 gap-1 justify-center items-center text-left overflow-hidden text-black ">
               <img
                 src={service.image}
                 alt={service.title}
-                className="rounded-lg h-[300px]"
+                className="rounded-2xl h-[300px] p-3 hover:scale-105 duration-500 ease-in-out"
               />
               <img
                 src={service.image}
                 alt={service.title}
-                className="rounded-lg h-[300px]"
+                className="rounded-2xl h-[300px] p-3 hover:scale-105 duration-500 ease-in-out"
               />
               <img
                 src={service.image}
                 alt={service.title}
-                className="rounded-lg h-[300px]"
+                className="rounded-2xl h-[300px] p-3 hover:scale-105 duration-500 ease-in-out"
               />
             </div>
           </section>

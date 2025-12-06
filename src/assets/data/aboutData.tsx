@@ -1,8 +1,7 @@
-import vision from "../images/tesla_logo.webp";
-import philosophy from "../images/philosophy.webp";
 import type { ReactNode } from "react";
+import vision from "../images/tesla_logo.webp";
 
-import { FaHandshake, FaMicroscope, FaGlobe, FaStore } from "react-icons/fa";
+import { FaGlobe, FaHandshake, FaMicroscope, FaStore } from "react-icons/fa";
 
 interface ListType {
   image: ReactNode;
@@ -12,8 +11,9 @@ interface ListType {
 export interface AboutType {
   index: number;
   image: string;
-  title: string;
+  title_1: string;
   para?: string;
+  title_2: string;
   list?: ListType[];
 }
 
@@ -21,13 +21,9 @@ export const aboutData: AboutType[] = [
   {
     index: 1,
     image: vision,
-    title: "Our Vision",
+    title_1: "Our Vision",
     para: "To become Sri Lanka’s most trusted and advanced Tesla service ecosystem, setting a new benchmark for EV maintenance, transparency, and customer care.",
-  },
-  {
-    index: 2,
-    image: philosophy,
-    title: "Our Philosophy",
+    title_2: "Our Philosophy",
     list: [
       {
         image: (

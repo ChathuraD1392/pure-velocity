@@ -53,7 +53,7 @@ const Header_Contact = () => {
                 mobile="Tel: (+94) 11 234 5556"
                 btnColor="#00ff99"
                 textColor="#0a0f2d"
-                opacity={50}
+                opacity={100}
                 backgroundColor="white"
                 paraColor="#0a0f2d"
                 footerColor="black"
@@ -71,7 +71,7 @@ const Header_Contact = () => {
                 address="11/3/2, Marine Drive, Wellawatte Colombo 06"
                 btnColor="#00ff99"
                 textColor="#0a0f2d"
-                opacity={50}
+                opacity={100}
                 backgroundColor="white"
                 paraColor="#0a0f2d"
                 footerColor="black"

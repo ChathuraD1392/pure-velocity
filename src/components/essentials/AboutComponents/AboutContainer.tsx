@@ -17,7 +17,7 @@ const AboutContainer = ({ about }: Props) => {
         >
           <img
             src={about.image}
-            alt={about.title}
+            alt={about.title_1}
             className="rounded-lg max-w-full max-h-full object-contain"
           />
         </div>
@@ -29,21 +29,21 @@ const AboutContainer = ({ about }: Props) => {
           } mt-3 mb-3`}
         >
           <p className="pt-2 pb-2 text-black font-semibold text-2xl rounded-lg p-1 pl-3">
-            {about.title}
+            {about.title_1}
           </p>
 
-          <p className="pt-2 pb-2 pl-3 text-black font-semibold text-md">
+          <p className="pt-2 pb-2 pl-3 mb-5 text-black font-normal text-md">
             {about.para}
           </p>
 
-          <ul className="pt-2 pb-2 text-black font-semibold text-md grid grid-cols-2 gap-5">
+          <p className="pt-2 pb-2 text-black font-semibold text-2xl rounded-lg p-1 pl-3">
+            {about.title_2}
+          </p>
+
+          <ul className="pt-2 pb-2 text-black font-semibold text-md gap-5 p-1 pl-5">
             {about.list?.map((i) => (
-              <li
-                key={i.label}
-                className="flex justify-around text-left items-center text-black ml-5 w-full h-[100px] rounded-lg shadow-md shadow-[#0a0f2d]"
-              >
-                <span className="m-5">{i.image}</span>
-                <span className="font-semibold text-xl p-3">{i.label}</span>
+              <li key={i.label} className="mb-2">
+                {i.label}
               </li>
             ))}
           </ul>
