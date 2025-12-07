@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { BsTelephone } from "react-icons/bs";
-import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import video from "../../assets/video/background_video.mp4";
 import MenuContext from "../../StateManagement/contexts/menuContext";
