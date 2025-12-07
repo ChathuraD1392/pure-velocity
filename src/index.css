@@ -53,7 +53,7 @@ body {
 /* Dark mode styles applied when the 'dark' class is on the body/html tag */
 
 body.dark {
-  background-color: #000000;
+  background-color: #0a0f2d;
   color: #ffffff;
 }
 

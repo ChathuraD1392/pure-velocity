@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
+import Footer from "../components/Footer/Footer";
+import NavBar from "../components/NavBar/NavBar";
 import ThemeContext from "../StateManagement/contexts/themeContext";
 
 const Layout = () => {

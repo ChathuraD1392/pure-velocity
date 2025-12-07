@@ -1,19 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../../Layout/Layout";
-import About from "../../components/About";
-import Contact from "../../components/Contact";
-import Home from "../../components/Home";
-import Our_Team from "../../components/Our_Team";
-import Services from "../../components/Services";
-import Why_Evs from "../../components/Why_Evs";
+import About from "../../components/About/About";
+import Contact from "../../components/Contact/Contact";
+import Home from "../../components/Home/Home";
+import Our_Team from "../../components/Our_Team/Our_Team";
+import Services from "../../components/Services/Services";
+import Why_Evs from "../../components/WhyEvs/Why_Evs";
 import HomeServices from "../../Layout/HomeServices";
-import HighVoltage from "../../components/essentials/ServiceComponents/HighVoltage";
-import TroubleShooting from "../../components/essentials/ServiceComponents/TroubleShooting";
-import Repairs from "../../components/essentials/ServiceComponents/Repairs";
-import Maintenance from "../../components/essentials/ServiceComponents/Maintenance";
-import Evaluation from "../../components/essentials/ServiceComponents/Evaluation";
-import Support from "../../components/essentials/ServiceComponents/Support";
-import Diagnostics from "../../components/essentials/ServiceComponents/Diagnostics";
+import Diagnostics from "../../components/Services/Diagnostics";
+import Evaluation from "../../components/Services/Evaluation";
+import HighVoltage from "../../components/Services/HighVoltage";
+import Maintenance from "../../components/Services/Maintenance";
+import Repairs from "../../components/Services/Repairs";
+import Support from "../../components/Services/Support";
+import TroubleShooting from "../../components/Services/TroubleShooting";
 
 export const router = createBrowserRouter([
   {
