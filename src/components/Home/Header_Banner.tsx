@@ -72,20 +72,22 @@ const Header_Banner = () => {
                   We’re not just a workshop
                 </h4>
 
-                <h4 className="text-sm md:text-2xl max-w-5xl font-light mt-3 mb-4 md:mb-5 h-[100px] justify-self-center">
-                  <AnimatePresence mode="wait">
-                    <motion.p
-                      key={index}
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="text-md md:text-xl font-sm md:font-extralight px-4"
-                    >
-                      {paragraphs[index]}
-                    </motion.p>
-                  </AnimatePresence>
-                </h4>
+                <div className="flex items-center text-center justify-center h-[100px]">
+                  <h4 className="text-sm md:text-2xl max-w-5xl font-light mt-3 mb-4 md:mb-5">
+                    <AnimatePresence mode="wait">
+                      <motion.p
+                        key={index}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="text-md md:text-xl font-sm md:font-extralight px-4"
+                      >
+                        {paragraphs[index]}
+                      </motion.p>
+                    </AnimatePresence>
+                  </h4>
+                </div>
 
                 <h4 className="text-2xl md:text-5xl font-light md:mt-5 mb-5 md:mb-10">
                   What We Do?
