@@ -13,20 +13,13 @@ const Why_Evs = () => (
     <ImageHeader
       backgroundImage={backgroundImage}
       title="Why EVs?"
-      text={
-        <>
-          The Future Isn’t Coming —{" "}
-          <span className="text-white font-medium">
-            It’s Parked in Your Garage
-          </span>
-        </>
-      }
+      text={<>The Future Isn’t Coming - It’s Parked in Your Garage</>}
     />
     <SectionHeader>
       <div className="text-left max-w-8xl space-y-1 z-10 mb-5 h-full">
         <div className="z-10 max-w-6xl mx-auto px-1 sm:px-2 lg:px-2 mb-5">
           <MotionUpDown initialY="100vh" delay={1} duration={1}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-5 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-semibold mb-5 text-center md:text-left">
               Why Electric Vehicles?
             </h1>
             <p className="p-2 text-lg font-light rounded-lg mt-5 text-center md:text-left">
@@ -41,7 +34,7 @@ const Why_Evs = () => (
             <WEVCard key={index} whyev={w} index={w.id} />
           ))}
           <ScrollingOneSide y={100} duration={1}>
-            <div className="felx items-center justify-center text-center mt-10 bg-blue-200/50 rounded-xl pt-5 pb-5 ml-1 mr-1">
+            <div className="felx items-center justify-center text-center mt-10 bg-slate-100 rounded-xl pt-5 pb-5 ml-1 mr-1">
               <h1 className="font-semibold text-xl md:text-3xl">
                 <span>Pure Velocity</span> : Because Sri Lanka Deserves
                 World-Class EV Care
@@ -60,7 +53,9 @@ const Why_Evs = () => (
               </div>
               <h4 className="font-light text-lg md:text-xl mt-5 pl-3 pr-3 md:pr-0 md:pl-0">
                 Whether you're already an EV owner or thinking about switching -{" "}
-                <span className="font-bold">you’re in the right place.</span>
+                <span className="font-semibold">
+                  you’re in the right place.
+                </span>
               </h4>
             </div>
           </ScrollingOneSide>

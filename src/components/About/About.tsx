@@ -12,18 +12,11 @@ const About = () => {
       <ImageHeader
         backgroundImage={backgroundImage}
         title="About"
-        text={
-          <>
-            Pure Velocity -{" "}
-            <span className="text-white font-medium">
-              Sri Lanka’s Home of Tesla Expertise
-            </span>
-          </>
-        }
+        text={<>Pure Velocity - Sri Lanka’s Home of Tesla Expertise</>}
       />
       <SectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-4xl md:text-5xl font-bold mb-5 md:text-left">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-5 md:text-left">
             Sri Lanka’s Home of Tesla Expertise
           </h1>
           <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-5">

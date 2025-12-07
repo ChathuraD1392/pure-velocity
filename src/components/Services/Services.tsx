@@ -12,17 +12,12 @@ const Services = () => {
       <ImageHeader
         backgroundImage={backgroundImage}
         title="Services & Repairs"
-        text={
-          <>
-            We specialise <span className="text-white font-medium">100%</span>{" "}
-            in Tesla vehicles - nothing else.
-          </>
-        }
+        text={<>We specialise in Tesla vehicles - nothing else.</>}
       />
 
       <SectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4">
             All Tesla services and Repairs
           </h1>
           <h4 className="text-md md:text-lg font-light mb-5 p-3 md:p-0">

@@ -31,7 +31,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
 
       <SectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-5xl font-bold mb-4">{service.title}</h1>
+          <h1 className="text-5xl font-semibold mb-4">{service.title}</h1>
           <h4 className="text-lg font-light">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quia
             incidunt et corporis tempora in, repudiandae eos! Sequi, repudiandae

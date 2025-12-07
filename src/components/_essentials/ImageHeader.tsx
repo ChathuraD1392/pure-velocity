@@ -26,7 +26,7 @@ const ImageHeader = ({ backgroundImage, title, text }: Props) => {
       />
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10 flex flex-col items-center pt-45 md:pt-70 px-6 text-white space-y-5 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold">{title}</h1>
         <p className="max-w-3xl text-sm md:text-2xl font-light leading-relaxed text-white/80">
           {text}
         </p>
