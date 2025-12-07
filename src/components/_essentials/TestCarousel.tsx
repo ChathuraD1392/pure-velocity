@@ -91,10 +91,10 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
             exit="exit"
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="relative z-10 
-        w-[90%] sm:w-[450px] md:w-[600px]
-        h-[370px] md:h-auto bg-white/20 shadow-[#0a0f2d]  
+        w-[90%] sm:w-[450px] md:w-[650px]
+        h-[400px] md:h-auto bg-white/20 shadow-[#0a0f2d]  
         p-4 sm:p-6 rounded-2xl border-[#0a0f2d]
-        backdrop-blur-md mt-5 md:mt-60 mb-2 md:mb-5 ml-5 md:ml-0"
+        backdrop-blur-md mt-5 md:mt-60 ml-5 md:ml-0"
           >
             {/* TOP: Name + Image */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -117,26 +117,27 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
             </div>
 
             {/* CONTENT */}
-            <div className="mt-4 sm:mt-5">
+            <div className="mt-5 sm:mt-5">
               <hr />
-              <p className="text-xs sm:text-sm mt-3 opacity-80 font-semibold">
+              <p className="text-xs sm:text-sm mt-3 opacity-80 font-light">
                 {memberDetails[index].para_1}
               </p>
-              <p className="text-xs sm:text-sm mt-2 opacity-80">
+              <p className="text-xs sm:text-sm mt-2 opacity-80 font-light">
                 {memberDetails[index].para_2}
               </p>
 
               <div className="grid grid-cols-1 text-center items-center">
                 <p className="text-xs sm:text-sm mt-3 opacity-80 font-semibold">
                   {memberDetails[index].para_3}
-
+                </p>
+                <div className="flex justify-center items-center">
                   <span
-                    className="inline-flex items-center rounded-md ml-2 px-2 py-1 mt-2
+                    className="mt-1 text-center rounded-md ml-2 px-2 py-1
                 text-[10px] sm:text-xs ring-2 bg-[#0a0f2d] text-white ring-[#0a0f2d]"
                   >
                     {memberDetails[index].badge}
                   </span>
-                </p>
+                </div>
               </div>
             </div>
           </motion.div>
