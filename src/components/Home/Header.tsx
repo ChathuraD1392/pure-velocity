@@ -120,15 +120,12 @@ const Header = () => {
             }}
             className="mt-4 text-sm md:text-mg lg:text-xl font-extralight max-w-3xl tracking-wide"
           >
-            <span className="text-white/90 font-semibold ">
-              Sri Lanka’s first specialist Tesla service
-            </span>
-            , diagnostics, and repair ecosystem powered by cutting-edge tech,
-            global expertise, and a team that eats, sleeps, and breathes{" "}
-            <span className="text-white/90 font-semibold">EVs.</span>
+            Sri Lanka’s first specialist Tesla service , diagnostics, and repair
+            ecosystem powered by cutting-edge tech, global expertise, and a team
+            that eats, sleeps, and breathes
           </motion.p>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 justify-center ">
-            <motion.button
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-1 gap-8 md:gap-4 justify-center ">
+            {/* <motion.button
               variants={btnVariants}
               initial="initial"
               animate="animate"
@@ -138,14 +135,14 @@ const Header = () => {
             >
               <Link
                 to="/services"
-                className="hidden sm:inline-block px-9 py-3 rounded-md border border-[#007bff] bg-[#007bff] "
+                className="hidden sm:inline-block px-9 py-3 rounded-md border border-white"
               >
                 <div className="flex items-center text-center space-x-2 text-md text-white font-medium">
                   <HiOutlineCog6Tooth className="text-2xl" />
                   <span>Services</span>
                 </div>
               </Link>
-            </motion.button>
+            </motion.button> */}
             <motion.button
               variants={btnVariants}
               initial="initial"
@@ -158,7 +155,7 @@ const Header = () => {
                 to="/contact"
                 className="hidden sm:inline-block px-9 py-3 rounded-md border border-white"
               >
-                <div className="flex items-center space-x-2 text-md text-white font-medium">
+                <div className="flex items-center space-x-2 text-md text-white font-light">
                   <BsTelephone className="text-lg" />
                   <span>Contact</span>
                 </div>

@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import type { WhyEv } from "../../assets/data/whyevs";
 import ScrollingOneSide from "../_essentials/Scrolling/ScrollingOneSide";
+import ThemeContext from "../../StateManagement/contexts/themeContext";
 
 const WEVCard = ({ whyev, index }: { whyev: WhyEv; index: number }) => {
+  const { theme } = useContext(ThemeContext);
   const isEven = index % 2 === 0;
 
   const x_valueImage = !isEven ? -50 : 50;
@@ -66,7 +69,11 @@ const WEVCard = ({ whyev, index }: { whyev: WhyEv; index: number }) => {
           </ScrollingOneSide>
         </div>
       </div>
-      <hr className="h-0.5 bg-slate-300" />
+      <hr
+        className={`h-0.5 ${
+          theme === "dark" ? "bg-zinc-100 opacity-25" : "bg-zinc-300"
+        }  border-0`}
+      />
     </>
   );
 };

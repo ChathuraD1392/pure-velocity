@@ -46,7 +46,7 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
           type: "spring",
           stiffness: 200,
         }}
-        className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-center px-3"
+        className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-tight text-center px-3"
       >
         Our Team
       </motion.h1>
@@ -61,14 +61,10 @@ pt-28 md:pt-32 bg-[#0a0f2d]/40 overflow-hidden"
           stiffness: 200,
         }}
         className="mt-3 sm:mt-4 text-sm sm:text-md md:text-lg lg:text-2xl 
-               font-extralight max-w-xl sm:max-w-2xl md:max-w-3xl 
+               font-light max-w-xl sm:max-w-2xl md:max-w-3xl 
                tracking-wide text-center px-4"
       >
-        <span>
-          Passionate people building a better
-          <span className="font-semibold"> EV experience </span>
-          for <span className="font-semibold">Sri Lanka.</span>
-        </span>
+        Passionate people building a better EV experience for Sri Lanka.
       </motion.p>
 
       {/* Background */}

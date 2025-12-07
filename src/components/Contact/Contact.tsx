@@ -18,23 +18,15 @@ const Contact = () => {
         title="Get in Touch With Us"
         text={
           <>
-            Whether your Tesla{" "}
-            <span className="text-white font-medium">
-              needs a quick check-up
-            </span>{" "}
-            or a{" "}
-            <span className="text-white font-medium">
-              full diagnostic deep dive
-            </span>
-            , our expert team is here to{" "}
-            <span className="text-white font-medium">help.</span>
+            Whether your Tesla needs a quick check-up or a full diagnostic deep
+            dive , our expert team is here to help.
           </>
         }
       />
 
       <SectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4">
             How to find us
           </h1>
 
@@ -51,10 +43,10 @@ const Contact = () => {
           <div className="h-full">
             <ScrollingOneSide y={100} duration={1}>
               <div className="p-1">
-                <h1 className="text-md md:text-2xl font-bold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
+                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
                   Co-operate Office
                 </h1>
-                <div className="mt-3 space-y-3 border ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md shadow-xl">
+                <div className="mt-3 space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
                   <p className="flex items-center text-sm">
                     <BsFillTelephoneFill className="mr-3 text-md md:text-xl" />{" "}
                     +94 XXXXXXXX
@@ -77,10 +69,10 @@ const Contact = () => {
             </ScrollingOneSide>
             <ScrollingOneSide y={100} duration={1}>
               <div className="p-1">
-                <h1 className="text-md md:text-2xl font-bold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
+                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
                   Service Center
                 </h1>
-                <div className="mt-3 space-y-3 border ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md shadow-xl">
+                <div className="mt-3 space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
                   <p className="flex items-center text-sm">
                     <BsFillTelephoneFill className="mr-3 text-xl" /> +94
                     XXXXXXXX

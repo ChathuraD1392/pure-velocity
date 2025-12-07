@@ -2,8 +2,8 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Form = () => {
   return (
-    <div className="shadow-black p-10 pl-15 pr-15 w-full rounded-lg shadow-xs mb-10 bg-[#007bff] text-white">
-      <h2 className="font-bold text-2xl mb-5">Having an Issue?</h2>
+    <div className="shadow-black p-10 pl-15 pr-15 w-full rounded-lg bg-slate-100 mb-10">
+      <h2 className="font-semibold text-2xl mb-5">Having an Issue?</h2>
       <h2 className="mb-5">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
         aliquid non omnis molestias nesciunt quasi voluptates fuga voluptas qui

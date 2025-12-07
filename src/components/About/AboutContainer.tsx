@@ -22,11 +22,11 @@ const AboutContainer = ({ about }: Props) => {
             !isEven ? "md:order-1" : "md:order-2"
           } mt-3 mb-3 w-full h-full flex justify-center items-center`}
         >
-          <img
+          {/* <img
             src={about.image}
             alt={about.title_1}
             className="rounded-lg max-w-full max-h-full object-contain"
-          />
+          /> */}
         </div>
 
         {/* TEXT */}

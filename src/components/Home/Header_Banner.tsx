@@ -87,11 +87,10 @@ const Header_Banner = () => {
                   </AnimatePresence>
                 </h4>
 
-                <h4 className="text-2xl md:text-5xl font-semibold md:mt-5 mb-5 md:mb-10">
+                <h4 className="text-2xl md:text-5xl font-light md:mt-5 mb-5 md:mb-10">
                   What We Do?
                 </h4>
               </ScrollingOneSide>
-              {/* Smooth service animation */}
               <ScrollingOneSide y={100} duration={1}>
                 <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mb-5 md:mb-5">
                   {services.map((service) => (
@@ -112,7 +111,7 @@ const Header_Banner = () => {
                   ))}
                 </div>
               </ScrollingOneSide>
-              <div className="p-1 md:p-2 mt-1 md:mt-4 text-md md:text-xl font-semibold">
+              <div className="p-1 md:p-2 mt-1 md:mt-4 text-md md:text-xl font-light">
                 If it has a battery, a motor, and a Tesla badge – we’ve got it
                 covered.
               </div>
