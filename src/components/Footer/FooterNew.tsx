@@ -4,6 +4,7 @@ import { GrServices } from "react-icons/gr";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Logo Horizontal white@300x.png";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 const FooterNew = () => {
   return (
@@ -44,32 +45,50 @@ const FooterNew = () => {
                 </h2>
                 <ul className="text-body font-medium">
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/trouble-shooting">
+                    <Link
+                      to="services/trouble-shooting"
+                      className="flex items-center"
+                    >
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       Advanced Diagnostics & Troubleshooting
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/high-voltage">
+                    <Link
+                      to="services/high-voltage"
+                      className="flex items-center"
+                    >
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       High Voltage System Repairs
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/repairs">
+                    <Link to="services/repairs" className="flex items-center">
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       Electrical & Mechanical Repairs
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/maintenance">
+                    <Link
+                      to="services/maintenance"
+                      className="flex items-center"
+                    >
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       Preventative Maintenance
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/evaluation">
+                    <Link
+                      to="services/evaluation"
+                      className="flex items-center"
+                    >
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       Battery & Range Health Evaluation
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">
-                    <Link to="services/support">
+                    <Link to="services/support" className="flex items-center">
+                      <CiLocationArrow1 className="mr-2 w-2.5" />
                       Software & Configuration Support
                     </Link>
                   </li>
@@ -90,11 +109,11 @@ const FooterNew = () => {
                   </li>
                   <li className="mb-4 text-sm font-light flex">
                     <IoLocationOutline className="mr-3 text-md md:text-xl" />{" "}
-                    75, Station Road, Kandana (office)
+                    11/3/2, Marine Drive, Wellawatte Colombo 06 (office)
                   </li>
                   <li className="mb-4 text-sm font-light flex">
                     <GrServices className="mr-3 text-lg md:text-xl" />
-                    11/3/2, Marine Drive, Wellawatte Colombo 06
+                    75, Station Road, Kandana (Service Center)
                   </li>
                 </ul>
               </div>

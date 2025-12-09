@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import vision from "../images/tesla_logo.webp";
+import vision from "../images/Logo vertical@300x.png";
 
 import { FaGlobe, FaHandshake, FaMicroscope, FaStore } from "react-icons/fa";
 

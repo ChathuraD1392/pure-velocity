@@ -1,9 +1,10 @@
+import { IoWarningOutline } from "react-icons/io5";
 import { aboutData } from "../../assets/data/aboutData";
 import backgroundImage from "../../assets/images/Model3Standard_88.jpg";
 import ImageHeader from "../_essentials/ImageHeader";
-import SectionHeader from "../_essentials/SectionHeader";
 import MotionUpDown from "../_essentials/Motion/MotionUpDown";
 import ScrollingOneSide from "../_essentials/Scrolling/ScrollingOneSide";
+import SectionHeader from "../_essentials/SectionHeader";
 import AboutContainer from "./AboutContainer";
 
 const About = () => {
@@ -19,7 +20,8 @@ const About = () => {
           <h1 className="text-4xl md:text-5xl font-semibold mb-5 md:text-left">
             Sri Lanka’s Home of Tesla Expertise
           </h1>
-          <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-5">
+          <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-5 inline-flex items-center">
+            <IoWarningOutline className="mr-4" />
             Pure Velocity began with a simple idea to bring world-class Tesla
             servicing to Sri Lanka.
           </h3>
