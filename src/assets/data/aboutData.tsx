@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-import vision from "../images/Logo vertical@300x.png";
-
+import { type ReactNode } from "react";
 import { FaGlobe, FaHandshake, FaMicroscope, FaStore } from "react-icons/fa";
 
 interface ListType {
@@ -10,7 +8,6 @@ interface ListType {
 
 export interface AboutType {
   index: number;
-  image: string;
   title_1: string;
   para?: string;
   title_2: string;
@@ -20,7 +17,6 @@ export interface AboutType {
 export const aboutData: AboutType[] = [
   {
     index: 1,
-    image: vision,
     title_1: "Our Vision",
     para: "To become Sri Lanka’s most trusted and advanced Tesla service ecosystem, setting a new benchmark for EV maintenance, transparency, and customer care.",
     title_2: "Our Philosophy",

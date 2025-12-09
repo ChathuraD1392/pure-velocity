@@ -43,10 +43,10 @@ const Contact = () => {
           <div className="h-full">
             <ScrollingOneSide y={100} duration={1}>
               <div className="p-1">
-                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
+                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 rounded">
                   Co-operate Office
                 </h1>
-                <div className="mt-3 space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
+                <div className=" space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
                   <p className="flex items-center text-sm">
                     <BsFillTelephoneFill className="mr-3 text-md md:text-xl" />{" "}
                     +94 XXXXXXXX
@@ -67,12 +67,14 @@ const Contact = () => {
                 </div>
               </div>
             </ScrollingOneSide>
+
             <ScrollingOneSide y={100} duration={1}>
               <div className="p-1">
-                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 text-black rounded">
+                <hr className="mt-2 mb-5 border-slate-200" />
+                <h1 className="text-md md:text-2xl font-semibold w-[380px] ml-25 md:ml-0 p-2 rounded">
                   Service Center
                 </h1>
-                <div className="mt-3 space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
+                <div className="space-y-3  ml-25 md:ml-0 w-[280px] md:w-[380px] p-5 rounded-md ">
                   <p className="flex items-center text-sm">
                     <BsFillTelephoneFill className="mr-3 text-xl" /> +94
                     XXXXXXXX

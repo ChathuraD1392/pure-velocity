@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import type { AboutType } from "../../assets/data/aboutData";
 import ThemeContext from "../../StateManagement/contexts/themeContext";
+import visin_light from "../../assets/images/Logo vertical@300x.png";
+import visin_dark from "../../assets/images/Logo vertical white and gradient@300x.png";
 
 interface Props {
   about: AboutType;
@@ -23,7 +25,7 @@ const AboutContainer = ({ about }: Props) => {
           } mt-3 mb-3 w-full h-full flex justify-center items-center`}
         >
           <img
-            src={about.image}
+            src={theme === "dark" ? visin_dark : visin_light}
             alt={about.title_1}
             className="rounded-lg max-w-full max-h-full object-contain"
           />

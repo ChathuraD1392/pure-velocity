@@ -34,7 +34,7 @@ const Why_Evs = () => (
             <WEVCard key={index} whyev={w} index={w.id} />
           ))}
           <ScrollingOneSide y={100} duration={1}>
-            <div className="felx items-center justify-center text-center mt-10 bg-slate-100 rounded-xl pt-5 pb-5 ml-1 mr-1">
+            <div className="felx items-center justify-center text-center mt-10 text-black bg-slate-100 rounded-xl pt-5 pb-5 ml-1 mr-1">
               <h1 className="font-semibold text-xl md:text-3xl">
                 <span>Pure Velocity</span> : Because Sri Lanka Deserves
                 World-Class EV Care

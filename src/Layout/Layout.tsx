@@ -5,6 +5,7 @@ import ThemeContext from "../StateManagement/contexts/themeContext";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
 import FooterNew from "../components/Footer/FooterNew";
 import NavBar from "../components/NavBar/NavBar";
+import ScrollToTopBtn from "../components/_essentials/ScrollToTopBtn";
 
 const Layout = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -26,6 +27,7 @@ const Layout = () => {
             <ScrollRestoration />
           </main>
         </ThemeContext.Provider>
+        <ScrollToTopBtn />
         <FooterNew />
       </MenuContext.Provider>
     </>
