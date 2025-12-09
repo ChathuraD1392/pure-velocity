@@ -61,7 +61,7 @@ const Header = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover brightness-125"
         >
           <source src={video} type="video/mp4" />
         </video>
@@ -72,7 +72,7 @@ const Header = () => {
         /> */}
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#0a0f2d]/40"></div>
+        <div className="absolute inset-0 bg-[#0a0f2d]/35"></div>
         {/* Hero Content */}
         <div
           className={`relative z-10 flex flex-col items-center justify-center h-auto text-center px-4 sm:px-6 lg:px-8 text-white space-y-5 pt-20 sm:pt-32 lg:top-20 top-10 md:top-20 ${
@@ -156,7 +156,7 @@ const Header = () => {
               >
                 <div className="flex items-center space-x-2 text-md text-white font-light">
                   <BsTelephone className="text-lg" />
-                  <span>Contact</span>
+                  <span>Contact Us Today</span>
                 </div>
               </Link>
             </motion.button>

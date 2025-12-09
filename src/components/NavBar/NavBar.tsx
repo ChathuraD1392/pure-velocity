@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BiSun } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
@@ -15,8 +15,38 @@ interface NavBarProps {
 }
 
 const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
+  const [isNavVisible, setNavVisibility] = useState(true);
   const { pathname } = useLocation();
   const { isMenuVisible, setMenuVisible } = useContext(MenuContext);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const handleActivity = () => {
+      setNavVisibility(true); // show nav when activity happens
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        setNavVisibility(false); // hide nav after 5 seconds inactivity
+      }, 3000);
+    };
+
+    window.addEventListener("mousemove", handleActivity);
+    window.addEventListener("scroll", handleActivity);
+    window.addEventListener("keydown", handleActivity);
+    window.addEventListener("click", handleActivity);
+
+    // Start timer immediately
+    handleActivity();
+
+    return () => {
+      window.removeEventListener("mousemove", handleActivity);
+      window.removeEventListener("scroll", handleActivity);
+      window.removeEventListener("keydown", handleActivity);
+      window.removeEventListener("click", handleActivity);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
     <>
@@ -24,8 +54,13 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         className={`fixed top-3 md:top-5 left-1/2 transform -translate-x-1/2 z-50 
     rounded-xl md:rounded-3xl w-[90%] h-[60px] md:h-fit max-w-[1400px] bg-[#0a0f2d]/70`}
         initial={{ opacity: 0, scale: 1, y: "-5vh" }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ type: "spring", delay: 0.5, stiffness: 200 }}
+        animate={{
+          opacity: isNavVisible ? 1 : 0,
+          scale: 1,
+          y: isMenuVisible ? 0 : "1vh",
+        }}
+        exit={{ opacity: 0, scale: 1, y: "-5vh" }}
+        transition={{ type: "tween", delay: 0.25, stiffness: 100 }}
       >
         <div className="flex items-center justify-between h-15 md:h-20 px-4 md:px-6">
           <Link to="/">

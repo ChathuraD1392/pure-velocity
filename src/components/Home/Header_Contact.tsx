@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsTelephone } from "react-icons/bs";
 import video from "../../assets/images/dog.png";
 import MapPage from "../_essentials/MapPage";
 import ScrollingOneSide from "../_essentials/Scrolling/ScrollingOneSide";
@@ -22,7 +22,7 @@ const Header_Contact = () => {
           <img src={video} alt="" className="inset-0 object-cover object-top" />
         </div>
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#0a0f2d]/50"></div>
+        <div className="absolute inset-0 bg-[#0a0f2d]/40"></div>
         {/* Hero Content */}
         <div className={`absolute z-10  text-white space-y-5 top-65 w-full`}>
           <div className="col-start-2 items-center text-center col-span-2 space-y-6">
@@ -35,8 +35,8 @@ const Header_Contact = () => {
               <p className="text-6xl">Visit Our Service Center!</p>
             </ScrollingOneSide>
             <ScrollingOneSide y={100} duration={1}>
-              <button className="bg-[#00ff99] p-3 pl-7 pr-7 rounded-md text-[#0a0f2d] font-semibold inline-flex items-center">
-                <BsFillTelephoneFill className="mr-2 font-semibold" />
+              <button className="bg-[#00ff99] p-3 pl-7 pr-7 rounded-md text-[#0a0f2d] font-normal inline-flex items-center hover:scale-105 duration-300 ease-in-out">
+                <BsTelephone className="mr-2 font-semibold" />
                 CONTACT US TODAY
               </button>
             </ScrollingOneSide>

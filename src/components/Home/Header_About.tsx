@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { BsArrowRightCircle } from "react-icons/bs";
-import photo from "../../assets/images/Model3Standard_96.jpg";
+import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import photo from "../../assets/images/Model3Standard_96.jpg";
 import ScrollingOneSide from "../_essentials/Scrolling/ScrollingOneSide";
 const Header_About = () => {
   return (
@@ -43,9 +43,9 @@ const Header_About = () => {
               quos fugit sit vel illo mollitia molestiae laudantium aperiam cum.
             </p>
             <div className="mt-1">
-              <button className="bg-[#007bff] p-3 pr-8 pl-8 rounded-md text-white font-semibold inline-flex items-center cursor-pointer">
+              <button className="bg-[#007bff] p-3 pr-8 pl-8 rounded-md text-white font-normal inline-flex items-center cursor-pointer hover:scale-105 duration-300 ease-in-out">
                 <Link to="/about"> Read More</Link>
-                <BsArrowRightCircle className="ml-2 font-semibold" />
+                <IoIosArrowForward className="ml-2 font-semibold" />
               </button>
             </div>
           </ScrollingOneSide>
