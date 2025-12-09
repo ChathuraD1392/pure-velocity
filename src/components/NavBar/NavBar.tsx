@@ -57,7 +57,7 @@ const NavBar = ({ toggleTheme, logo, theme }: NavBarProps) => {
         animate={{
           opacity: isNavVisible ? 1 : 0,
           scale: 1,
-          y: isMenuVisible ? 0 : "1vh",
+          y: isMenuVisible ? 0 : "0vh",
         }}
         exit={{ opacity: 0, scale: 1, y: "-5vh" }}
         transition={{ type: "tween", delay: 0.25, stiffness: 100 }}
