@@ -16,29 +16,31 @@ const Breadcrums = () => {
   return (
     <>
       <MotionUpDown initialY="100vh" delay={1} duration={1}>
-        <span className="text-[12px] mt-8 pb-1 flex items-center justify-items-start pl-62.5">
-          {pathnames.map((path, index) => {
-            const routeTo = path === "services" ? "/services" : "";
-            return (
-              <li
-                key={index}
-                onClick={() => navigate(routeTo)}
-                className="list-none"
-              >
-                <p
-                  className={`${
-                    isLast === index
-                      ? "text-blue-500"
-                      : "hover:underline hover:underline-offset-1 cursor-pointer"
-                  } font-semibold inline-flex items-center `}
+        <div className="w-full max-w-6xl mx-auto">
+          <span className="lg:flex hidden items-center text-left text-[12px] mt-8 pb-1">
+            {pathnames.map((path, index) => {
+              const routeTo = path === "services" ? "/services" : "";
+              return (
+                <li
+                  key={index}
+                  onClick={() => navigate(routeTo)}
+                  className="list-none"
                 >
-                  <IoIosArrowForward className="font-semibold mr-1 ml-1" />
-                  {path.toUpperCase()}
-                </p>
-              </li>
-            );
-          })}
-        </span>
+                  <p
+                    className={`${
+                      isLast === index
+                        ? "text-blue-500"
+                        : "hover:underline hover:underline-offset-3 cursor-pointer"
+                    } font-semibold inline-flex items-center `}
+                  >
+                    <IoIosArrowForward className="font-semibold mr-1 ml-1" />
+                    {path.toUpperCase()}
+                  </p>
+                </li>
+              );
+            })}
+          </span>
+        </div>
       </MotionUpDown>
     </>
   );

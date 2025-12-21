@@ -15,31 +15,9 @@ const Footer = () => {
             <div className="mb-6 md:mb-0">
               <img src={logo} alt="logo" className="w-[600px] object-contain" />
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                {/* <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
-                  Follow us
-                </h2>
-                <ul className="text-body font-medium">
-                  <li className="mb-4">
-                    <a
-                      href="https://github.com/themesberg/flowbite"
-                      className="hover:underline "
-                    >
-                      Github
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.gg/4eeurUVvTy"
-                      className="hover:underline"
-                    >
-                      Discord
-                    </a>
-                  </li>
-                </ul> */}
-              </div>
-              <div>
+            <div className="grid grid-cols-2 sm:gap-6 sm:grid-cols-3">
+              <div></div>
+              <div className="">
                 <h2 className="mb-6 text-lg font-medium text-heading uppercase">
                   Services
                 </h2>
@@ -50,7 +28,7 @@ const Footer = () => {
                       className="flex items-center"
                     >
                       <CiLocationArrow1 className="mr-2 w-2.5" />
-                      Advanced Diagnostics & Troubleshooting
+                      Diagnostics & Troubleshooting
                     </Link>
                   </li>
                   <li className="mb-2 text-sm font-light hover:underline hover:underline-offset-4">

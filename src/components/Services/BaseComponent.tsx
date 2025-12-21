@@ -42,7 +42,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
         </MotionUpDown>
 
         <ScrollingOneSide y={100} duration={1}>
-          <div className="pl-4 max-w-6xl mx-auto mt-6 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden">
+          <div className="pl-0 md:pl-4 max-w-6xl mx-auto mt-6 grid grid-cols-1  gap-1 justify-center items-center text-left overflow-hidden">
             <div className="mr-2">
               <ul className="space-y-5 ml-5 font-medium">
                 {service.bullets.map((b) => (
@@ -57,7 +57,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
           </div>
         </ScrollingOneSide>
         <ScrollingOneSide y={100} duration={1}>
-          <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 grid grid-cols-3 gap-1 justify-center items-center text-left overflow-hidden">
+          <div className="pl-4 max-w-6xl mx-auto mt-10 mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 justify-center items-center text-left overflow-hidden">
             <img
               src={service.image}
               alt={service.title}
@@ -66,12 +66,12 @@ const BaseComponent = ({ service }: { service: Service }) => {
             <img
               src={service.image}
               alt={service.title}
-              className="rounded-2xl h-[300px] p-3"
+              className="rounded-2xl h-[300px] p-3 hidden md:block"
             />
             <img
               src={service.image}
               alt={service.title}
-              className="rounded-2xl h-[300px] p-3"
+              className="rounded-2xl h-[300px] p-3 hidden lg:block"
             />
           </div>
         </ScrollingOneSide>
