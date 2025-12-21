@@ -65,7 +65,10 @@ const Form = () => {
           </label>
         </div>
         <div className="flex justify-end">
-          <button type="submit" className="btn bg-[#0a0f2d] text-right">
+          <button
+            type="submit"
+            className="btn bg-[#0a0f2d] text-right text-white"
+          >
             <MdOutlineMailOutline />
             Submit
           </button>

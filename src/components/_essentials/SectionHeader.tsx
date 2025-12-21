@@ -8,7 +8,7 @@ const SectionHeader = ({ children }: PropsWithChildren) => {
     <div className="relative">
       <section id="contact" className="pt-2 md:pt-5 pl-5 pr-5">
         <div
-          className={`max-w-6xl mx-auto mt-10 mb-5 justify-center items-center text-left overflow-hidden ${
+          className={`max-w-6xl mx-auto mt-8 mb-5 justify-center items-center text-left overflow-hidden ${
             theme === "dark" ? "text-white" : "text-black"
           }`}
         >

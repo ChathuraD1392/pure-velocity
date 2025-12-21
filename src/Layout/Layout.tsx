@@ -3,7 +3,7 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import MenuContext from "../StateManagement/contexts/menuContext";
 import ThemeContext from "../StateManagement/contexts/themeContext";
 import logo from "../assets/images/Logo Horizontal white@300x.png";
-import FooterNew from "../components/Footer/FooterNew";
+import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import ScrollToTopBtn from "../components/_essentials/ScrollToTopBtn";
 
@@ -28,7 +28,7 @@ const Layout = () => {
           </main>
         </ThemeContext.Provider>
         <ScrollToTopBtn />
-        <FooterNew />
+        <Footer />
       </MenuContext.Provider>
     </>
   );

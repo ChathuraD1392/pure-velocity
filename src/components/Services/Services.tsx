@@ -17,7 +17,7 @@ const Services = () => {
 
       <SectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-4xl md:text-5xl font-semibold mb-4">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-5">
             All Tesla services and Repairs
           </h1>
           <h4 className="text-md md:text-lg font-light mb-5 p-3 md:p-0">

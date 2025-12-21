@@ -4,7 +4,7 @@ import type { Service } from "../../assets/data/services";
 import ImageHeader from "../_essentials/ImageHeader";
 import MotionUpDown from "../_essentials/Motion/MotionUpDown";
 import ScrollingOneSide from "../_essentials/Scrolling/ScrollingOneSide";
-import SectionHeader from "../_essentials/SectionHeader";
+import ServiceSectionHeader from "./SeviceSectionHeader";
 
 const BaseComponent = ({ service }: { service: Service }) => {
   return (
@@ -19,9 +19,9 @@ const BaseComponent = ({ service }: { service: Service }) => {
                 to="/contact"
                 className="hidden sm:inline-block px-9 py-3 mt-3 rounded-md border bg-[#007bff] border-[#007bff]"
               >
-                <div className="pl-3 pr-3 p-1 flex items-center space-x-2 text-md text-white text-xl">
+                <div className="pl-3 pr-3 p-1 flex items-center space-x-2 text-white">
                   <BsTelephone className="text-lg" />
-                  <span>Contact us Today</span>
+                  <span className="text-lg">Contact us</span>
                 </div>
               </Link>
             </button>
@@ -29,9 +29,9 @@ const BaseComponent = ({ service }: { service: Service }) => {
         }
       />
 
-      <SectionHeader>
+      <ServiceSectionHeader>
         <MotionUpDown initialY="100vh" delay={1} duration={1}>
-          <h1 className="text-5xl font-semibold mb-4">{service.title}</h1>
+          <h1 className="text-5xl font-semibold mb-5">{service.title}</h1>
           <h4 className="text-lg font-light">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quia
             incidunt et corporis tempora in, repudiandae eos! Sequi, repudiandae
@@ -42,7 +42,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
         </MotionUpDown>
 
         <ScrollingOneSide y={100} duration={1}>
-          <div className="pl-4 max-w-6xl mx-auto mt-10 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden">
+          <div className="pl-4 max-w-6xl mx-auto mt-6 grid grid-cols-2 gap-1 justify-center items-center text-left overflow-hidden">
             <div className="mr-2">
               <ul className="space-y-5 ml-5 font-medium">
                 {service.bullets.map((b) => (
@@ -75,7 +75,7 @@ const BaseComponent = ({ service }: { service: Service }) => {
             />
           </div>
         </ScrollingOneSide>
-      </SectionHeader>
+      </ServiceSectionHeader>
     </>
   );
 };
